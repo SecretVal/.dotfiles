@@ -17,9 +17,11 @@
     };
   #thunar
   programs.thunar.enable = true;
-  #fish
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  # I use zsh btw
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   #sound
   security.rtkit.enable = true;
   services.pipewire = {

@@ -4,6 +4,6 @@
   programs.rofi = {
       terminal="alacritty";
       enable = true;
-      theme=(dotfilesDir + "/rofi/nord.rasi");
+      theme=(dotfilesDir + "/rofi/config2.rasi");
   };
 }
