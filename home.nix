@@ -11,9 +11,10 @@
     ./neovim/neovim.nix
     ./emacs/emacs.nix
     ./rofi/rofi.nix
+    ./sh/zsh.nix
   ];
 
-  Home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "23.05"; # Please read the comment before changing.
   #fonts
   fonts.fontconfig.enable = true;
   home.packages = [
@@ -22,6 +23,6 @@
 
 
   home.sessionVariables = {
-    EDITOR="EMACS";
+    EDITOR="EMACSCLIENT -C";
   };
 }
