@@ -12,6 +12,7 @@
     ./emacs/emacs.nix
     ./rofi/rofi.nix
     ./sh/zsh.nix
+    (dotfilesDir + "/term/alacritty.nix")
   ];
 
   home.stateVersion = "23.05"; # Please read the comment before changing.

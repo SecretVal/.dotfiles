@@ -17,7 +17,7 @@
             keybindings = let 
                 modifier = config.xsession.windowManager.i3.config.modifier;
             in lib.mkOptionDefault{
-                "${modifier}+d" = "exec rofi -show run";
+                "${modifier}+d" = "exec rofi -show drun";
             };
         };
     };
