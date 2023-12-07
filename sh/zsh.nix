@@ -7,5 +7,6 @@
       enable = true;
       theme = "robbyrussell";
     };
+    initExtra = "export PATH=/home/lukas/.cargo/bin:$PATH";
   };
 }

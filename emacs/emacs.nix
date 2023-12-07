@@ -11,6 +11,7 @@
 
     xdg.configFile."doom".source = ./doom;
     home.packages = with pkgs; [
+        nil
         ## Doom dependencies
         git
         (ripgrep.override {withPCRE2 = true;})
