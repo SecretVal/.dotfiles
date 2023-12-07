@@ -1,1 +1,4 @@
 * My Nixos Config
+** PLEASE DONT COPY
+This is my own personal nixos config.
+*It's very bad and not modular in any way so please do not copy it but you can take some of my ideas*
