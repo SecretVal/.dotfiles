@@ -7,7 +7,7 @@
 		vimdiffAlias = true;
 		plugins = with pkgs.vimPlugins;[
 			telescope-nvim
-				dracula-nvim
+				catppuccin-nvim
 				null-ls-nvim
 				nvim-lspconfig
 				cmp-nvim-lsp
@@ -16,6 +16,7 @@
 		];
 		extraLuaConfig = ''
 			${builtins.readFile ./config/set.lua}
+			${builtins.readFile ./config/color.lua}
 		'';
 	};
 
