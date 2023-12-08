@@ -6,9 +6,15 @@
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         rust-overlay.url = "github:oxalica/rust-overlay";
+
+	nixvim = {
+		url = "github:nix-community/nixvim";
+		inputs.nixpkgs.follows = "nixpkgs";
+	};
+
     };
 
-    outputs = inputs @ { self, nixpkgs, home-manager,rust-overlay,... }:
+    outputs = inputs @ { self, nixpkgs, home-manager,rust-overlay, nixvim, ... }:
         let
         system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -34,6 +40,7 @@
             ];
             extraSpecialArgs = {
                 inherit dotfilesDir;
+		inherit nixvim;
             };
         };
     };

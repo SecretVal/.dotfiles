@@ -1,4 +1,4 @@
-{ config, pkgs, dotfilesDir, ... }:
+{ config, pkgs, dotfilesDir, inputs, ... }:
 
 {
   home.username = "lukas";
@@ -12,6 +12,7 @@
     ./rofi/rofi.nix
     ./sh/zsh.nix
     ./term/alacritty.nix
+    ./term/kitty.nix
     ./code/node.nix
   ];
 
