@@ -9,7 +9,6 @@
   imports  = [
     ./i3/i3.nix
     ./neovim/neovim.nix
-    ./emacs/emacs.nix
     ./rofi/rofi.nix
     ./sh/zsh.nix
     ./term/alacritty.nix
@@ -25,6 +24,6 @@
 
 
   home.sessionVariables = {
-    EDITOR="EMACSCLIENT -C";
+    EDITOR="nvim";
   };
 }

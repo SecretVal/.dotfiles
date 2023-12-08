@@ -125,6 +125,8 @@
      cava
      flameshot
      discord-canary
+     pkg-config
+     openssl
   ];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
