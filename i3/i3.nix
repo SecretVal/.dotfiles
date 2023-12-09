@@ -18,7 +18,6 @@
                 modifier = config.xsession.windowManager.i3.config.modifier;
             in lib.mkOptionDefault{
                 "${modifier}+d" = "exec rofi -show drun";
-                "${modifier}+Shift+x" = "exec emacsclient -c -a 'emacs'";
             };
         };
     };

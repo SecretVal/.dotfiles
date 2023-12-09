@@ -8,5 +8,9 @@
       theme = "robbyrussell";
     };
     initExtra = "export PATH=/home/lukas/.cargo/bin:$PATH";
+    shellAliases = {
+      vim="nvim";
+    };
   };
 }
+
