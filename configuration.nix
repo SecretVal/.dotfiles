@@ -5,6 +5,7 @@
 
 { imports = [ 
   ./hardware-configuration.nix 
+  ./hypr/hypr.nix
 ];
     #bluetooth
     hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -26,8 +27,6 @@
         ];
       };
     };
-  #thunar
-  programs.thunar.enable = true;
   # I use zsh btw
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -101,7 +100,7 @@
      brave
 
      #terminal
-     kitty
+     foot
      neovim
      neofetch
      htop
@@ -115,12 +114,10 @@
      pavucontrol
      bluez
      nitrogen
+     dolphin
 
      #picom
      picom
-
-     #emacs
-     emacs-all-the-icons-fonts
 
      # dev stuff
      rustup
@@ -141,9 +138,6 @@
      bat
      nnn
    ];
-   hardware.opengl.enable = true;
-   hardware.opengl.driSupport = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
