@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.alacritty = {
+  programs.kitty = {
     enable = true;
     settings = {
-      window.opacity = 0.9;
+      background_opacity = 0.9;
     };
   };
 }

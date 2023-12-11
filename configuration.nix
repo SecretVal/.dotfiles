@@ -4,16 +4,27 @@
 { config, pkgs, ... }:
 
 { imports = [ 
-    ./hardware-configuration.nix 
-    ];
+  ./hardware-configuration.nix 
+];
     #bluetooth
     hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
     services.blueman.enable = true; # blueman
 
     services.xserver = {
+      enable = true;
+      resolutions = [ {x = 1920; y = 1080;} ];
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "none+awesome";
+      };
+
+      windowManager.awesome = {
         enable = true;
-        windowManager.i3.enable = true;
-        resolutions = [ {x = 1920; y = 1080;} ];
+        luaModules = with pkgs.luaPackages; [
+          luarocks # is the package manager for Lua modules
+          luadbi-mysql # Database abstraction layer
+        ];
+      };
     };
   #thunar
   programs.thunar.enable = true;
@@ -25,11 +36,11 @@
   #sound
   security.rtkit.enable = true;
   services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
   };
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -90,7 +101,7 @@
      brave
 
      #terminal
-     alacritty
+     kitty
      neovim
      neofetch
      htop
@@ -127,9 +138,11 @@
      discord-canary
      pkg-config
      openssl
-  ];
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
+     bat
+     nnn
+   ];
+   hardware.opengl.enable = true;
+   hardware.opengl.driSupport = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -158,5 +171,4 @@
   system.stateVersion = "23.05"; # Did you read the comment?
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
 }

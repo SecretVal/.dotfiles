@@ -1,4 +1,4 @@
 {pkgs, config,lib, ...}:
 {
-  windowManager.awesome.enable = true;
+  xsession.windowManager.awesome.enable = true;
 }
