@@ -11,7 +11,6 @@
 		WLR_RENDERER_ALLOW_SOFTWARE="1";
 	};
 	hardware = {
-
 		nvidia.modesetting.enable = true;
 	};
 	xdg.portal.enable = true;
