@@ -3,7 +3,7 @@
   programs.foot = {
     enable = true;
     settings = {
-      main= {
+      colors = {
         alpha=0.9;
       };
     };
