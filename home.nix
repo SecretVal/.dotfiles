@@ -8,6 +8,7 @@
   programs.home-manager.enable = true;
   imports  = [
     ./rofi/rofi.nix
+    ./term/foot.nix
     ./neovim/neovim.nix
     ./sh/zsh.nix
     ./code/node.nix

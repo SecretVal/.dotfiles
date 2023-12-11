@@ -118,7 +118,6 @@
      cmake
      libtool
      just 
-     rofi-wayland
 
      #extra
      bitwarden
