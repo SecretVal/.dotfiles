@@ -25,7 +25,8 @@
         nixosConfigurations =  {
             nixos = lib.nixosSystem {
                 modules = [
-                    ./configuration.nix
+                  ./configuration.nix
+                  ./hypr/hypr.nix
                     ({ pkgs, ... }: {
                         nixpkgs.overlays = [ rust-overlay.overlays.default ];
                         environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
