@@ -7,12 +7,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports  = [
-    # ./i3/i3.nix
-    ./wm/awesome/awesome.nix
-    ./neovim/neovim.nix
     ./rofi/rofi.nix
+    ./neovim/neovim.nix
     ./sh/zsh.nix
-    ./term/kitty.nix
     ./code/node.nix
   ];
 
