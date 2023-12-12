@@ -7,11 +7,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports  = [
-    ./rofi/rofi.nix
-    ./term/foot.nix
-    ./neovim/neovim.nix
-    ./sh/zsh.nix
-    ./code/node.nix
+    ./modules/hm/rofi/rofi.nix
+    ./modules/hm/term/foot.nix
+    ./modules/hm/neovim/neovim.nix
+    ./modules/hm/sh/zsh.nix
+    ./modules/hm/code/node.nix
   ];
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
