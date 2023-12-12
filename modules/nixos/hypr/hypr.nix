@@ -21,5 +21,4 @@
     environment.systemPackages = with pkgs; [
       gtk3
     ];
-
   }

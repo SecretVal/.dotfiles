@@ -10,4 +10,7 @@
       };
     };
   };
+  home.packages = with pkgs; [
+    waybar
+  ];
 }

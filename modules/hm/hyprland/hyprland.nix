@@ -3,6 +3,11 @@
   imports = [
     ./waybar.nix
   ];
+  gtk.cursorTheme = {
+    package = pkgs.phinger-cursors;
+    name = "dark";
+    size = 20;
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
