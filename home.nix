@@ -12,6 +12,7 @@
     ./modules/hm/neovim/neovim.nix
     ./modules/hm/sh/zsh.nix
     ./modules/hm/code/node.nix
+    ./modules/hm/hyprland/hyprland.nix
   ];
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
