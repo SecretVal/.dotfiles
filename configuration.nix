@@ -130,6 +130,7 @@
      openssl
      bat
      nnn
+     qt6.qtwayland
    ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
