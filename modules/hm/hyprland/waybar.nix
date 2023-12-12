@@ -7,6 +7,9 @@
         layer = "top";
         position = "top";
         modules-left = ["hyprland/workspaces"];
+        "hyprland/workspaces" = {
+          active-only = true;
+        };
       };
     };
   };

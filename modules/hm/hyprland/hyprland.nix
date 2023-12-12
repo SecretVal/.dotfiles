@@ -5,9 +5,16 @@
   ];
   gtk.cursorTheme = {
     package = pkgs.phinger-cursors;
-    name = "dark";
+    name="phinger-cursors";
     size = 20;
   };
+  home.pointerCursor = {
+      name = "phinger-cursors";
+      package = pkgs.phinger-cursors;
+      size = 24;
+      gtk.enable = true;
+      x11.enable = true;
+    };
   wayland.windowManager.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
