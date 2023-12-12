@@ -14,6 +14,12 @@
     ./modules/hm/code/node.nix
     ./modules/hm/hyprland/hyprland.nix
   ];
+  gtk.cursorTheme = {
+    package = pkgs.quintom-cursor-theme;
+    name = "Quintom_Snow";
+    size = 36;
+  };
+
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
   #fonts

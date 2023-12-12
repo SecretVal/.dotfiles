@@ -1,8 +1,10 @@
 { config, lib, pkgs, ... }:
 {
+  imports = [
+    ./waybar.nix
+  ];
   gtk.cursorTheme = {
-    package = pkgs.quintom-cursor-theme;
-    name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
+    package = pkgs.phinger-cursors;
     size = 36;
   };
 }
