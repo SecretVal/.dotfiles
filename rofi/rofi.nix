@@ -5,6 +5,6 @@
       package = pkgs.rofi-wayland;
       terminal= "foot";
       enable = true;
-      theme=(dotfilesDir + "/rofi/config2.rasi");
+#      theme=(dotfilesDir + "/rofi/config2.rasi");
   };
 }

@@ -15,14 +15,16 @@
     services.xserver = {
       enable = true;
       resolutions = [ {x = 1920; y = 1080;} ];
-      displayManager = {
-        lightdm.enable = true;
-      };
+#      displayManager = {
+#        lightdm.enable = true;
+#      };
     };
   # I use zsh btw
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+  # thunar
+  programs.thunar.enable = true;
 
   #sound
   security.rtkit.enable = true;
@@ -61,9 +63,9 @@
     LC_MONETARY = "de_DE.UTF-8";
     LC_NAME = "de_DE.UTF-8";
     LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
+#    LC_PAPER = "de_DE.UTF-8";
+#    LC_TELEPHONE = "de_DE.UTF-8";
+#    LC_TIME = "de_DE.UTF-8";
   };
 
   # Configure keymap in X11
@@ -106,7 +108,6 @@
      pavucontrol
      bluez
      swww
-     dolphin
 
      #picom
      picom
