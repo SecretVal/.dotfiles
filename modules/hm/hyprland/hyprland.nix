@@ -45,8 +45,7 @@ input {
       kb_options =
         kb_rules =
 
-          follow_mouse = 2
-
+          follow_mouse = 1
           touchpad {
             natural_scroll = no
           }
@@ -135,6 +134,21 @@ device:epic-mouse-v1 {
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
+$scratchpadsize = size 80% 85%
+$scratchpad = class:^(scratchpad)$
+windowrulev2 = float,$scratchpad
+windowrulev2 = $scratchpadsize,$scratchpad
+windowrulev2 = workspace special silent,$scratchpad
+windowrulev2 = center,$scratchpad
+
+$pavucontrol = class:^(pavucontrol)$
+windowrulev2 = float,$pavucontrol
+windowrulev2 = size 86% 40%,$pavucontrol
+windowrulev2 = move 50% 6%,$pavucontrol
+windowrulev2 = workspace special silent,$pavucontrol
+windowrulev2 = opacity 0.80,$pavucontrol
+
+layerrule = blur,waybar
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 $mainMod = ALT
@@ -195,6 +209,40 @@ bind = $mainMod,F,fullscreen
 bind = $mainMod,D,exec, rofi -show drun
 bind = $mainMod,R,exec, ~/.dotfiles/scripts/waybar.sh
 exec-once=waybar
+exec-once=pypr
 '';
   };
+  home.packages = [
+    (pkgs.python3Packages.buildPythonPackage rec {
+      pname = "pyprland";
+      version = "1.4.1";
+      src = pkgs.fetchPypi {
+        inherit pname version;
+        sha256 = "sha256-JRxUn4uibkl9tyOe68YuHuJKwtJS//Pmi16el5gL9n8=";
+      };
+      format = "pyproject";
+      propagatedBuildInputs = with pkgs; [
+        python3Packages.setuptools
+        python3Packages.poetry-core
+        poetry
+      ];
+      doCheck = false;
+    })
+  ];
+  home.file.".config/hypr/pyprland.json".text = ''
+  {
+    "pyprland": {
+      "plugins": ["scratchpads", "magnify"]
+    },
+    "scratchpads": {
+      "pavu": {
+        "command": "pavucontrol",
+        "margin": 50,
+        "unfocus": "hide",
+        "animation": "fromTop"
+      }
+    }
+  }
+  '';
+
 }

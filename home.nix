@@ -14,11 +14,13 @@
     ./modules/hm/code/node.nix
     ./modules/hm/hyprland/hyprland.nix
     ./modules/hm/styling/gtk.nix
+    ./modules/hm/styling/stylix.nix
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.
   #fonts
   fonts.fontconfig.enable = true;
   home.packages = [
+    pkgs.font-awesome
     (pkgs.nerdfonts.override { fonts = ["JetBrainsMono"]; })
   ];
 
