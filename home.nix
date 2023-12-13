@@ -14,7 +14,7 @@
     ./modules/hm/code/node.nix
     ./modules/hm/hyprland/hyprland.nix
     ./modules/hm/styling/gtk.nix
-    ./modules/hm/styling/stylix.nix
+    ./modules/hm/styling/nix-colors.nix
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.
   #fonts

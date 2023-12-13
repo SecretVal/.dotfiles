@@ -10,10 +10,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager,rust-overlay, nixvim,stylix, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager,rust-overlay, nixvim,nix-colors, ... }:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -40,7 +40,7 @@
         inherit dotfilesDir;
         inherit nixvim;
         inherit inputs;
-        inherit stylix;
+        inherit nix-colors;
       };
     };
   };
