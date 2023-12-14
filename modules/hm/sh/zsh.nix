@@ -3,13 +3,17 @@
 {
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-    };
     initExtra = "export PATH=/home/lukas/.cargo/bin:$PATH";
     shellAliases = {
       vim="nvim";
+    };
+  };
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+    settings = {
+      add_newline = false;
     };
   };
 }
