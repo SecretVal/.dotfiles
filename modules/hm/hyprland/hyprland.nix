@@ -37,6 +37,9 @@ monitor=,1920x1080,auto,1
 # Some default env vars.
 env = XCURSOR_SIZE,24
 
+exec-once=waybar
+exec-once=pypr
+
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
   kb_layout = de
@@ -208,8 +211,6 @@ bindm = $mainMod, mouse:273, resizewindow
 bind = $mainMod,F,fullscreen
 bind = $mainMod,D,exec, rofi -show drun
 bind = $mainMod,R,exec, ~/.dotfiles/scripts/waybar.sh
-exec-once=waybar
-exec-once=pypr
 '';
   };
   home.packages = [

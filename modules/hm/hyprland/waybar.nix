@@ -1,48 +1,67 @@
-{config, pkgs, nix-colors, ...}: {
+{config, pkgs, inputs, ...}: 
+{
   # Enable waybar
   programs.waybar = {
     enable = true;
     style = ''
+    @define-color bg #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base00};
     * {
       font-family: FontAwesome;
       font-size: 16px;
+      border: none;
+      border-radius: 16px;
     }
     window#waybar {
-      background: rgba(36, 39, 56, 0.75);
-      border: none;
-      border-radius: 20px;
+      background-color: rgba(0,0,0,0);
+      background: transparent;
     }
-    #workspaces button {
-      color: ${config.colorScheme.base00};
+    #workspaces  {
+      background: @bg;
+      color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
       padding: 0 5px;
       min-width: 20px;
     }
      #workspaces button.active {
-       color: ${config.colorScheme.base0D};
+       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base0D};
      }
      #workspaces button.urgent {
-       color: ${config.colorScheme.base08};
+       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base08};
      }
      #clock {
-       color: ${config.colorScheme.base05};
+       background-color: @bg;
+       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
        padding: 0 5px;
+       margin: 0px 5px;
      }
      #pulseaudio {
-       color: ${config.colorScheme.base05};
+       background-color: @bg;
+       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
        padding: 0 5px;
+       margin: 0px 5px;
      }
      #window {
-       color: ${config.colorScheme.base05};
+       background-color: @bg;
+       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
        padding: 0 5px;
+     }
+     window#waybar.empty #window{
+       background: none;
      }
      '';
      settings = {
        mainBar = {
          modules-left = ["hyprland/workspaces"];
-         modules-right = ["pulseaudio" "clock"];
+         modules-right = ["group/right"];
          modules-center = ["hyprland/window"];
          "pulseaudio" = {
            "on-click" = "pypr toggle pavu && hyprctl dispatch bringactivetotop";
+         };
+         "group/right" = {
+           orientation = "horizontal";
+           modules = ["custom/swaync" "pulseaudio" "clock"];
+         };
+         "custom/bell" = {
+           "format" = "";
          };
        };
      };

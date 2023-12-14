@@ -7,7 +7,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports  = [
+    inputs.nix-colors.homeManagerModules.default
     ./modules/hm/rofi/rofi.nix
+    ./modules/hm/mako/mako.nix
     ./modules/hm/term/foot.nix
     ./modules/hm/neovim/neovim.nix
     ./modules/hm/sh/zsh.nix
@@ -23,8 +25,7 @@
     pkgs.font-awesome
     (pkgs.nerdfonts.override { fonts = ["JetBrainsMono"]; })
   ];
-
-
+  colorScheme = inputs.nix-colors.colorSchemes.dracula;
   home.sessionVariables = {
     EDITOR="nvim";
   };
