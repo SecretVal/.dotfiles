@@ -1,16 +1,13 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.zsh = {
+  programs.fish = {
     enable = true;
-    initExtra = "export PATH=/home/lukas/.cargo/bin:$PATH";
-    shellAliases = {
-      vim="nvim";
-    };
+    shellInit = "set fish_greeting";
   };
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
     enableBashIntegration = true;
     settings = {
       add_newline = false;

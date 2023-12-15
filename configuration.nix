@@ -20,9 +20,9 @@
 #      };
     };
   # I use zsh btw
-  environment.shells = with pkgs; [ zsh ];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
+  environment.shells = with pkgs; [ fish ];
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
   # thunar
   programs.thunar.enable = true;
 
@@ -112,9 +112,6 @@
      bluez
      swww
 
-     #picom
-     picom
-
      # dev stuff
      rustup
      cargo
@@ -133,7 +130,6 @@
      openssl
      bat
      nnn
-     qt6.qtwayland
    ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

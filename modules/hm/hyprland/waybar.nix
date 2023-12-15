@@ -1,47 +1,49 @@
-{config, pkgs, inputs, ...}: 
+{config, pkgs, inputs,nix-colors, ...}: 
 {
+  imports = [ 
+    inputs.nix-colors.homeManagerModules.default
+  ];
   # Enable waybar
   programs.waybar = {
     enable = true;
     style = ''
-    @define-color bg #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base00};
+    @define-color bg #${config.colorScheme.colors.base00};
+
     * {
       font-family: FontAwesome;
       font-size: 16px;
-      border: none;
-      border-radius: 16px;
     }
     window#waybar {
-      background-color: rgba(0,0,0,0);
-      background: transparent;
+      background-color: #${config.colorScheme.colors.base00};
+      opacity: 0.9;
     }
     #workspaces  {
-      background: @bg;
-      color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
+      color: #${config.colorScheme.colors.base05};
       padding: 0 5px;
       min-width: 20px;
     }
      #workspaces button.active {
-       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base0D};
+       color: #${config.colorScheme.colors.base0D};
      }
      #workspaces button.urgent {
-       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base08};
+       color: #${config.colorScheme.colors.base08};
+     }
+     #workspaces button:hover {
+       color: #${config.colorScheme.colors.base05};
+       border: none;
      }
      #clock {
-       background-color: @bg;
-       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
+       color: #${config.colorScheme.colors.base05};
        padding: 0 5px;
        margin: 0px 5px;
      }
      #pulseaudio {
-       background-color: @bg;
-       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
+       color: #${config.colorScheme.colors.base05};
        padding: 0 5px;
        margin: 0px 5px;
      }
      #window {
-       background-color: @bg;
-       color: #${inputs.nix-colors.colorSchemes.catppuccin-mocha.colors.base05};
+       color: #${config.colorScheme.colors.base05};
        padding: 0 5px;
      }
      window#waybar.empty #window{
@@ -51,17 +53,17 @@
      settings = {
        mainBar = {
          modules-left = ["hyprland/workspaces"];
-         modules-right = ["group/right"];
+         modules-right = ["custom/notification" "tray" "pulseaudio" "clock" ];
          modules-center = ["hyprland/window"];
          "pulseaudio" = {
            "on-click" = "pypr toggle pavu && hyprctl dispatch bringactivetotop";
          };
-         "group/right" = {
-           orientation = "horizontal";
-           modules = ["custom/swaync" "pulseaudio" "clock"];
+         "tray" = {
+           "icon-size" = 21;
+           "spacing" = 15;
          };
-         "custom/bell" = {
-           "format" = "";
+         "pulseaudio" = {
+
          };
        };
      };
