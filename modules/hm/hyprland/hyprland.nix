@@ -33,6 +33,7 @@ env = XCURSOR_SIZE,24
 
 exec-once=waybar 
 exec-once=pypr
+exec-once=swww init
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
