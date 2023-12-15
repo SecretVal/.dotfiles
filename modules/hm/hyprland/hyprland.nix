@@ -54,7 +54,7 @@ input {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
     gaps_in = 5
-    gaps_out = 20
+    gaps_out = 10
     border_size = 2
     col.active_border = rgb(${config.colorScheme.colors.base0E})
     col.inactive_border = rgba(595959aa)

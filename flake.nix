@@ -5,7 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    rust-overlay.url = "github:oxalica/rust-overlay";
+    #rust-overlay.url = "github:oxalica/rust-overlay";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +13,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager,rust-overlay, nixvim,nix-colors, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nixvim,nix-colors, ... }:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -24,10 +24,11 @@
     nixosConfigurations =  {
       nixos = lib.nixosSystem {
         modules = [
-          ./configuration.nix ({ pkgs, ... }: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          })
+          ./configuration.nix 
+#          ({ pkgs, ... }: {
+#            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+#            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+#          })
           ./modules/nixos/sddm/sddm.nix
         ];
       };

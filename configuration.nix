@@ -111,15 +111,8 @@
      pavucontrol
      bluez
      swww
-
-     # dev stuff
-     rustup
-     cargo
-     gcc
-     gnumake
-     cmake
-     libtool
-     just 
+     #dev
+     just
 
      #extra
      bitwarden
