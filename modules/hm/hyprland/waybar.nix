@@ -53,7 +53,7 @@
      settings = {
        mainBar = {
          modules-left = ["hyprland/workspaces"];
-         modules-right = ["custom/notification" "tray" "pulseaudio" "clock" ];
+         modules-right = [ "tray" "pulseaudio" "clock" ];
          modules-center = ["hyprland/window"];
          "pulseaudio" = {
            "on-click" = "pypr toggle pavu && hyprctl dispatch bringactivetotop";
@@ -61,9 +61,6 @@
          "tray" = {
            "icon-size" = 21;
            "spacing" = 15;
-         };
-         "pulseaudio" = {
-
          };
        };
      };
