@@ -3,6 +3,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ./waybar.nix
+    ./swaylock.nix
   ];
   wayland.windowManager.hyprland = { enable = true; enableNvidiaPatches = true; settings = { }; xwayland = {
     enable = true; 
@@ -31,9 +32,10 @@ monitor=,1920x1080,auto,1
 # Some default env vars.
 env = XCURSOR_SIZE,24
 
-exec-once=waybar 
-exec-once=pypr
-exec-once=swww init
+exec=waybar 
+exec=pypr
+exec=swww init
+exec=swaync
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
@@ -215,6 +217,8 @@ bind = $mainMod,z,exec, pypr zoom
     grim
     slurp
     swaynotificationcenter
+    wlogout
+    swaylock
     (python3Packages.buildPythonPackage rec {
       pname = "pyprland";
       version = "1.4.1";

@@ -42,6 +42,16 @@
        padding: 0 5px;
        margin: 0px 5px;
      }
+     #cpu {
+       color: #${config.colorScheme.colors.base05};
+       padding: 0 5px;
+       margin: 0px 5px;
+     }
+     #memory {
+       color: #${config.colorScheme.colors.base05};
+       padding: 0 5px;
+       margin: 0px 5px;
+     }
      #window {
        color: #${config.colorScheme.colors.base05};
        padding: 0 5px;
@@ -49,18 +59,55 @@
      window#waybar.empty #window{
        background: none;
      }
+     #custom-power {
+       color: #${config.colorScheme.colors.base05};
+       padding: 0 5px;
+       margin: 0px 5px;
+     }
+     #custom-power:hover {
+       color: #${config.colorScheme.colors.base08};
+       padding: 0 5px;
+       margin: 0px 5px;
+     }
      '';
      settings = {
        mainBar = {
          modules-left = ["hyprland/workspaces"];
-         modules-right = [ "tray" "pulseaudio" "clock" ];
+         modules-right = [ "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
          modules-center = ["hyprland/window"];
          "pulseaudio" = {
+           "scroll-step" = 1;
+           "format" = "{volume}% {icon}  {format_source}";
+           "format-bluetooth" = "{volume}% {icon}  {format_source}";
+           "format-bluetooth-muted" = "󰸈 {icon}  {format_source}";
+           "format-muted" = "󰸈 {format_source}";
+           "format-source" = "{volume}% ";
+           "format-source-muted" = " ";
+           "format-icons" = {
+             "headphone" = "";
+             "hands-free" = "";
+             "headset" = "";
+             "phone" = "";
+             "portable" = "";
+             "car" = "";
+             "default" = [ "" "" "" ];
+           };
+
            "on-click" = "pypr toggle pavu && hyprctl dispatch bringactivetotop";
          };
          "tray" = {
            "icon-size" = 21;
            "spacing" = 15;
+         };
+         "cpu" = {
+           "format" = "{usage}% ";
+         };
+         "memory" = {
+           "format" = "{percentage}% ";
+         };
+         "custom/power" = {
+           "format" = "";
+           "on-click" = "wlogout";
          };
        };
      };

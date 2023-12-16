@@ -8,6 +8,7 @@
     ./hardware-configuration.nix 
     ./modules/nixos/hypr/hypr.nix
     ./modules/nixos/sddm/sddm.nix
+    ./modules/nixos/nivida/nvidia.nix
   ];
     #bluetooth
     hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -125,6 +126,11 @@
      bat
      nnn
    ];
+   security.pam.services.swaylock = {
+     text = ''
+     auth include login
+     '';
+   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

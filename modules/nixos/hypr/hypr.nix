@@ -10,9 +10,6 @@
 		NIXOS_OZONE_WL = "1";
 		WLR_RENDERER_ALLOW_SOFTWARE="1";
 	};
-	hardware = {
-		nvidia.modesetting.enable = true;
-	};
 	xdg.portal.enable = true;
 	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	hardware.opengl.enable = true;

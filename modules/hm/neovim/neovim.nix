@@ -3,8 +3,7 @@
   imports = [
     nixvim.homeManagerModules.nixvim 
   ];
-  programs.nixvim = {
-    enable = true;
+  programs.nixvim = { enable = true;
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -71,6 +70,7 @@
           cssls.enable = true;
           cmake.enable = true;
           bashls.enable = true; 
+          gopls.enable = true;
         };
       };
       luasnip.enable = true;
