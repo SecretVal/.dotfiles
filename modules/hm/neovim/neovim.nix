@@ -3,7 +3,8 @@
   imports = [
     nixvim.homeManagerModules.nixvim 
   ];
-  programs.nixvim = { enable = true;
+  programs.nixvim = { 
+    enable = true;
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -43,16 +44,17 @@
     '';
     colorschemes.catppuccin = {
       enable = true;
-      transparentBackground = true;
+      flavour = "mocha";
+      transparentBackground = false;
     };
     plugins = {
       treesitter.enable = true;
       treesitter.ensureInstalled = "all";
       nix.enable = true;
-      chadtree.enable = true;
       neogit  = {
         enable = true;
         autoRefresh = true;
+        useMagitKeybindings = true;
       };
       nvim-autopairs.enable = true;
       lsp = {
@@ -96,35 +98,20 @@
 
         snippet = { expand = "luasnip"; };
 
-        window = {
-          completion = {
-            winhighlight =
-              "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
-              scrollbar = false;
-              sidePadding = 0;
-              border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
-            };
-
-            documentation = {
-              border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
-              winhighlight =
-                "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
-              };
-            };
-            mapping = {
-              "<C-n>" = "cmp.mapping.select_next_item()";
-              "<C-p>" = "cmp.mapping.select_prev_item()";
-              "<C-j>" = "cmp.mapping.select_next_item()";
-              "<C-k>" = "cmp.mapping.select_prev_item()";
-              "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-              "<C-f>" = "cmp.mapping.scroll_docs(4)";
-              "<C-Space>" = "cmp.mapping.complete()";
-              "<C-e>" = "cmp.mapping.close()";
-              "<CR>" =
-                "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })";
-                "<Tab>" = {
-                  modes = [ "i" "s" ];
-                  action =
+        mapping = {
+          "<C-n>" = "cmp.mapping.select_next_item()";
+          "<C-p>" = "cmp.mapping.select_prev_item()";
+          "<C-j>" = "cmp.mapping.select_next_item()";
+          "<C-k>" = "cmp.mapping.select_prev_item()";
+          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<C-e>" = "cmp.mapping.close()";
+          "<CR>" =
+            "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })";
+            "<Tab>" = {
+              modes = [ "i" "s" ];
+              action =
             # lua
             ''
             function(fallback)
@@ -165,23 +152,5 @@
         };
       };
     };
-    keymaps = [
-      {
-        key="<leader>e";
-        action="<cmd>CHADopen<CR>";
-        options = {
-          silent=true;
-          desc="Open ChadTree because I am a chad!";
-        };
-      }
-      {
-        key="<leader>E";
-        action="<cmd>CHADopen<CR>";
-        options = {
-          silent=true;
-          desc="Open ChadTree because I am a chad!";
-        };
-      }
-    ];
   };
 }

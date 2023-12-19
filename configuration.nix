@@ -104,7 +104,6 @@
      neofetch
      htop
      git
-     tmux
      gh
      killall
 
@@ -125,6 +124,7 @@
      openssl
      bat
      nnn
+     ripgrep
    ];
    security.pam.services.swaylock = {
      text = ''

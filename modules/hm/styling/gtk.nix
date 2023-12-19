@@ -1,11 +1,10 @@
 {config, lib, pkgs, ...}:
 {
-  gtk.enable = true;
   gtk= {
+    enable = true;
     cursorTheme = {
-      name = "Catppuccin-Mocha-Dark-Cursors";
-      package = pkgs.catppuccin-cursors.mochaDark;
-      size = 26;
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors";
     };
     theme = {
       name = "Catppuccin-Mocha-Compact-Lavender-Dark";
@@ -37,11 +36,10 @@
   };
 
   home.pointerCursor = {
-    name = "Catppuccin-Mocha-Dark-Cursors";
-    package = pkgs.catppuccin-cursors.mochaDark;
+    name = "phinger-cursors";
+    package = pkgs.phinger-cursors;
     size = 26;
     gtk.enable = true;
     x11.enable = true;
   };
-
 }

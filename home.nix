@@ -16,7 +16,7 @@
     ./modules/hm/hyprland/hyprland.nix
     ./modules/hm/styling/gtk.nix
     ./modules/hm/styling/qt.nix
-    ./modules/hm/tmux/tmux.nix
+    ./modules/hm/zellij/zellij.nix
     ./modules/hm/direnv/direnv.nix
   ];
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
