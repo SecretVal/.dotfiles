@@ -32,10 +32,19 @@ monitor=,1920x1080,auto,1
 # Some default env vars.
 env = XCURSOR_SIZE,24
 
+<<<<<<< Updated upstream
 exec=waybar 
 exec=pypr
 exec=swww init
 exec=swaync
+=======
+exec-once=waybar 
+exec-once=pypr
+exec-once=swww init
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {

@@ -112,8 +112,14 @@
      pavucontrol
      bluez
      swww
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
      #dev
      just
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
      #extra
      bitwarden
