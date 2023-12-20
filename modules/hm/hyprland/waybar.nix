@@ -73,15 +73,7 @@
      settings = {
        mainBar = {
          modules-left = ["hyprland/workspaces"];
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
          modules-right = [ "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
-=======
-         modules-right = ["tray" "pulseaudio" "clock" ];
->>>>>>> Stashed changes
-=======
-         modules-right = ["tray" "pulseaudio" "clock" ];
->>>>>>> Stashed changes
          modules-center = ["hyprland/window"];
          "pulseaudio" = {
            "scroll-step" = 1;
@@ -107,8 +99,6 @@
            "icon-size" = 21;
            "spacing" = 15;
          };
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
          "cpu" = {
            "format" = "{usage}% ";
          };
@@ -119,10 +109,6 @@
            "format" = "";
            "on-click" = "wlogout";
          };
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
        };
      };
    };

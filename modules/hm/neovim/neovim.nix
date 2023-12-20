@@ -42,10 +42,10 @@
     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
     vim.opt.isfname:append("@-@")
     '';
-    colorschemes.catppuccin = {
+        colorschemes.catppuccin = {
       enable = true;
       flavour = "mocha";
-      transparentBackground = false;
+      transparentBackground = true;
     };
     plugins = {
       treesitter.enable = true;

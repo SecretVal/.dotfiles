@@ -21,7 +21,7 @@
 #        lightdm.enable = true;
 #      };
     };
-  # I use zsh btw
+  # I use fish btw
   environment.shells = with pkgs; [ fish ];
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
@@ -112,14 +112,9 @@
      pavucontrol
      bluez
      swww
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
      #dev
      just
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
      #extra
      bitwarden

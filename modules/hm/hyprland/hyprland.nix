@@ -32,19 +32,11 @@ monitor=,1920x1080,auto,1
 # Some default env vars.
 env = XCURSOR_SIZE,24
 
-<<<<<<< Updated upstream
-exec=waybar 
-exec=pypr
-exec=swww init
-exec=swaync
-=======
 exec-once=waybar 
 exec-once=pypr
 exec-once=swww init
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+exec-once=swaync
+exec-once=wl-copy
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
@@ -85,10 +77,11 @@ input {
 
     blur {
       enabled = true
-      size = 8
+      size = 25
       passes = 1
-      new_optimizations = true;
       xray = true;
+      new_optimizations = on
+      ignore_opacity = on
     }
 
     drop_shadow = yes
@@ -157,6 +150,9 @@ windowrulev2 = size 86% 40%,$pavucontrol
 windowrulev2 = move 50% 6%,$pavucontrol
 windowrulev2 = workspace special silent,$pavucontrol
 windowrulev2 = opacity 0.80,$pavucontrol
+
+windowrule=opacity 0.9,^(foot)$
+windowrulev2=opacity 0.9 0.9,fullscreen:1,class:^(foot)$
 
 layerrule = blur,waybar
 
@@ -228,6 +224,7 @@ bind = $mainMod,z,exec, pypr zoom
     swaynotificationcenter
     wlogout
     swaylock
+    wl-clipboard
     (python3Packages.buildPythonPackage rec {
       pname = "pyprland";
       version = "1.4.1";
