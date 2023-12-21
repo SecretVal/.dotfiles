@@ -10,7 +10,7 @@
     nix-colors.homeManagerModules.default
     ./modules/hm/rofi/rofi.nix
     ./modules/hm/term/foot.nix
-    ./modules/hm/neovim/neovim.nix
+    ./modules/hm/neovim
     ./modules/hm/sh/zsh.nix
     ./modules/hm/code/node.nix
     ./modules/hm/hyprland/hyprland.nix
