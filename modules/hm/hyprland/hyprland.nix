@@ -35,6 +35,7 @@ env = XCURSOR_SIZE,24
 exec-once=waybar 
 exec-once=pypr
 exec-once=swww init
+exec=swww img ~/.dotfiles/bgs/unicat.png
 exec-once=swaync
 exec-once=wl-copy
 
@@ -148,9 +149,6 @@ windowrulev2 = size 86% 40%,$pavucontrol
 windowrulev2 = move 50% 6%,$pavucontrol
 windowrulev2 = workspace special silent,$pavucontrol
 windowrulev2 = opacity 0.80,$pavucontrol
-
-windowrule=opacity 0.9,^(foot)$
-windowrulev2=opacity 0.90 0.90,class:^(foot)$,fullscreen:1
 
 layerrule = blur,waybar
 

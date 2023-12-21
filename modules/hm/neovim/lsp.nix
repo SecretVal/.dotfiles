@@ -17,6 +17,22 @@
         bashls.enable = true; 
         gopls.enable = true;
       };
+      keymaps = {
+        silent = true;
+        diagnostic = {
+          "<leader>dj" = "goto_next";
+          "<leader>dk" = "goto_prev";
+        };
+        lspBuf = {
+          "gd" = "definition";
+          "gr" = "references";
+          "gt" = "type_definition";
+          "gi" = "implementation";
+          "K" = "hover";
+          "<leader>r" = "rename";
+          "<leader>ca" ="code_action";
+        };
+      };
     };
   };
 }
