@@ -1,17 +1,12 @@
-{ config, lib, pkgs, ... }:
-
+{pkgs,config,...}:
 {
-  programs.fish = {
-    enable = true;
-    shellInit = "set fish_greeting";
-  };
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
     enableBashIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       add_newline = false;
     };
   };
 }
-

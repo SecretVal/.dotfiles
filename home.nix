@@ -11,7 +11,7 @@
     ./modules/hm/rofi/rofi.nix
     ./modules/hm/term/foot.nix
     ./modules/hm/neovim
-    ./modules/hm/sh/zsh.nix
+    ./modules/hm/sh/shell.nix
     ./modules/hm/code/node.nix
     ./modules/hm/hyprland/hyprland.nix
     ./modules/hm/styling/gtk.nix
