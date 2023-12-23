@@ -4,7 +4,7 @@
       mapleader = " ";
       maplocalleader = " ";
     };
-    options = {
+    options =  {
       guicursor = "";
 
       number = true;
