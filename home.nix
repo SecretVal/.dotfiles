@@ -4,12 +4,6 @@
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";
 
-  home.sessionVariables = rec {
-    EDITOR="nvim";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE="1";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
