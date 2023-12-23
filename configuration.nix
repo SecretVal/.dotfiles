@@ -21,10 +21,9 @@
 #        lightdm.enable = true;
 #      };
     };
-  # I use fish btw
-  environment.shells = with pkgs; [ fish ];
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
+  # I use nushell btw
+  environment.shells = with pkgs; [ nushell ];
+  users.defaultUserShell = pkgs.nushell;
   # thunar
   programs.thunar.enable = true;
 

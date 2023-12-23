@@ -4,9 +4,14 @@
   imports = [
     ./starship.nix
   ];
-  programs.fish = {
+  programs.nushell = {
     enable = true;
-    shellInit = "set fish_greeting";
+
+    extraConfig = "
+    $env.config = {
+      show_banner: false,
+    }
+    ";
   };
 }
 
