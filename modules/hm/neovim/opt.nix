@@ -7,6 +7,8 @@
     options =  {
       guicursor = "";
 
+      shortmess = "ltToOCF";
+
       number = true;
       relativenumber = true;
 
@@ -33,9 +35,5 @@
 
       colorcolumn = "80";
     };
-    extraConfigLua = ''
-    vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-    vim.opt.isfname:append("@-@")
-    '';
   };
 }
