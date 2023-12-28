@@ -125,6 +125,7 @@
      bat
      nnn
      ripgrep
+     musikcube
    ];
    security.pam.services.swaylock = {
      text = ''
