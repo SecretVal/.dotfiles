@@ -8,6 +8,7 @@
     ./color.nix
     ./plugins.nix
     ./telescope.nix
+    ./dash.nix
   ];
   programs.nixvim = {
     enable = true;

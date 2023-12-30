@@ -68,11 +68,16 @@
        padding: 0 5px;
        margin: 0px 5px;
      }
+     #custom-notification {
+       color: #${config.colorScheme.colors.base05};
+       padding: 0 5px;
+       margin: 0px 5px;
+     }
      '';
      settings = {
        mainBar = {
          modules-left = ["hyprland/workspaces"];
-         modules-right = [ "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
+         modules-right = [ "custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power" ];
          modules-center = ["hyprland/window"];
          "pulseaudio" = {
            "scroll-step" = 1;
@@ -107,6 +112,25 @@
          "custom/power" = {
            "format" = "";
            "on-click" = "wlogout";
+         };
+         "custom/notification" = {
+           tooltip = false;
+           format = "{icon} {}";
+           format-icons = {
+             notification = "<span foreground='red'><sup></sup></span>";
+             none = "";
+             dnd-notification = "<span foreground='red'><sup></sup></span>";
+             dnd-none = "";
+             inhibited-notification = "<span foreground='red'><sup></sup></span>";
+             inhibited-none = "";
+             dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+             dnd-inhibited-none = "";
+           };
+           return-type = "json";
+           exec-if = "which swaync-client";
+           exec = "swaync-client -swb";
+           on-click = "swaync-client -t";
+           escape = true;
          };
        };
      };
