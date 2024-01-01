@@ -5,7 +5,7 @@
     xwayland.enable = true;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
 
