@@ -37,9 +37,8 @@ exec-once=wl-copy
 input {
   kb_layout = de
   follow_mouse = 1
-  force_no_accel = true
-  accel_profile = flat
   sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+  accel_profile = flat
 }
 general {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
