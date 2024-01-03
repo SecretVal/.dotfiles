@@ -4,7 +4,6 @@
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";
 
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports  = [

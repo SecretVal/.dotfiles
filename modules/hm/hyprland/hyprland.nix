@@ -58,13 +58,11 @@ general {
 decoration {
   rounding = 10
   drop_shadow = false
-
   blur {
     enabled = true
-    size = 5
-    passes = 3
+    size = 0
+    passes = 0
     new_optimizations = on
-    ignore_opacity = on
   }
 }
 animations {

@@ -4,15 +4,10 @@
     plugins = {
       luasnip.enable = true;
       cmp-buffer = { enable = true; };
-
       cmp-emoji = { enable = true; };
-
       cmp-nvim-lsp = { enable = true; };
-
       cmp-path = { enable = true; };
-
       cmp_luasnip = { enable = true; };
-
       nvim-cmp = {
         enable = true;
         sources = [
@@ -22,9 +17,7 @@
           { name = "nvim_lua"; }
           { name = "path"; }
         ];
-
         snippet = { expand = "luasnip"; };
-
         mapping = {
           "<C-n>" = "cmp.mapping.select_next_item()";
           "<C-p>" = "cmp.mapping.select_prev_item()";

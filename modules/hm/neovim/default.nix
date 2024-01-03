@@ -2,13 +2,14 @@
 {
   imports = [
     nixvim.homeManagerModules.nixvim
+    ./opt.nix
     ./cmp.nix
     ./lsp.nix
     ./opt.nix
     ./color.nix
     ./plugins.nix
     ./telescope.nix
-    ./dash.nix
+    ./startify.nix
   ];
   programs.nixvim = {
     enable = true;
