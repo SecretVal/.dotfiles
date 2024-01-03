@@ -125,7 +125,7 @@ windowrulev2 = opacity 0.80,$pavucontrol
 layerrule = blur,waybar
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-$mainMod = ALT
+$mainMod = SUPER
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, RETURN, exec, foot

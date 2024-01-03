@@ -7,8 +7,6 @@
     options =  {
       guicursor = "";
 
-      shortmess = "ltToOCF";
-
       number = true;
       relativenumber = true;
 

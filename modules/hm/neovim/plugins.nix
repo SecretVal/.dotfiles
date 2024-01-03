@@ -20,6 +20,30 @@
         theme = "catppuccin";
         globalstatus = true;
       };
+      harpoon = {
+        enable = true;
+        keymapsSilent = true;
+        keymaps = {
+          addFile = "<leader>a";
+          toggleQuickMenu = "<C-e>";
+          navFile = {
+            "1" = "<C-j>";
+            "2" = "<C-k>";
+            "3" = "<C-l>";
+          };
+        };
+      };
+      comment-nvim.enable = true;
+      fidget = {
+        enable = true;
+        notification = {
+          window = {
+            winblend = 0;
+            relative = "editor";
+          };
+        };
+      };
+      markdown-preview.enable = true;
     };
   };
 }

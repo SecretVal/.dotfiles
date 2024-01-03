@@ -5,7 +5,7 @@
     keymaps = {
       "<leader>pf"="find_files";
       "<C-p>"="git_files";
-      "<leader>vh"="help_tags";
-    };
+      "<leader>dl"="diagnostics";
+   };
   };
 }
