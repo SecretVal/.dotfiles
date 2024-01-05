@@ -9,6 +9,7 @@
       return {
         NormalFloat = { bg = colors.base, fg = colors.text },
         Pmenu = { bg = colors.base, fg = colors.text },
+        TreesitterContext = { bg = colors.none, fg = colors.text },
       }
       end
       '';

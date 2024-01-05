@@ -1,8 +1,11 @@
 {config, lib, ...}:{
   programs.nixvim = {
     plugins = {
-      treesitter.enable = true;
-      treesitter.ensureInstalled = "all";
+      treesitter = {
+        enable = true;
+        ensureInstalled = "all";
+      };
+      treesitter-context.enable = true;
       nix.enable = true;
       # git
       git-worktree = {
@@ -34,15 +37,6 @@
         };
       };
       comment-nvim.enable = true;
-      fidget = {
-        enable = true;
-        notification = {
-          window = {
-            winblend = 0;
-            relative = "editor";
-          };
-        };
-      };
       markdown-preview.enable = true;
     };
   };

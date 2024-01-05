@@ -1,7 +1,6 @@
 {config, lib,nixvim, ...}:{
   programs.nixvim = {
-    globals = {
-      mapleader = " ";
+    globals = { mapleader = " ";
       maplocalleader = " ";
     };
     options =  {

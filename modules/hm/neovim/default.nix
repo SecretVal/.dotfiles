@@ -10,6 +10,7 @@
     ./plugins.nix
     ./telescope.nix
     ./startify.nix
+    ./autoCmd.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -19,5 +20,12 @@
     vimAlias = true;
 
     luaLoader.enable = true;
+
+    keymaps = [
+      {
+        key = "<leader>dl";
+        action = "<cmd>TroubleToggle<cr>";
+      }
+    ];
   };
 }
