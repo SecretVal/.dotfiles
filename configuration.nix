@@ -9,6 +9,7 @@
     ./modules/nixos/hypr/hypr.nix
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
+    ./modules/nixos/keyd/keyd.nix
   ];
     #bluetooth
     hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
