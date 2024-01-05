@@ -1,7 +1,12 @@
 {config, lib,nixvim, ...}:{
   programs.nixvim = {
-    globals = { mapleader = " ";
+    globals = { 
+      mapleader = " ";
       maplocalleader = " ";
+      netrw_browser_split = 0;
+      netrw_banner = 0;
+      netrw_winsize = 25;
+      langmap = "äöü";
     };
     options =  {
       guicursor = "";
@@ -31,6 +36,9 @@
       updatetime = 50;
 
       colorcolumn = "80";
+
+      list = true;
+      listchars = "eol:↲";
     };
   };
 }
