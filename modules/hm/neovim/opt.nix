@@ -10,7 +10,7 @@
     };
     options =  {
       guicursor = "";
-
+        
       number = true;
       relativenumber = true;
       tabstop = 4;
@@ -32,12 +32,11 @@
       signcolumn = "yes";
 
       updatetime = 50;
-       
 
       colorcolumn = "80";
 
       list = true;
-      listchars = "eol:↲,multispace:⠀·";
+      listchars = "eol:↲";
     } ;
   };
 }

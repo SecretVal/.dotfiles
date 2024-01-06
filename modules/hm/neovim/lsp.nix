@@ -45,6 +45,8 @@
         };
       };
       trouble.enable = true;
+      lspkind.enable = true;
+      lspsaga.enable = true;
     };
   };
 }
