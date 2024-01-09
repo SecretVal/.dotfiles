@@ -34,6 +34,14 @@
             "<leader>ca" ="code_action";
           };
         };
+        capabilities = ''
+        vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", { silent = true })
+        '';
+        onAttach = ''
+        vim.diagnostic.config({
+          virtual_text = true,
+        })
+        '';
       };
       fidget = {
         enable = true;
@@ -46,7 +54,6 @@
       };
       trouble.enable = true;
       lspkind.enable = true;
-      lspsaga.enable = true;
     };
   };
 }

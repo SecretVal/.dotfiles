@@ -1,4 +1,4 @@
-{config, lib, nixvim,...}:
+{config, lib, nixvim,pkgs,...}:
 {
   imports = [
     nixvim.homeManagerModules.nixvim
@@ -11,6 +11,7 @@
     ./telescope.nix
     ./startify.nix
     ./autoCmd.nix
+    ./remaps.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -20,12 +21,5 @@
     vimAlias = true;
 
     luaLoader.enable = true;
-
-    keymaps = [
-      {
-        key = "<leader>dl";
-        action = "<cmd>TroubleToggle<cr>";
-      }
-    ];
   };
 }

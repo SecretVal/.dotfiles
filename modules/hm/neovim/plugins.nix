@@ -6,6 +6,12 @@
         ensureInstalled = "all";
       };
       treesitter-context.enable = true;
+      #lualine 
+      lualine = {
+        enable = true;
+        theme = "catppuccin";
+        globalstatus = true;
+      };
       nix.enable = true;
       # git
       git-worktree = {
@@ -18,11 +24,6 @@
       };
       #nvim-autopairs
       nvim-autopairs.enable = true;
-      lualine = {
-        enable = true;
-        theme = "catppuccin";
-        globalstatus = true;
-      };
       harpoon = {
         enable = true;
         keymapsSilent = true;
@@ -39,6 +40,7 @@
       };
       comment-nvim.enable = true;
       markdown-preview.enable = true;
+      undotree.enable = true;
     };
   };
 }

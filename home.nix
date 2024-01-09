@@ -1,4 +1,4 @@
-{ config, pkgs, dotfilesDir, inputs, nix-colors,... }:
+{ config, pkgs,inputs, nix-colors,... }:
 
 {
   home.username = "lukas";

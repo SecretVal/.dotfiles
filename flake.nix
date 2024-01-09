@@ -18,7 +18,6 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    dotfilesDir = "/home/lukas/.dotfiles";
     user = "lukas";
   in  {
     nixosConfigurations =  {
@@ -38,7 +37,6 @@
         ./home.nix
       ];
       extraSpecialArgs = {
-        inherit dotfilesDir;
         inherit nixvim;
         inherit inputs;
         inherit nix-colors;

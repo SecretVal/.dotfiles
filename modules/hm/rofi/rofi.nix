@@ -1,4 +1,4 @@
-{ config, lib, pkgs,dotfilesDir, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.rofi = {
