@@ -9,7 +9,6 @@
     ./color.nix
     ./plugins.nix
     ./telescope.nix
-    ./startify.nix
     ./autoCmd.nix
     ./remaps.nix
   ];

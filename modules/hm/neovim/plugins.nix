@@ -41,6 +41,13 @@
       comment-nvim.enable = true;
       markdown-preview.enable = true;
       undotree.enable = true;
+      neorg = {
+        enable = true;
+        modules = {
+          "core.defaults".__empty = null;
+          "core.concealer".__empty = null;
+        };
+      };
     };
   };
 }
