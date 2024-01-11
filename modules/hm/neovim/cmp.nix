@@ -16,6 +16,7 @@
           { name = "buffer"; }
           { name = "nvim_lua"; }
           { name = "path"; }
+          { name = "neorg"; }
         ];
         snippet = { expand = "luasnip"; };
         mapping = {

@@ -1,11 +1,6 @@
 {config, lib, ...}:{
   programs.nixvim = {
     plugins = {
-      treesitter = {
-        enable = true;
-        ensureInstalled = "all";
-      };
-      treesitter-context.enable = true;
       #lualine 
       lualine = {
         enable = true;
@@ -43,9 +38,12 @@
       undotree.enable = true;
       neorg = {
         enable = true;
+        lazyLoading = true;
         modules = {
           "core.defaults".__empty = null;
           "core.concealer".__empty = null;
+          "core.highlights".__empty = null;
+          "core.completion".config.engine = "nvim-cmp";
         };
       };
     };

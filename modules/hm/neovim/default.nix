@@ -5,10 +5,7 @@
     ./opt.nix
     ./cmp.nix
     ./lsp.nix
-    ./opt.nix
-    ./color.nix
-    ./plugins.nix
-    ./telescope.nix
+    ./plugins
     ./autoCmd.nix
     ./remaps.nix
   ];

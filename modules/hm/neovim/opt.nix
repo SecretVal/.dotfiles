@@ -37,6 +37,10 @@
 
       list = true;
       listchars = "eol:↲";
-    } ;
+    };
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
   };
 }
