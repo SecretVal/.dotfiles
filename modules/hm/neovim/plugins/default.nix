@@ -1,7 +1,8 @@
 {config, lib,...}:{
-  modules = [
+  imports = [
     ./color.nix
     ./plugins.nix
+    ./treesitter.nix
     ./telescope.nix
   ];
 }
