@@ -1,6 +1,6 @@
 {conig,lib,...}:
 {
-  programs.nixvim = {
+ programs.nixvim = {
     plugins = {
       treesitter = {
         enable = true;
