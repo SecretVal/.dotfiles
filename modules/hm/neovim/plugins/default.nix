@@ -8,5 +8,6 @@
     ./neorg.nix
     ./lualine.nix
     ./git.nix
+    ./rust.nix
   ];
 }

@@ -7,8 +7,8 @@
       customHighlights =''
       function(colors)
       return {
-        NormalFloat = { bg = colors.base, fg = colors.text },
-        Pmenu = { bg = colors.base, fg = colors.text },
+        NormalFloat = { bg = colors.base, fg = colors.text, blend=10},
+        Pmenu = { bg = colors.base, fg = colors.text,blend=10},
         TreesitterContext = { bg = colors.none, fg = colors.text },
       }
       end

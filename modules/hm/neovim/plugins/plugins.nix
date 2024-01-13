@@ -16,6 +16,7 @@
       comment-nvim.enable = true;
       markdown-preview.enable = true;
       undotree.enable = true;
+      rainbow-delimiters.enable = true;
     };
   };
 }

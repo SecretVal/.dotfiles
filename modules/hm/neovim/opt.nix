@@ -10,7 +10,8 @@
     };
     options =  {
       guicursor = "";
-        
+      pumblend = 100;
+
       number = true;
       relativenumber = true;
       tabstop = 4;
