@@ -1,7 +1,7 @@
-{ config, lib, pkgs,inputs, nix-colors, ... }:
+{ config,  pkgs,nix-colors, ... }:
 {
   imports = [
-    inputs.nix-colors.homeManagerModules.default
+    nix-colors.homeManagerModules.default
     ./waybar.nix
     ./swaylock.nix
   ];

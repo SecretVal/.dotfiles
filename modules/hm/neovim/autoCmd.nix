@@ -3,6 +3,17 @@
   programs.nixvim = {
     autoCmd = [
       {
+        event = "BufWritePre";
+        pattern = "*";
+        callback = {
+          __raw = ''
+          function()
+          vim.lsp.buf.format()
+          end
+          ''; 
+        };
+      }
+      {
         event = "TextYankPost";
         pattern = "*";
         callback = {

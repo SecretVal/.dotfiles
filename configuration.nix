@@ -9,7 +9,7 @@
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd/keyd.nix
-  ];
+    ];
     #bluetooth
     hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
     services.blueman.enable = true; # blueman
@@ -17,9 +17,6 @@
     services.xserver = {
       enable = true;
       resolutions = [ {x = 1920; y = 1080;} ];
-#      displayManager = {
-#        lightdm.enable = true;
-#      };
     };
   # I use nushell btw
   environment.shells = with pkgs; [ nushell ];
@@ -142,7 +139,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

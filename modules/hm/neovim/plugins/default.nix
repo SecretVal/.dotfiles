@@ -9,5 +9,6 @@
     ./lualine.nix
     ./git.nix
     ./rust.nix
+    ./conform.nix
   ];
 }
