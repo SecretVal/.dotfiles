@@ -1,8 +1,4 @@
-{
-  conig,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       conform-nvim = {
@@ -13,9 +9,13 @@
         };
         formatOnSave = {
           lspFallback = true;
-          timeoutMs = 50;
+          timeoutMs = 250;
         };
       };
     };
   };
+  home.packages = with pkgs; [
+    alejandra
+    rustfmt
+  ];
 }

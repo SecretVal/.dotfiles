@@ -130,7 +130,6 @@
     nnn
     ripgrep
     rhythmbox
-    alejandra
   ];
   security.pam.services.swaylock = {
     text = ''
