@@ -1,5 +1,8 @@
-{conig,lib,...}:
 {
+  conig,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     plugins = {
       conform-nvim = {
@@ -7,6 +10,10 @@
         formattersByFt = {
           rust = ["rustfmt"];
           nix = ["alejandra"];
+        };
+        formatOnSave = {
+          lspFallback = true;
+          timeoutMs = 50;
         };
       };
     };

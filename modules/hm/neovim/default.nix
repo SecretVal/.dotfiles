@@ -1,5 +1,10 @@
-{config, lib, nixvim,pkgs,...}:
 {
+  config,
+  lib,
+  nixvim,
+  pkgs,
+  ...
+}: {
   imports = [
     nixvim.homeManagerModules.nixvim
     ./opt.nix

@@ -1,6 +1,9 @@
-{conig,lib,...}:
 {
- programs.nixvim = {
+  conig,
+  lib,
+  ...
+}: {
+  programs.nixvim = {
     plugins = {
       treesitter = {
         enable = true;
@@ -13,22 +16,22 @@
         select = {
           enable = true;
           keymaps = {
-            "af"= "@function.outer";
+            "af" = "@function.outer";
             "if" = "@function.inner";
 
-            "ab"= "@block.outer";
-            "ib"= "@block.inner";
+            "ab" = "@block.outer";
+            "ib" = "@block.inner";
 
-            "aif"= "@conditional.outer";
-            "iif"= "@conditional.inner";
+            "aif" = "@conditional.outer";
+            "iif" = "@conditional.inner";
 
-            "al"= "@loop.outer";
-            "il"= "@loop.inner";
+            "al" = "@loop.outer";
+            "il" = "@loop.inner";
 
-            "at"= "@comment.outer";
-            "it"= "@comment.inner";
+            "at" = "@comment.outer";
+            "it" = "@comment.inner";
 
-            "s"= "@statement.outer";
+            "s" = "@statement.outer";
             "as" = "@scopename.inner";
           };
         };

@@ -1,11 +1,14 @@
-{config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
 
@@ -13,9 +16,9 @@
     gtk3
   ];
   environment.sessionVariables = rec {
-    EDITOR="nvim";
+    EDITOR = "nvim";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE="1";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
   };
 }

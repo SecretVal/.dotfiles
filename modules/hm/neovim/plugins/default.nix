@@ -1,4 +1,8 @@
-{config, lib,...}:{
+{
+  config,
+  lib,
+  ...
+}: {
   imports = [
     ./color.nix
     ./plugins.nix

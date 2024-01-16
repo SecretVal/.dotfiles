@@ -1,25 +1,33 @@
 # Edet this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, ... }:
-{ 
-  imports = [ 
-    ./hardware-configuration.nix 
+{
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
     ./modules/nixos/hypr/hypr.nix
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd/keyd.nix
-    ];
-    #bluetooth
-    hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-    services.blueman.enable = true; # blueman
+  ];
+  #bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true; # blueman
 
-    services.xserver = {
-      enable = true;
-      resolutions = [ {x = 1920; y = 1080;} ];
-    };
+  services.xserver = {
+    enable = true;
+    resolutions = [
+      {
+        x = 1920;
+        y = 1080;
+      }
+    ];
+  };
   # I use nushell btw
-  environment.shells = with pkgs; [ nushell ];
+  environment.shells = with pkgs; [nushell];
   users.defaultUserShell = pkgs.nushell;
   # thunar
   programs.thunar.enable = true;
@@ -64,9 +72,9 @@
     LC_MONETARY = "de_DE.UTF-8";
     LC_NAME = "de_DE.UTF-8";
     LC_NUMERIC = "de_DE.UTF-8";
-#    LC_PAPER = "de_DE.UTF-8";
-#    LC_TELEPHONE = "de_DE.UTF-8";
-#    LC_TIME = "de_DE.UTF-8";
+    #    LC_PAPER = "de_DE.UTF-8";
+    #    LC_TELEPHONE = "de_DE.UTF-8";
+    #    LC_TIME = "de_DE.UTF-8";
   };
 
   # Configure keymap in X11
@@ -82,7 +90,7 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
   # Allow unfree packages
@@ -91,43 +99,44 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     #browser
-     firefox
+    #browser
+    firefox
 
-     #terminal
-     foot
-     neofetch
-     htop
-     git
-     gh
-     killall
+    #terminal
+    foot
+    neofetch
+    htop
+    git
+    gh
+    killall
 
-     # gui
-     qpwgraph
-     pavucontrol
-     bluez
-     swww
+    # gui
+    qpwgraph
+    pavucontrol
+    bluez
+    swww
 
-     #dev
-     just
+    #dev
+    just
 
-     #extra
-     bitwarden
-     cava
-     flameshot
-     discord-canary
-     pkg-config
-     openssl
-     bat
-     nnn
-     ripgrep
-     rhythmbox
-   ];
-   security.pam.services.swaylock = {
-     text = ''
-     auth include login
-     '';
-   };
+    #extra
+    bitwarden
+    cava
+    flameshot
+    discord-canary
+    pkg-config
+    openssl
+    bat
+    nnn
+    ripgrep
+    rhythmbox
+    alejandra
+  ];
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

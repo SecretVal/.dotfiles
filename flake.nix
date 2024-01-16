@@ -14,21 +14,27 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nixvim,nix-colors, ... }:
-  let
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    nixvim,
+    nix-colors,
+    ...
+  }: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
     user = "lukas";
-  in  {
-    nixosConfigurations =  {
+  in {
+    nixosConfigurations = {
       nixos = lib.nixosSystem {
         modules = [
-          ./configuration.nix 
-#          ({ pkgs, ... }: {
-#            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-#            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-#          })
+          ./configuration.nix
+          #          ({ pkgs, ... }: {
+          #            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+          #            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          #          })
         ];
       };
     };

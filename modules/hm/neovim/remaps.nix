@@ -1,5 +1,8 @@
-{config, lib,...}:
 {
+  config,
+  lib,
+  ...
+}: {
   programs.nixvim.keymaps = [
     {
       mode = "v";
@@ -31,15 +34,15 @@
       key = "<leader>ps";
       lua = true;
       action = ''
-      function()
-        require("telescope.builtin").grep_string( { search = vim.fn.input("Grep > ") } )
-      end
+        function()
+          require("telescope.builtin").grep_string( { search = vim.fn.input("Grep > ") } )
+        end
       '';
     }
     {
       key = "<leader>u";
       lua = true;
-      action= "vim.cmd.UndotreeToggle";
+      action = "vim.cmd.UndotreeToggle";
     }
-    ];
+  ];
 }

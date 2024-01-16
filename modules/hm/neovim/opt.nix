@@ -1,6 +1,11 @@
-{config, lib,nixvim, ...}:{
+{
+  config,
+  lib,
+  nixvim,
+  ...
+}: {
   programs.nixvim = {
-    globals = { 
+    globals = {
       mapleader = " ";
       maplocalleader = " ";
       netrw_browser_split = 0;
@@ -8,7 +13,7 @@
       netrw_winsize = 25;
       langmap = "äöü";
     };
-    options =  {
+    options = {
       guicursor = "";
       pumblend = 100;
 

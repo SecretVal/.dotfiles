@@ -1,5 +1,8 @@
-{config, lib,...}:
 {
+  config,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     autoCmd = [
       {
@@ -7,10 +10,10 @@
         pattern = "*";
         callback = {
           __raw = ''
-          function()
-          vim.lsp.buf.format()
-          end
-          ''; 
+            function()
+            vim.lsp.buf.format()
+            end
+          '';
         };
       }
       {
@@ -18,12 +21,12 @@
         pattern = "*";
         callback = {
           __raw = ''
-          function()
-          vim.highlight.on_yank({
-            timeout = 40,
-          })
-          end
-          ''; 
+            function()
+            vim.highlight.on_yank({
+              timeout = 40,
+            })
+            end
+          '';
         };
       }
     ];

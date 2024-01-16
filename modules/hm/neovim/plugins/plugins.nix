@@ -1,7 +1,11 @@
-{config, lib, ...}:{
+{
+  config,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     plugins = {
-      #lualine 
+      #lualine
       lualine = {
         enable = true;
         theme = "catppuccin";

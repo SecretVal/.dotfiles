@@ -1,6 +1,11 @@
-{config, lib,nixvim,...}:{
+{
+  config,
+  lib,
+  nixvim,
+  ...
+}: {
   programs.nixvim = {
-    plugins= {
+    plugins = {
       lsp = {
         enable = true;
         servers = {
@@ -15,7 +20,7 @@
           lua-ls.enable = true;
           cssls.enable = true;
           cmake.enable = true;
-          bashls.enable = true; 
+          bashls.enable = true;
           gopls.enable = true;
         };
         keymaps = {
@@ -31,16 +36,16 @@
             "gi" = "implementation";
             "K" = "hover";
             "<leader>r" = "rename";
-            "<leader>ca" ="code_action";
+            "<leader>ca" = "code_action";
           };
         };
         capabilities = ''
-        vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", { silent = true })
+          vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", { silent = true })
         '';
         onAttach = ''
-        vim.diagnostic.config({
-          virtual_text = true,
-        })
+          vim.diagnostic.config({
+            virtual_text = true,
+          })
         '';
       };
       fidget = {

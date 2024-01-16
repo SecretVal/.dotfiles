@@ -1,9 +1,13 @@
-{config,lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   programs.nixvim.plugins.telescope = {
     enable = true;
     keymaps = {
-      "<leader>pf"="find_files";
-      "<C-p>"="git_files";
+      "<leader>pf" = "find_files";
+      "<C-p>" = "git_files";
     };
   };
 }

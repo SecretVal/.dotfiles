@@ -1,12 +1,16 @@
-{ config, pkgs,inputs, nix-colors,... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  nix-colors,
+  ...
+}: {
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  imports  = [
+  imports = [
     nix-colors.homeManagerModules.default
     ./modules/hm/rofi/rofi.nix
     ./modules/hm/term/foot.nix
@@ -26,7 +30,6 @@
   fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.font-awesome
-    (pkgs.nerdfonts.override { fonts = ["JetBrainsMono"]; })
+    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
-
 }
