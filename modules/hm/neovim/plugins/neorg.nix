@@ -12,6 +12,7 @@
           "core.defaults".__empty = null;
           "core.concealer".__empty = null;
           "core.highlights".__empty = null;
+          "core.qol.toc".__empty = null;
           "core.completion".config.engine = "nvim-cmp";
         };
       };

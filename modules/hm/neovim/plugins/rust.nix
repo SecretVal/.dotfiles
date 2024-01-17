@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     plugins = {
       crates-nvim.enable = true;
@@ -10,6 +6,7 @@
         enable = true;
         inlayHints = {
           auto = false;
+          showParameterHints = true;
         };
       };
     };

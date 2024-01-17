@@ -1,8 +1,8 @@
 {
-  config,
   pkgs,
   inputs,
   nix-colors,
+  overlays,
   ...
 }: {
   home.username = "lukas";
@@ -31,5 +31,7 @@
   home.packages = [
     pkgs.font-awesome
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+    pkgs.cosmic-term
   ];
+  # nixpkgs.overlays = overlays;
 }

@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{...}: {
   programs.nixvim.colorschemes = {
     catppuccin = {
       enable = true;
@@ -11,8 +7,8 @@
       customHighlights = ''
         function(colors)
         return {
-          NormalFloat = { bg = colors.base, fg = colors.text, blend=10},
-          Pmenu = { bg = colors.base, fg = colors.text,blend=10},
+          NormalFloat = { bg = colors.base, fg = colors.text, blend=25},
+          Pmenu = { bg = colors.base, fg = colors.text,blend=25},
           TreesitterContext = { bg = colors.none, fg = colors.text },
         }
         end

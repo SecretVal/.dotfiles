@@ -3,7 +3,6 @@
     plugins = {
       lualine = {
         enable = true;
-        theme = "auto";
         globalstatus = true;
       };
     };

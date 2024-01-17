@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     plugins = {
       # git

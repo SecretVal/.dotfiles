@@ -12,6 +12,7 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs @ {
@@ -25,16 +26,14 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    user = "lukas";
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+    ];
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         modules = [
           ./configuration.nix
-          #          ({ pkgs, ... }: {
-          #            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-          #            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          #          })
         ];
       };
     };
@@ -47,6 +46,7 @@
         inherit nixvim;
         inherit inputs;
         inherit nix-colors;
+        inherit overlays;
       };
     };
   };

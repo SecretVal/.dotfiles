@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  nixvim,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     plugins = {
       lsp = {
