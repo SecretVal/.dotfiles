@@ -1,8 +1,4 @@
-{
-  conifg,
-  pkgs,
-  ...
-}: {
+{...}: {
   services.keyd = {
     enable = true;
     keyboards = {

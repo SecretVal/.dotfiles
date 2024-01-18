@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  nixvim,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     globals = {
       mapleader = " ";
@@ -40,9 +35,6 @@
       updatetime = 50;
 
       colorcolumn = "80";
-
-      list = true;
-      listchars = "eol:↲";
     };
     clipboard = {
       register = "unnamedplus";

@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{...}: {
   programs.nixvim.keymaps = [
     {
       mode = "v";
@@ -29,15 +25,6 @@
     {
       key = "<leader>k";
       action = "<cmd>cprevious<cr>";
-    }
-    {
-      key = "<leader>ps";
-      lua = true;
-      action = ''
-        function()
-          require("telescope.builtin").grep_string( { search = vim.fn.input("Grep > ") } )
-        end
-      '';
     }
     {
       key = "<leader>u";

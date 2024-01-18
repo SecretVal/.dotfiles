@@ -1,8 +1,4 @@
-{
-  conig,
-  lib,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     plugins = {
       treesitter = {
@@ -36,6 +32,7 @@
           };
         };
       };
+      hmts.enable = true;
     };
   };
 }

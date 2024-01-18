@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -11,11 +7,10 @@
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
-
   environment.systemPackages = with pkgs; [
     gtk3
   ];
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     EDITOR = "nvim";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";

@@ -113,19 +113,6 @@
       # Example windowrule v2
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
-      $scratchpadsize = size 80% 85%
-      $scratchpad = class:^(scratchpad)$
-      windowrulev2 = float,$scratchpad
-      windowrulev2 = $scratchpadsize,$scratchpad
-      windowrulev2 = workspace special silent,$scratchpad
-      windowrulev2 = center,$scratchpad
-
-      $pavucontrol = class:^(pavucontrol)$
-      windowrulev2 = float,$pavucontrol
-      windowrulev2 = size 86% 40%,$pavucontrol
-      windowrulev2 = move 50% 6%,$pavucontrol
-      windowrulev2 = workspace special silent,$pavucontrol
-      windowrulev2 = opacity 0.80,$pavucontrol
       layerrule = blur,waybar
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
