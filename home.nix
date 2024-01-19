@@ -1,8 +1,6 @@
 {
   pkgs,
-  inputs,
   nix-colors,
-  overlays,
   ...
 }: {
   home.username = "lukas";
@@ -14,7 +12,6 @@
     nix-colors.homeManagerModules.default
     ./modules/hm/rofi/rofi.nix
     ./modules/hm/term/foot.nix
-    ./modules/hm/term/wezterm.nix
     ./modules/hm/neovim
     ./modules/hm/sh/shell.nix
     ./modules/hm/code/node.nix
