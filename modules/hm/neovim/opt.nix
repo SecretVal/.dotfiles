@@ -35,6 +35,8 @@
       updatetime = 50;
 
       colorcolumn = "80";
+
+      conceallevel = 3;
     };
     clipboard = {
       register = "unnamedplus";

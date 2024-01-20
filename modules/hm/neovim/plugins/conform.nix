@@ -6,6 +6,7 @@
         formattersByFt = {
           rust = ["rustfmt"];
           nix = ["alejandra"];
+          lua = ["stylua"];
         };
         formatOnSave = {
           lspFallback = true;
@@ -17,5 +18,6 @@
   home.packages = with pkgs; [
     alejandra
     rustfmt
+    stylua
   ];
 }

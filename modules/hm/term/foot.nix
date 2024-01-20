@@ -8,7 +8,7 @@
         background = config.colorScheme.colors.base00;
       };
       main = {
-        font = "JetBrainsMono Nerd Font:size=12:fontfeatures=cliga dlig liga";
+        font = "JetBrainsMono Nerd Font:size=12:fontfeatures=calt:fontfeatures=dlig:fontfeatures=liga";
       };
       mouse = {
         hide-when-typing = "yes";

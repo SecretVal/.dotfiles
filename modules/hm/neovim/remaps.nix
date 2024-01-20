@@ -1,6 +1,10 @@
 {...}: {
   programs.nixvim.keymaps = [
     {
+      key = "<leader>pv";
+      action = "<cmd>Explore<cr>";
+    }
+    {
       mode = "v";
       key = "K";
       action = ":m '<-2<CR>gv=gv";

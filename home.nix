@@ -1,6 +1,7 @@
 {
   pkgs,
   nix-colors,
+  overlays,
   ...
 }: {
   home.username = "lukas";
@@ -30,5 +31,5 @@
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
     pkgs.cosmic-term
   ];
-  # nixpkgs.overlays = overlays;
+  nixpkgs.overlays = overlays;
 }

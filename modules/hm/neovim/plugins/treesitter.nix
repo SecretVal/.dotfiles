@@ -3,7 +3,7 @@
     plugins = {
       treesitter = {
         enable = true;
-        ensureInstalled = "all";
+        ensureInstalled = "norg rust nix";
         nixvimInjections = true;
       };
       treesitter-context.enable = true;
