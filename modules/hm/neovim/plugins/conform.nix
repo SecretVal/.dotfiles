@@ -6,7 +6,6 @@
         formattersByFt = {
           rust = ["rustfmt"];
           nix = ["alejandra"];
-          "*" = ["trim_newlines" "trim_newlines"];
         };
         formatOnSave = {
           lspFallback = true;

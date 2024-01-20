@@ -1,9 +1,0 @@
-[submodule "anime"]
-	path = anime
-	url = https://github.com/ThePrimeagen/anime
-[submodule "bgs"]
-	path = bgs
-	url = https://github.com/ThePrimeagen/anime
-[submodule "bgs/anime"]
-	path = bgs/anime
-	url = https://github.com/ThePrimeagen/anime
