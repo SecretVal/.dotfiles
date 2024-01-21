@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{...}: {
   imports = [
     ./color.nix
     ./plugins.nix
@@ -14,5 +10,6 @@
     ./git.nix
     ./rust.nix
     ./conform.nix
+    ./image.nix
   ];
 }

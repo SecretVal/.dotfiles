@@ -15,11 +15,11 @@
       action = ":m '>+1<CR>gv=gv";
     }
     {
-      key = "<leader>qo";
+      key = "<leader>o";
       action = "<cmd>copen<cr>";
     }
     {
-      key = "<leader>qc";
+      key = "<leader>q";
       action = "<cmd>cclose<cr>";
     }
     {
