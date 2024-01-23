@@ -10,7 +10,6 @@
         };
         formatOnSave = {
           lspFallback = true;
-          timeoutMs = 250;
         };
       };
     };

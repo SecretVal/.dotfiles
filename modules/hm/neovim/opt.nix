@@ -36,6 +36,9 @@
 
       colorcolumn = "80";
 
+      list = true;
+      listchars = "eol:↲";
+
       conceallevel = 3;
     };
     clipboard = {
