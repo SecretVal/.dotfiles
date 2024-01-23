@@ -1,7 +1,7 @@
 {...}: {
   programs.nixvim.keymaps = [
     {
-      key = "<leader>pv";
+      key = "<leader>pe";
       action = "<cmd>Explore<cr>";
     }
     {

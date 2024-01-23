@@ -19,7 +19,8 @@
     ./modules/hm/hyprland/hyprland.nix
     ./modules/hm/styling/gtk.nix
     ./modules/hm/styling/qt.nix
-    ./modules/hm/zellij/zellij.nix
+    ./modules/hm/multiplexers/tmux.nix
+    ./modules/hm/multiplexers/zellij.nix
     ./modules/hm/direnv/direnv.nix
   ];
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
