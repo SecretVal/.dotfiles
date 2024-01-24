@@ -7,6 +7,7 @@
           rust = ["rustfmt"];
           nix = ["alejandra"];
           lua = ["stylua"];
+          json = ["jsonfmt"];
         };
         formatOnSave = {
           lspFallback = true;
@@ -18,5 +19,6 @@
     alejandra
     rustfmt
     stylua
+    jsonfmt
   ];
 }

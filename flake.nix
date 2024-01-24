@@ -13,6 +13,7 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
   };
 
   outputs = inputs @ {
@@ -28,6 +29,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     overlays = [
       inputs.neovim-nightly-overlay.overlay
+      inputs.neorg-overlay.overlays.default
     ];
   in {
     nixosConfigurations = {

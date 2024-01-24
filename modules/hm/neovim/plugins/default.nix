@@ -10,6 +10,7 @@
     ./rust.nix
     ./conform.nix
     ./image.nix
+    ./lint.nix
   ];
   programs.nixvim = {
     plugins = {

@@ -29,7 +29,7 @@
       incsearch = true;
 
       termguicolors = true;
-      scrolloff = 999;
+      scrolloff = 8;
       signcolumn = "yes";
 
       updatetime = 50;
