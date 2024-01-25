@@ -2,7 +2,7 @@
   programs.nixvim.keymaps = [
     {
       key = "<leader>pe";
-      action = "<cmd>Explore<cr>";
+      action = "<cmd>Oil<cr>";
     }
     {
       mode = "v";
