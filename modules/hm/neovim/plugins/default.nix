@@ -5,12 +5,12 @@
     ./telescope.nix
     ./harpoon.nix
     ./neorg.nix
-    ./lualine.nix
     ./git.nix
     ./rust.nix
     ./conform.nix
     ./image.nix
     ./lint.nix
+    ./oil.nix
   ];
   programs.nixvim = {
     plugins = {

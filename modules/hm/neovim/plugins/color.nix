@@ -3,12 +3,9 @@
     catppuccin = {
       enable = true;
       flavour = "mocha";
-      transparentBackground = true;
       customHighlights = ''
         function(colors)
         return {
-          Pmenu = { bg = colors.base, fg = colors.text},
-          NormalFloat = { bg = colors.base, fg = colors.text, blend=17},
           TreesitterContext = { bg = colors.none, fg = colors.text },
         }
         end

@@ -4,17 +4,23 @@
     baseIndex = 1;
     clock24 = true;
     prefix = "C-a";
-    plugins = with pkgs; [
+    plugins = with pkgs.tmuxPlugins; [
+      vim-tmux-navigator
+      sensible
+      yank
       {
-        plugin = tmuxPlugins.catppuccin;
+        plugin = dracula;
         extraConfig = ''
-          set -g @catppuccin_flavour 'mocha' # or frappe, macchiato, mocha
-          set -g @catppuccin_window_default_background ""#00FFFFFF""
+          set -g @dracula-show-battery false
+          set -g @dracula-show-powerline true
+          set -g @dracula-refresh-rate 10
         '';
       }
     ];
     extraConfig = ''
       set-option -g status-position top
+      set -g default-terminal "tmux-256color"
+      set -ag terminal-overrides ",xterm-256color:RGB"
     '';
   };
 }

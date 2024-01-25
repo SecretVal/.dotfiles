@@ -7,7 +7,6 @@
           text = ["vale"];
           json = ["jsonlint"];
           markdown = ["vale"];
-          rust = ["clipy"];
         };
       };
     };
@@ -15,6 +14,5 @@
   home.packages = with pkgs; [
     vale
     nodePackages_latest.jsonlint
-    clippy
   ];
 }
