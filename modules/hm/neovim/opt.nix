@@ -40,6 +40,8 @@
       listchars = "eol:↲";
 
       conceallevel = 3;
+
+      laststatus = 3;
     };
     clipboard = {
       register = "unnamedplus";

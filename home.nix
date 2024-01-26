@@ -30,7 +30,7 @@
   home.packages = [
     pkgs.font-awesome
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
-    pkgs.cosmic-term
+    pkgs.sl
   ];
   nixpkgs.overlays = overlays;
 }

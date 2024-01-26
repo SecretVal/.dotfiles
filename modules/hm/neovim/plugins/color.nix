@@ -6,6 +6,7 @@
       customHighlights = ''
         function(colors)
         return {
+          NormalFloat = { blend = 17 },
           TreesitterContext = { bg = colors.none, fg = colors.text },
         }
         end

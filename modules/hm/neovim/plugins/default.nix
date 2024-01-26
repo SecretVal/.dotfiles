@@ -7,7 +7,6 @@
     ./neorg.nix
     ./git.nix
     ./rust.nix
-    ./conform.nix
     ./image.nix
     ./lint.nix
     ./oil.nix
