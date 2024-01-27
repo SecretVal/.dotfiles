@@ -32,11 +32,6 @@
         capabilities = ''
           vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", { silent = true })
         '';
-        onAttach = ''
-          vim.diagnostic.config({
-            virtual_text = true,
-          })
-        '';
       };
       fidget = {
         enable = true;

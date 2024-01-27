@@ -5,6 +5,7 @@
         enable = true;
         ensureInstalled = "norg rust nix";
         nixvimInjections = true;
+        indent = true;
       };
       treesitter-context.enable = true;
       treesitter-textobjects = {

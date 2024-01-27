@@ -36,9 +36,6 @@
 
       colorcolumn = "80";
 
-      list = true;
-      listchars = "eol:↲";
-
       conceallevel = 3;
 
       laststatus = 3;
@@ -46,6 +43,11 @@
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
+    };
+    files."ftplugin/go.lua" = {
+      options = {
+        expandtab = false;
+      };
     };
   };
 }
