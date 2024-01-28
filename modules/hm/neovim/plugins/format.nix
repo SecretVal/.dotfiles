@@ -5,7 +5,7 @@
         enable = true;
         formattersByFt = {
           rust = ["rustfmt"];
-          nix = ["alejandra"];
+          nix = ["nixpkgs_fmt"];
           lua = ["stylua"];
           json = ["jsonfmt"];
           go = ["gofumpt"];
@@ -18,7 +18,7 @@
   };
   home.packages = with pkgs; [
     gofumpt
-    alejandra
+    nixpkgs-fmt
     rustfmt
     stylua
     jsonfmt

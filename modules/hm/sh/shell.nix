@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./starship.nix
+    ./nnn.nix
   ];
   programs.nushell = {
     enable = true;
