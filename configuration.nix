@@ -1,7 +1,7 @@
 # Edet this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./modules/nixos/hypr/hypr.nix
@@ -23,7 +23,7 @@
     ];
   };
   # I use nushell btw
-  environment.shells = with pkgs; [nushell];
+  environment.shells = with pkgs; [ nushell ];
   users.defaultUserShell = pkgs.nushell;
   # thunar
   programs.thunar.enable = true;
@@ -86,8 +86,8 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [ ];
   };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -157,5 +157,5 @@
   # this value at the release version of the first install of this system. Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

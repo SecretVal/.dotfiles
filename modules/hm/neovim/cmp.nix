@@ -1,23 +1,24 @@
-{...}: {
+{ ... }: {
   programs.nixvim = {
     plugins = {
       luasnip.enable = true;
-      cmp-buffer = {enable = true;};
-      cmp-emoji = {enable = true;};
-      cmp-nvim-lsp = {enable = true;};
-      cmp-path = {enable = true;};
-      cmp_luasnip = {enable = true;};
+      cmp-buffer = { enable = true; };
+      cmp-emoji = { enable = true; };
+      cmp-nvim-lsp = { enable = true; };
+      cmp-path = { enable = true; };
+      cmp_luasnip = { enable = true; };
       nvim-cmp = {
         enable = true;
         sources = [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "buffer";}
-          {name = "nvim_lua";}
-          {name = "path";}
-          {name = "neorg";}
+          { name = "nvim_lsp"; }
+          { name = "luasnip"; }
+          { name = "emoji"; }
+          { name = "buffer"; }
+          { name = "nvim_lua"; }
+          { name = "path"; }
+          { name = "neorg"; }
         ];
-        snippet = {expand = "luasnip";};
+        snippet = { expand = "luasnip"; };
         mapping = {
           "<C-n>" = "cmp.mapping.select_next_item()";
           "<C-p>" = "cmp.mapping.select_prev_item()";
@@ -27,7 +28,7 @@
           "<C-e>" = "cmp.mapping.close()";
           "<CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })";
           "<Tab>" = {
-            modes = ["i" "s"];
+            modes = [ "i" "s" ];
             action =
               # lua
               ''
@@ -43,7 +44,7 @@
               '';
           };
           "<S-Tab>" = {
-            modes = ["i" "s"];
+            modes = [ "i" "s" ];
             action =
               # lua
               ''

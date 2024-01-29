@@ -1,8 +1,8 @@
-{...}: {
+{ ... }: {
   programs.nixvim.keymaps = [
     {
       key = "<leader>pe";
-      action = "<cmd>Oil<cr>";
+      action = "<cmd>FloatermNew --height=0.75 --width=0.75 nnn -Hde<cr>";
     }
     {
       mode = "v";
@@ -37,3 +37,4 @@
     }
   ];
 }
+

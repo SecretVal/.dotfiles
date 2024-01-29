@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   imports = [
     ./color.nix
     ./treesitter.nix
@@ -9,8 +9,8 @@
     ./rust.nix
     ./image.nix
     ./lint.nix
-    ./oil.nix
     ./format.nix
+    ./floaterm.nix
   ];
   programs.nixvim = {
     plugins = {

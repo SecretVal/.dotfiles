@@ -1,8 +1,7 @@
-{
-  pkgs,
-  nix-colors,
-  overlays,
-  ...
+{ pkgs
+, nix-colors
+, overlays
+, ...
 }: {
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";
@@ -29,7 +28,7 @@
   fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.font-awesome
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.sl
   ];
   nixpkgs.overlays = overlays;
