@@ -16,40 +16,42 @@
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    nixvim,
-    nix-colors,
-    ...
-  }: let
-    system = "x86_64-linux";
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
-    overlays = [
-      inputs.neovim-nightly-overlay.overlay
-      inputs.neorg-overlay.overlays.default
-    ];
-  in {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        modules = [
-          ./configuration.nix
-        ];
-      };
-    };
-    homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-        ./home.nix
+  outputs =
+    inputs @ { self
+    , nixpkgs
+    , home-manager
+    , nixvim
+    , nix-colors
+    , ...
+    }:
+    let
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [
+        inputs.neovim-nightly-overlay.overlay
+        inputs.neorg-overlay.overlays.default
       ];
-      extraSpecialArgs = {
-        inherit nixvim;
-        inherit inputs;
-        inherit nix-colors;
-        inherit overlays;
+    in
+    {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          modules = [
+            ./configuration.nix
+          ];
+        };
+      };
+      homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home.nix
+        ];
+        extraSpecialArgs = {
+          inherit nixvim;
+          inherit inputs;
+          inherit nix-colors;
+          inherit overlays;
+        };
       };
     };
-  };
 }

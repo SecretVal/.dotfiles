@@ -11,6 +11,7 @@
     ./lint.nix
     ./format.nix
     ./floaterm.nix
+    ./lualine.nix
   ];
   programs.nixvim = {
     plugins = {

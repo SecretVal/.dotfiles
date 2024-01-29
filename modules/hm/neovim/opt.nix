@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   programs.nixvim = {
     globals = {
       mapleader = " ";
@@ -36,9 +36,8 @@
 
       colorcolumn = "80";
 
-      conceallevel = 3;
-
-      laststatus = 3;
+      conceallevel = 2;
+      foldlevel = 999;
     };
     clipboard = {
       register = "unnamedplus";
