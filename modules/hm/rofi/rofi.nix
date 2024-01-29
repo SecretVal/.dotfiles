@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ pkgs, ... }: {
   programs.rofi = {
     package = pkgs.rofi-wayland;
     terminal = "foot";
