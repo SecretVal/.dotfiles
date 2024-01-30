@@ -1,7 +1,6 @@
-{
-  config,
-  inputs,
-  ...
+{ config
+, inputs
+, ...
 }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -10,79 +9,79 @@
   programs.waybar = {
     enable = true;
     style = ''
-      @define-color bg #${config.colorScheme.colors.base00};
+      @define-color bg #${config.colorScheme.palette.base00};
 
       * {
         font-family: FontAwesome;
         font-size: 16px;
       }
       window#waybar {
-        background-color: #${config.colorScheme.colors.base00};
+        background-color: #${config.colorScheme.palette.base00};
         opacity: 0.9;
       }
       #workspaces  {
-        color: #${config.colorScheme.colors.base05};
+        color: #${config.colorScheme.palette.base05};
         padding: 0 5px;
         min-width: 20px;
       }
        #workspaces button.active {
-         color: #${config.colorScheme.colors.base0D};
+         color: #${config.colorScheme.palette.base0D};
        }
        #workspaces button.urgent {
-         color: #${config.colorScheme.colors.base08};
+         color: #${config.colorScheme.palette.base08};
        }
        #workspaces button:hover {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          border: none;
        }
        #clock {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
          margin: 0px 5px;
        }
        #pulseaudio {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
          margin: 0px 5px;
        }
        #cpu {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
          margin: 0px 5px;
        }
        #memory {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
          margin: 0px 5px;
        }
        #window {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
        }
        window#waybar.empty #window{
          background: none;
        }
        #custom-power {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
          margin: 0px 5px;
        }
        #custom-power:hover {
-         color: #${config.colorScheme.colors.base08};
+         color: #${config.colorScheme.palette.base08};
          padding: 0 5px;
          margin: 0px 5px;
        }
        #custom-notification {
-         color: #${config.colorScheme.colors.base05};
+         color: #${config.colorScheme.palette.base05};
          padding: 0 5px;
          margin: 0px 5px;
        }
     '';
     settings = {
       mainBar = {
-        modules-left = ["hyprland/workspaces"];
-        modules-right = ["custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
-        modules-center = ["hyprland/window"];
+        modules-left = [ "hyprland/workspaces" ];
+        modules-right = [ "custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power" ];
+        modules-center = [ "hyprland/window" ];
         "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{volume}% {icon}  {format_source}";
@@ -98,7 +97,7 @@
             "phone" = "";
             "portable" = "";
             "car" = "";
-            "default" = ["" "" ""];
+            "default" = [ "" "" "" ];
           };
 
           "on-click" = "pypr toggle pavu && hyprctl dispatch bringactivetotop";

@@ -15,7 +15,6 @@
   ];
   programs.nixvim = {
     plugins = {
-      nix.enable = true;
       #nvim-autopairs
       nvim-autopairs = {
         enable = true;

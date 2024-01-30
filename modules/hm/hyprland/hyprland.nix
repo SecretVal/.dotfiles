@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  nix-colors,
-  ...
+{ config
+, pkgs
+, nix-colors
+, ...
 }: {
   imports = [
     nix-colors.homeManagerModules.default
@@ -11,7 +10,7 @@
   ];
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = {};
+    settings = { };
     xwayland = {
       enable = true;
     };
@@ -49,7 +48,7 @@
           gaps_in = 4
           gaps_out = 8
           border_size = 3
-          col.active_border = rgb(${config.colorScheme.colors.base0E})
+          col.active_border = rgb(${config.colorScheme.palette.base0E})
           col.inactive_border = rgba(595959aa)
 
           layout = dwindle
