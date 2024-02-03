@@ -19,16 +19,6 @@
           { name = "neorg"; }
           { name = "emoji"; }
         ];
-        window = {
-          completion = {
-            border.__raw = "cmp.config.window.bordered()";
-            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None";
-          };
-          documentation = {
-            border.__raw = "cmp.config.window.bordered()";
-	    winhighlight = "FloatBorder:NormalFloat";
-	  };
-        };
         snippet = { expand = "luasnip"; };
         mapping = {
           "<C-n>" = "cmp.mapping.select_next_item()";
