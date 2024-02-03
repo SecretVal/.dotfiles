@@ -7,16 +7,17 @@
       cmp-nvim-lsp = { enable = true; };
       cmp-path = { enable = true; };
       cmp_luasnip = { enable = true; };
+      friendly-snippets = { enable = true; };
       nvim-cmp = {
         enable = true;
         sources = [
           { name = "nvim_lsp"; }
           { name = "luasnip"; }
-          { name = "emoji"; }
-          { name = "buffer"; }
           { name = "nvim_lua"; }
           { name = "path"; }
+          { name = "buffer"; }
           { name = "neorg"; }
+          { name = "emoji"; }
         ];
         snippet = { expand = "luasnip"; };
         mapping = {

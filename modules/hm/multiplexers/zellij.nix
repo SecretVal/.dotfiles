@@ -9,13 +9,6 @@
       simplified_ui true
       default_layout "compact"
       copy_command "wl-copy"
-      keybinds {
-        normal {
-          bind "Ctrl r" {
-            Run "cargo r" 
-          }
-        }
-      }
     '';
   };
 }

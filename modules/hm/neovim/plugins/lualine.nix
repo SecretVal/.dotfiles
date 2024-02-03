@@ -4,9 +4,10 @@
       lualine = {
         enable = true;
         globalstatus = true;
+        iconsEnabled = false;
         componentSeparators = {
-          left = "";
-          right = "";
+          left = "|";
+          right = "|";
         };
         sectionSeparators = {
           left = "";

@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   programs.nixvim = {
     plugins = {
       lsp = {
@@ -12,12 +12,14 @@
           cmake.enable = true;
           bashls.enable = true;
           gopls.enable = true;
+          tsserver.enable = true;
         };
         keymaps = {
           silent = true;
           diagnostic = {
             "<leader>dj" = "goto_next";
             "<leader>dk" = "goto_prev";
+            "<leader>ds" = "open_float";
           };
           lspBuf = {
             "gd" = "definition";

@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./color.nix
     ./treesitter.nix
@@ -25,5 +25,8 @@
       undotree.enable = true;
       rainbow-delimiters.enable = true;
     };
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-just
+    ];
   };
 }
