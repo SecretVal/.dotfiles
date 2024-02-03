@@ -10,7 +10,6 @@
     };
     options = {
       guicursor = "";
-      pumblend = 17;
 
       number = true;
       relativenumber = true;
