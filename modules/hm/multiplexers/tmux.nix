@@ -5,7 +5,6 @@
     baseIndex = 1;
     terminal = "xterm-256color";
     prefix = "C-a";
-    tmuxp.enable = true;
     plugins = with pkgs.tmuxPlugins; [
       sensible
       yank
