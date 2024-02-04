@@ -17,9 +17,19 @@
           { name = "path"; }
           { name = "buffer"; }
           { name = "neorg"; }
+          { name = "crates"; }
           { name = "emoji"; }
         ];
-        snippet = { expand = "luasnip"; };
+        window = {
+          completion = {
+            scrollbar = false;
+            border = "rounded";
+          };
+          documentation.border = "rounded";
+        };
+        snippet = {
+          expand = "luasnip";
+        };
         mapping = {
           "<C-n>" = "cmp.mapping.select_next_item()";
           "<C-p>" = "cmp.mapping.select_prev_item()";
@@ -27,7 +37,7 @@
           "<C-k>" = "cmp.mapping.select_prev_item()";
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-e>" = "cmp.mapping.close()";
-          "<CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
           "<Tab>" = {
             modes = [ "i" "s" ];
             action =

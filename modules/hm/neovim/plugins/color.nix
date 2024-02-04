@@ -3,6 +3,7 @@
     catppuccin = {
       enable = true;
       flavour = "mocha";
+      transparentBackground = true;
       integrations = {
         cmp = true;
         fidget = true;
