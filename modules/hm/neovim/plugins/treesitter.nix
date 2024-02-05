@@ -7,6 +7,7 @@
         nixvimInjections = true;
         indent = true;
       };
+      treesitter-context.enable = true;
       treesitter-textobjects = {
         enable = true;
         select = {

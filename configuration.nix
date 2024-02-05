@@ -126,7 +126,6 @@
     nnn
     ripgrep
     rhythmbox
-    nixos-shell
   ];
   security.pam.services.swaylock = {
     text = ''

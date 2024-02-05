@@ -38,6 +38,9 @@
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
+
+      unbind t
+      bind t display-popup -E "tms"
     '';
   };
 }

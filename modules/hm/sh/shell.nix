@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ ... }: {
   imports = [
     ./starship.nix
     ./nnn.nix
@@ -21,4 +16,5 @@
     }
     ";
   };
+  programs.carapace.enable = true;
 }

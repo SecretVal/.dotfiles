@@ -1,5 +1,4 @@
-{ pkgs
-, nix-colors
+{ nix-colors
 , overlays
 , ...
 }: {
@@ -21,15 +20,9 @@
     ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/multiplexers/zellij.nix
     ./modules/hm/direnv/direnv.nix
+    ./modules/hm/pkgs.nix
   ];
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
   home.stateVersion = "23.05"; # Please read the comment before changing.
-  #fonts
-  fonts.fontconfig.enable = true;
-  home.packages = [
-    pkgs.font-awesome
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    pkgs.sl
-  ];
   nixpkgs.overlays = overlays;
 }

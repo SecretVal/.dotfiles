@@ -100,7 +100,7 @@
             "default" = [ "" "" "" ];
           };
 
-          "on-click" = "pypr toggle pavu && hyprctl dispatch bringactivetotop";
+          "on-click" = "pavucontrol";
         };
         "tray" = {
           "icon-size" = 21;

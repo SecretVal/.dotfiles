@@ -30,6 +30,7 @@
         snippet = {
           expand = "luasnip";
         };
+        formatting.fields = [ "kind" "abbr" "menu" ];
         mapping = {
           "<C-n>" = "cmp.mapping.select_next_item()";
           "<C-p>" = "cmp.mapping.select_prev_item()";
