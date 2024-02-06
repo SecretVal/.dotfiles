@@ -37,6 +37,8 @@
 
       colorcolumn = "80";
 
+      list = true;
+      lcs = "eol:↲,tab:  ,extends:☛,precedes:☚";
       conceallevel = 2;
       foldlevel = 999;
     };

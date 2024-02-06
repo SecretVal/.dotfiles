@@ -11,7 +11,7 @@
         font = "JetBrainsMono Nerd Font:size=12:fontfeatures=calt dlig liga";
       };
       mouse = {
-        hide-when-typing = " yes ";
+        hide-when-typing = "yes";
       };
     };
   };
