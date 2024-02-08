@@ -8,9 +8,7 @@
         changeDirectoryCommand = "tcd";
       };
       fugitive.enable = true;
-      gitsigns = {
-        enable = true;
-      };
+      gitsigns.enable = true;
     };
     keymaps = [
       {

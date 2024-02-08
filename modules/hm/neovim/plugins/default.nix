@@ -12,6 +12,7 @@
     ./format.nix
     ./floaterm.nix
     ./lualine.nix
+    ./oil.nix
   ];
   programs.nixvim = {
     plugins = {

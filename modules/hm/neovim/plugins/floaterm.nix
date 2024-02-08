@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.nixvim = {
     plugins.floaterm = {
       enable = true;
@@ -16,23 +15,6 @@
                       "--height=0.9",
                       "--width=0.9",
                       vim.fn.input("cmd > "),
-                  },
-              })
-          end
-        '';
-      }
-      {
-        key = "<leader>pe";
-        lua = true;
-        action = ''
-              function()
-                  vim.cmd({
-                      cmd = "FloatermNew",
-                      args = {
-                      "--height=0.75",
-                      "--width=0.75",
-                      "nnn -Hde",
-                      vim.fn.expand("%:p:h"),
                   },
               })
           end
