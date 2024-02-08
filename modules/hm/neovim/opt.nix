@@ -25,13 +25,17 @@
       swapfile = false;
       backup = false;
       undofile = true;
+
       splitright = true;
+      splitbelow = true;
 
       hlsearch = false;
       incsearch = true;
       termguicolors = true;
       scrolloff = 999;
       signcolumn = "yes";
+
+      completeopt = [ "menuone" "noselect" "noinsert" ];
 
       updatetime = 50;
 
