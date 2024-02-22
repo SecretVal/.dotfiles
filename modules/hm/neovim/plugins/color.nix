@@ -5,7 +5,7 @@
       flavour = "mocha";
       transparentBackground = true;
       customHighlights = ''
-        function(colors)
+            function(colors)
             return {
                 TreesitterContext = { bg = colors.none, fg = colors.text },
             }
@@ -19,6 +19,7 @@
         treesitter = true;
         lsp_trouble = true;
         rainbow_delimiters = true;
+        mini.enabled = true;
       };
     };
   };

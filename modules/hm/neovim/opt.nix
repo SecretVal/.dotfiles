@@ -42,9 +42,12 @@
       colorcolumn = "80";
 
       list = true;
-      lcs = "eol:↲,tab:  ,extends:☛,precedes:☚";
+      lcs = "eol:↲,tab:  ";
       conceallevel = 2;
       foldlevel = 999;
+
+      virtualedit = "block";
+      laststatus = 3;
     };
     clipboard = {
       register = "unnamedplus";
@@ -61,6 +64,13 @@
       };
     };
     files."ftplugin/c.lua" = {
+      options = {
+        tabstop = 2;
+        softtabstop = 2;
+        shiftwidth = 2;
+      };
+    };
+    files."ftplugin/nix.lua" = {
       options = {
         tabstop = 2;
         softtabstop = 2;

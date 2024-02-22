@@ -126,6 +126,7 @@
     nnn
     ripgrep
     rhythmbox
+    ffmpeg
   ];
   security.pam.services.swaylock = {
     text = ''

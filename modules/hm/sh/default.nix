@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./starship.nix
+    ./zoxide.nix
     ./nnn.nix
   ];
   programs.nushell = {
@@ -8,6 +9,7 @@
 
     shellAliases = {
       cat = "bat";
+      cd = "z";
     };
 
     extraConfig = "

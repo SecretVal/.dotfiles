@@ -11,17 +11,18 @@
     ./lint.nix
     ./format.nix
     ./floaterm.nix
-    ./lualine.nix
+    ./mini.nix
     ./oil.nix
   ];
   programs.nixvim = {
     plugins = {
-      #nvim-autopairs
+      # nvim-autopairs
       nvim-autopairs = {
         enable = true;
         checkTs = true;
       };
       comment-nvim.enable = true;
+      todo-comments.enable = true;
       markdown-preview.enable = true;
       undotree.enable = true;
       rainbow-delimiters.enable = true;

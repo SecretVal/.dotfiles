@@ -16,5 +16,8 @@
     vimAlias = true;
 
     luaLoader.enable = true;
+
+    highlight.ExtraWhitespace.bg = "red";
+    match.ExtraWhitespace = "\\s\\+$";
   };
 }
