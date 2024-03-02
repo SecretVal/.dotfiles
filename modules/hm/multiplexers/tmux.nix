@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -28,7 +28,7 @@
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
 
-      set -g status-style bg=default 
+      set -g status-style bg=default
       set-option -g status-position top
 
       # VIM

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.nixvim.keymaps = [
     {
       mode = "v";

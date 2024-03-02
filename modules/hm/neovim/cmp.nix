@@ -1,37 +1,30 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     plugins = {
       luasnip.enable = true;
-      cmp-buffer = { enable = true; };
-      cmp-emoji = { enable = true; };
-      cmp-nvim-lsp = { enable = true; };
-      cmp-path = { enable = true; };
-      cmp_luasnip = { enable = true; };
-      friendly-snippets = { enable = true; };
+      cmp-buffer = {enable = true;};
+      cmp-emoji = {enable = true;};
+      cmp-nvim-lsp = {enable = true;};
+      cmp-path = {enable = true;};
+      cmp_luasnip = {enable = true;};
+      friendly-snippets = {enable = true;};
       nvim-cmp = {
         enable = true;
         sources = [
-          { name = "nvim_lsp"; }
-          { name = "luasnip"; }
-          { name = "nvim_lua"; }
-          { name = "path"; }
-          { name = "buffer"; }
-          { name = "neorg"; }
-          { name = "crates"; }
-          { name = "emoji"; }
+          {name = "nvim_lsp";}
+          {name = "luasnip";}
+          {name = "nvim_lua";}
+          {name = "path";}
+          {name = "buffer";}
+          {name = "neorg";}
+          {name = "crates";}
+          {name = "emoji";}
         ];
-        window = {
-          completion = {
-            scrollbar = false;
-            border = "rounded";
-          };
-          documentation.border = "rounded";
-        };
         snippet = {
           expand = "luasnip";
         };
         formatting = {
-          fields = [ "kind" "abbr" "menu" ];
+          fields = ["kind" "abbr" "menu"];
           expandableIndicator = true;
         };
         mapping = {
@@ -43,7 +36,7 @@
           "<C-e>" = "cmp.mapping.close()";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
           "<Tab>" = {
-            modes = [ "i" "s" ];
+            modes = ["i" "s"];
             action =
               # lua
               ''
@@ -59,7 +52,7 @@
               '';
           };
           "<S-Tab>" = {
-            modes = [ "i" "s" ];
+            modes = ["i" "s"];
             action =
               # lua
               ''

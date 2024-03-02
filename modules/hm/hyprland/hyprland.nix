@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, nix-colors
-, ...
+{
+  config,
+  pkgs,
+  nix-colors,
+  ...
 }: {
   imports = [
     nix-colors.homeManagerModules.default
@@ -10,7 +11,7 @@
   ];
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = { };
+    settings = {};
     xwayland = {
       enable = true;
     };
@@ -63,7 +64,7 @@
         drop_shadow = false
         blur {
           enabled = true
-          size = 0
+          size = 8
           passes = 0
           new_optimizations = on
         }

@@ -1,9 +1,8 @@
-{ config, ... }: {
+{config, ...}: {
   programs.foot = {
     enable = true;
     settings = {
       colors = {
-        alpha = 0.9;
         foreground = config.colorScheme.palette.base05;
         background = config.colorScheme.palette.base00;
       };
@@ -16,4 +15,3 @@
     };
   };
 }
-

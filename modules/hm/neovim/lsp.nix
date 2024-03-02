@@ -1,10 +1,15 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       lsp = {
         enable = true;
         servers = {
           nil_ls.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installRustc = false;
+            installCargo = false;
+          };
           html.enable = true;
           jsonls.enable = true;
           lua-ls.enable = true;
@@ -33,9 +38,11 @@
             "<leader>ca" = "code_action";
           };
         };
-        capabilities = ''
-          vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", { silent = true })
-        '';
+        capabilities =
+          # lua
+          ''
+            vim.keymap.set("n", "<leader>dl", "<cmd>TroubleToggle<cr>", { silent = true })
+          '';
       };
       fidget = {
         enable = true;
@@ -52,30 +59,7 @@
     extraConfigLua =
       # lua
       ''
-            local _border = "rounded"
-
-            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-                    vim.lsp.handlers.hover, {
-                    border = _border
-                    }
-                    )
-
-            vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-                    vim.lsp.handlers.signature_help, {
-                    border = _border
-                    }
-                    )
-
-            vim.diagnostic.config{
-                float={border=_border}
-            };
-
-        require('lspconfig.ui.windows').default_options = {
-            border = _border
-        }
-
-        -- ocaml lsp
-            require("lspconfig").ocamllsp.setup({})
+        require("lspconfig").ocamllsp.setup({ })
       '';
   };
   home.packages = with pkgs; [

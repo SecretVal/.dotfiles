@@ -1,6 +1,7 @@
-{ nix-colors
-, overlays
-, ...
+{
+  nix-colors,
+  overlays,
+  ...
 }: {
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";

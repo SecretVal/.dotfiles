@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     plugins.telescope = {
       enable = true;
@@ -16,16 +16,21 @@
       {
         key = "<leader>gw";
         lua = true;
-        action = ''function()
-            require('telescope').extensions.git_worktree.git_worktrees()
-        end'';
+        action =
+          #lua
+          ''            function()
+                          require('telescope').extensions.git_worktree.git_worktrees()
+                      end'';
       }
       {
         key = "<leader>gaw";
         lua = true;
-        action = ''function()
-            require('telescope').extensions.git_worktree.create_git_worktree()
-        end'';
+        action =
+          #lua
+          ''
+            function()
+              require('telescope').extensions.git_worktree.create_git_worktree()
+            end'';
       }
     ];
   };

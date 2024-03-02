@@ -14,41 +14,39 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs =
-    inputs @ { self
-    , nixpkgs
-    , home-manager
-    , nixvim
-    , nix-colors
-    , ...
-    }:
-    let
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-      overlays = [
-        inputs.neovim-nightly-overlay.overlay
-      ];
-    in
-    {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          modules = [
-            ./configuration.nix
-          ];
-        };
-      };
-      homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    nixvim,
+    nix-colors,
+    ...
+  }: let
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+    ];
+  in {
+    nixosConfigurations = {
+      nixos = lib.nixosSystem {
         modules = [
-          ./home.nix
+          ./configuration.nix
         ];
-        extraSpecialArgs = {
-          inherit nixvim;
-          inherit inputs;
-          inherit nix-colors;
-          inherit overlays;
-        };
       };
     };
+    homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home.nix
+      ];
+      extraSpecialArgs = {
+        inherit nixvim;
+        inherit inputs;
+        inherit nix-colors;
+        inherit overlays;
+      };
+    };
+  };
 }

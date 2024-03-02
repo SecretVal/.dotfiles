@@ -1,16 +1,18 @@
-{ ... }: {
+{...}: {
   programs.nixvim.colorschemes = {
     catppuccin = {
       enable = true;
       flavour = "mocha";
-      transparentBackground = true;
-      customHighlights = ''
-            function(colors)
+      customHighlights =
+        # lua
+        ''
+          function(colors)
             return {
+                NormalFloat = { blend = 17 },
                 TreesitterContext = { bg = colors.none, fg = colors.text },
             }
-        end
-      '';
+          end
+        '';
       integrations = {
         cmp = true;
         fidget = true;

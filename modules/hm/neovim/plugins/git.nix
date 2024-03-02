@@ -1,6 +1,7 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     plugins = {
+      neogit.enable = true;
       # git
       git-worktree = {
         enable = true;

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./starship.nix
     ./zoxide.nix
@@ -10,12 +10,13 @@
     shellAliases = {
       cat = "bat";
       cd = "z";
+      ci = "zi";
     };
 
     extraConfig = "
-    $env.config = {
-      show_banner: false,
-    }
+      $env.config = {
+show_banner: false,
+      }
     ";
   };
   programs.carapace.enable = true;

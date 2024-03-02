@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     globals = {
       mapleader = " ";
@@ -9,7 +9,7 @@
       langmap = "äöü";
     };
     options = {
-      guicursor = "";
+      pb = 17;
 
       number = true;
       relativenumber = true;
@@ -35,7 +35,7 @@
       scrolloff = 999;
       signcolumn = "yes";
 
-      completeopt = [ "menuone" "noselect" "noinsert" ];
+      completeopt = ["menuone" "noselect" "noinsert"];
 
       updatetime = 50;
 
