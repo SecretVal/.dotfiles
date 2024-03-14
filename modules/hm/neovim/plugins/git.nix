@@ -7,17 +7,13 @@
         enableTelescope = true;
         changeDirectoryCommand = "tcd";
       };
-      fugitive.enable = true;
+      neogit.enable = true;
       gitsigns.enable = true;
     };
     keymaps = [
       {
         key = "<leader>gs";
-        action = "<cmd>Git<cr>";
-      }
-      {
-        key = "<leader>ga";
-        action = "<cmd>G add .<cr>";
+        action = "<cmd>NeoGit<cr>";
       }
     ];
   };
