@@ -24,8 +24,8 @@
       }
       {
         mode = "t";
-        key = "<Esc>";
-        action = ''<C-\><C-n>'';
+        key = "<Esc><Esc>";
+        action = "<C-\\><C-n>";
       }
     ];
   };

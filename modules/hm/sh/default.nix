@@ -15,9 +15,10 @@
 
     extraConfig = "
       $env.config = {
-show_banner: false,
+          show_banner: false,
       }
     ";
   };
   programs.carapace.enable = true;
+  programs.atuin.enable = true;
 }

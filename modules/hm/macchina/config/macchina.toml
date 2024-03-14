@@ -1,0 +1,13 @@
+current_shell = true
+show = [
+    "Host",
+    "Machine",
+    "Distribution",
+    "WindowManager",
+    "Shell",
+    "Memory",
+    "ProcessorLoad",
+    "Processor",
+    "Packages",
+]
+theme = "my_theme"

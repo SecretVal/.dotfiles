@@ -47,8 +47,8 @@
       general {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
           gaps_in = 4
-          gaps_out = 8
-          border_size = 3
+          gaps_out = 4
+          border_size = 2
           col.active_border = rgb(${config.colorScheme.palette.base0E})
           col.inactive_border = rgba(595959aa)
 
@@ -60,7 +60,7 @@
           cursor_inactive_timeout = 5 # Hyprland uses seconds
       }
       decoration {
-        rounding = 10
+        rounding = 5
         drop_shadow = false
         blur {
           enabled = true

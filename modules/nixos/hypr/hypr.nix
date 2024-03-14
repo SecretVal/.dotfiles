@@ -7,6 +7,7 @@
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
   environment.systemPackages = with pkgs; [
     gtk3
   ];

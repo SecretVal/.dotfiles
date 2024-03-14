@@ -7,6 +7,8 @@
     ./plugins
     ./autoCmd.nix
     ./remaps.nix
+    ./ftplugins.nix
+    ./commands.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -16,8 +18,5 @@
     vimAlias = true;
 
     luaLoader.enable = true;
-
-    highlight.ExtraWhitespace.bg = "red";
-    match.ExtraWhitespace = "\\s\\+$";
   };
 }

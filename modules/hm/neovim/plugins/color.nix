@@ -3,12 +3,14 @@
     catppuccin = {
       enable = true;
       flavour = "mocha";
+      transparentBackground = true;
       customHighlights =
-        # lua
+        #lua
         ''
           function(colors)
             return {
-                NormalFloat = { blend = 17 },
+                Pmenu = { bg = colors.surface0, fg = colors.text },
+                NormalFloat = { bg = colors.base, fg = colors.text, blend = 17 },
                 TreesitterContext = { bg = colors.none, fg = colors.text },
             }
           end

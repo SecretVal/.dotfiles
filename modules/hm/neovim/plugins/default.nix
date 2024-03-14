@@ -11,7 +11,8 @@
     ./lint.nix
     ./format.nix
     ./floaterm.nix
-    ./lualine.nix
+    # ./lualine.nix
+    ./mini.nix
     ./oil.nix
   ];
   programs.nixvim = {
@@ -22,6 +23,7 @@
       undotree.enable = true;
       rainbow-delimiters.enable = true;
       indent-o-matic.enable = true;
+      notify.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-just

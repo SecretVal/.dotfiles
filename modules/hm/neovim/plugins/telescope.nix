@@ -4,7 +4,9 @@
       enable = true;
       keymaps = {
         "<leader>pf" = "find_files";
+        "<leader>pb" = "buffers";
         "<leader>ps" = "live_grep";
+        "<leader>pg" = "grep_string";
         "<C-p>" = "git_files";
       };
       extensions.ui-select = {

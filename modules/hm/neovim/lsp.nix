@@ -12,7 +12,10 @@
           };
           html.enable = true;
           jsonls.enable = true;
-          lua-ls.enable = true;
+          lua-ls = {
+            enable = true;
+            settings = {};
+          };
           cssls.enable = true;
           cmake.enable = true;
           bashls.enable = true;
@@ -54,7 +57,6 @@
         };
       };
       trouble.enable = true;
-      lspkind.enable = true;
     };
     extraConfigLua =
       # lua

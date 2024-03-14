@@ -32,50 +32,31 @@
       hlsearch = false;
       incsearch = true;
       termguicolors = true;
-      scrolloff = 999;
+      scrolloff = 15;
       signcolumn = "yes";
 
-      completeopt = ["menuone" "noselect" "noinsert"];
+      completeopt = ["menu" "menuone" "noselect"];
 
       updatetime = 50;
 
       colorcolumn = "80";
 
+      belloff = "all";
+
       list = true;
-      lcs = "eol:↲,tab:  ";
+      lcs = "eol:↲,tab:  ,trail:·";
+      cursorline = true;
       conceallevel = 2;
       foldlevel = 999;
 
       virtualedit = "block";
       laststatus = 3;
+
+      inccommand = "split";
     };
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
-    };
-    files."ftplugin/go.lua" = {
-      options = {
-        expandtab = false;
-      };
-    };
-    files."ftplugin/make.lua" = {
-      options = {
-        expandtab = false;
-      };
-    };
-    files."ftplugin/c.lua" = {
-      options = {
-        tabstop = 2;
-        softtabstop = 2;
-        shiftwidth = 2;
-      };
-    };
-    files."ftplugin/nix.lua" = {
-      options = {
-        tabstop = 2;
-        softtabstop = 2;
-        shiftwidth = 2;
-      };
     };
   };
 }

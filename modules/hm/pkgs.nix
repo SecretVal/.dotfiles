@@ -8,5 +8,6 @@
     fzf
     tmux-sessionizer
     toipe
+    watchexec
   ];
 }
