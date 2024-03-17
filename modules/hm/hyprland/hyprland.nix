@@ -64,8 +64,8 @@
         drop_shadow = false
         blur {
           enabled = true
-          size = 8
-          passes = 0
+          size = 4
+          passes = 1
           new_optimizations = on
         }
       }

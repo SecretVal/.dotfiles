@@ -45,7 +45,6 @@
 
       list = true;
       lcs = "eol:↲,tab:  ,trail:·";
-      cursorline = true;
       conceallevel = 2;
       foldlevel = 999;
 

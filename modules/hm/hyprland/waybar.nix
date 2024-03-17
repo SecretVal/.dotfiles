@@ -20,6 +20,7 @@
         }
         window#waybar {
           background-color: #${config.colorScheme.palette.base00};
+          opacity: 0.9;
         }
         #workspaces  {
           color: #${config.colorScheme.palette.base05};
