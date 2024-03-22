@@ -17,7 +17,7 @@ in {
         ensureInstalled = "all";
         nixvimInjections = true;
         indent = true;
-        languageRegister.ul = "u_lang";
+        languageRegister.ul = "ul";
         grammarPackages = [u-lang-grammer] ++ pkgs.vimPlugins.nvim-treesitter.allGrammars;
       };
       treesitter-context.enable = true;
@@ -53,8 +53,8 @@ in {
       ''
         local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
         parser_config.ul = {
-          filetype = "ul",u_lang
-        };
+          filetype = "ul",
+        }
       '';
   };
 }
