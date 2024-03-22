@@ -57,5 +57,6 @@
       register = "unnamedplus";
       providers.wl-copy.enable = true;
     };
+    filetype.extension.ul = "ul";
   };
 }

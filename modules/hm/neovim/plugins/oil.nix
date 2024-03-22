@@ -9,7 +9,7 @@
     keymaps = [
       {
         key = "<leader>pe";
-        action = "<cmd>Oil --float<cr>";
+        action = "<cmd>Oil<cr>";
       }
     ];
   };

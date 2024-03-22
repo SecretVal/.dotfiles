@@ -23,7 +23,6 @@
       undotree.enable = true;
       rainbow-delimiters.enable = true;
       indent-o-matic.enable = true;
-      notify.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-just
