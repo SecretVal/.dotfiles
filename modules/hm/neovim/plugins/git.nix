@@ -9,7 +9,7 @@
       };
       neogit = {
         enable = true;
-        settings.kind = "floating";
+        settings.kind = "replace";
       };
       gitsigns.enable = true;
     };

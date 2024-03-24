@@ -21,7 +21,6 @@
 
       smartindent = true;
       breakindent = true;
-      wrap = false;
       swapfile = false;
       backup = false;
       undofile = true;
@@ -57,6 +56,6 @@
       register = "unnamedplus";
       providers.wl-copy.enable = true;
     };
-    filetype.extension.ul = "ul";
+    filetype.extension.ul = "u-lang";
   };
 }
