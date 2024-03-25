@@ -11,8 +11,7 @@
     ./lint.nix
     ./format.nix
     ./floaterm.nix
-    # ./lualine.nix
-    ./mini.nix
+    ./lualine.nix
     ./oil.nix
   ];
   programs.nixvim = {
