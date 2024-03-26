@@ -11,12 +11,13 @@
             installCargo = false;
           };
           html.enable = true;
+          cssls.enable = true;
+          htmx.enable = true;
           jsonls.enable = true;
           lua-ls = {
             enable = true;
             settings = {};
           };
-          cssls.enable = true;
           cmake.enable = true;
           bashls.enable = true;
           gopls.enable = true;
