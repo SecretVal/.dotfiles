@@ -43,7 +43,7 @@
       belloff = "all";
 
       list = true;
-      lcs = "eol:↲,tab:  ,trail:·";
+      lcs = "eol:↲,tab:» ,trail:·";
       conceallevel = 2;
       foldlevel = 999;
 

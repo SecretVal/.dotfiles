@@ -2,9 +2,11 @@
   programs.nixvim = {
     plugins.oil = {
       enable = true;
-      skipConfirmForSimpleEdits = true;
-      promptSaveOnSelectNewEntry = false;
-      viewOptions.showHidden = true;
+      settings = {
+        skip_conform_for_simple_edits = true;
+        prompt_save_on_select_new_entry = false;
+        view_options.show_hidden = true;
+      };
     };
     keymaps = [
       {

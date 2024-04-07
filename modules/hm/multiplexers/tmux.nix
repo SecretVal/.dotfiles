@@ -8,6 +8,7 @@
     plugins = with pkgs.tmuxPlugins; [
       sensible
       yank
+      vim-tmux-navigator
       {
         plugin = catppuccin;
         extraConfig = ''
@@ -33,11 +34,6 @@
 
       # VIM
       set -g status-keys vi
-      setw -g mode-keys vi
-      bind h select-pane -L
-      bind j select-pane -D
-      bind k select-pane -U
-      bind l select-pane -R
 
       unbind t
       bind t display-popup -E "tms"

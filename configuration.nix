@@ -4,7 +4,7 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ./modules/nixos/hypr/hypr.nix
+    ./modules/nixos/sway
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd/keyd.nix
@@ -43,7 +43,7 @@
   boot.loader.grub.useOSProber = true;
 
   # kernelPackages
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

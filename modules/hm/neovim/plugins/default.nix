@@ -16,7 +16,8 @@
   ];
   programs.nixvim = {
     plugins = {
-      comment-nvim.enable = true;
+      comment.enable = true;
+      tmux-navigator.enable = true;
       todo-comments.enable = true;
       markdown-preview.enable = true;
       undotree.enable = true;

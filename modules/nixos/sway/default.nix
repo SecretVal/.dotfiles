@@ -1,10 +1,10 @@
 {pkgs, ...}: {
-  programs.hyprland = {
+  programs.sway = {
     enable = true;
-    xwayland.enable = true;
+    wrapperFeatures.gtk = true;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
