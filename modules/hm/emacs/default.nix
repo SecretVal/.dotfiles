@@ -6,6 +6,13 @@
       with epkgs; [
         magit
         nix-mode
+        go-mode
+        rust-mode
+        web-mode
+        smex
+        yasnippet
+        catppuccin-theme
+        "ido-completing-read+"
       ];
   };
 }
