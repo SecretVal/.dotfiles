@@ -27,6 +27,14 @@
         lib.mkOptionDefault {
           "${modifier}+d" = "exec rofi -show drun";
         };
+      window = {
+        border = 0;
+        titlebar = false;
+      };
+      gaps = {
+        outer = 4;
+        inner = 2;
+      };
     };
   };
   home.packages = with pkgs; [

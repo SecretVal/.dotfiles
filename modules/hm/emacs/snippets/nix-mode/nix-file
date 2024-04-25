@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: New Nix file
-# key: !nix
-# --
-{$1...}: {
-    $0
-}

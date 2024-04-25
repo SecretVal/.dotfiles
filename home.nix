@@ -13,9 +13,7 @@
     ./modules/hm/rofi/rofi.nix
     ./modules/hm/term/foot.nix
     ./modules/hm/neovim
-    ./modules/hm/emacs
     ./modules/hm/sh
-    ./modules/hm/code/node.nix
     ./modules/hm/sway/sway.nix
     ./modules/hm/macchina
     ./modules/hm/styling/gtk.nix

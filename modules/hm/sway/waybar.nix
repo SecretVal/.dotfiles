@@ -18,11 +18,13 @@
         * {
           font-family: FontAwesome;
           font-size: 16px;
+          padding: 0;
+          margin: 0;
         }
         window#waybar {
           background-color: #${config.colorScheme.palette.base00};
-          opacity: 0.9;
         }
+
         #workspaces  {
           color: #${config.colorScheme.palette.base05};
           padding: 0 5px;
@@ -83,9 +85,9 @@
       '';
     settings = {
       mainBar = {
-        modules-left = ["hyprland/workspaces"];
+        modules-left = ["sway/workspaces"];
         modules-right = ["custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
-        modules-center = ["hyprland/window"];
+        modules-center = ["sway/window"];
         "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{volume}% {icon}  {format_source}";

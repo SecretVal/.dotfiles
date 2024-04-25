@@ -9,5 +9,8 @@
     tmux-sessionizer
     toipe
     watchexec
+    nim2
+    gcc
+    fasm
   ];
 }
