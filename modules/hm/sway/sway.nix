@@ -35,6 +35,12 @@
         outer = 4;
         inner = 2;
       };
+      bars = [
+        {
+          command = "waybar";
+          position = "top";
+        }
+      ];
     };
   };
   home.packages = with pkgs; [

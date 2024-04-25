@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  pkgs,
   ...
 }: {
   imports = [
@@ -14,15 +13,13 @@
       # css
       ''
         @define-color bg #${config.colorScheme.palette.base00};
-
         * {
           font-family: FontAwesome;
           font-size: 16px;
-          padding: 0;
-          margin: 0;
         }
         window#waybar {
           background-color: #${config.colorScheme.palette.base00};
+          opacity: 0.9;
         }
 
         #workspaces  {

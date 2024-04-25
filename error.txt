@@ -1,1 +1,0 @@
-nix log /nix/store/fcdhvhjkarv6fd0r6vb86ycj5d6y3b5m-emacs-packages-deps.drv
