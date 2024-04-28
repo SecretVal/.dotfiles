@@ -38,7 +38,6 @@
       bars = [
         {
           command = "waybar";
-          position = "top";
         }
       ];
     };

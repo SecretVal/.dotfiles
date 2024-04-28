@@ -10,14 +10,10 @@
     ./image.nix
     ./lint.nix
     ./format.nix
-    ./floaterm.nix
-    ./lualine.nix
-    ./oil.nix
   ];
   programs.nixvim = {
     plugins = {
       comment.enable = true;
-      tmux-navigator.enable = true;
       todo-comments.enable = true;
       markdown-preview.enable = true;
       undotree.enable = true;

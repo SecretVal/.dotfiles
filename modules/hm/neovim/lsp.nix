@@ -28,7 +28,6 @@
         keymaps = {
           silent = true;
           diagnostic = {
-            "<leader>dj" = "goto_next";
             "<leader>dk" = "goto_prev";
             "<leader>ds" = "open_float";
           };
@@ -63,19 +62,6 @@
       # lua
       ''
         require("lspconfig").ocamllsp.setup({ })
-
-        -- local client = vim.lsp.start_client({
-        -- 	name = "u-lang-lsp",
-        -- 	cmd = { "/home/lukas/Dokumente/coding/u-lang/u-lang-lsp/main" },
-        -- 	on_attach = function() end,
-        -- })
-        --
-        -- vim.api.nvim_create_autocmd("FileType", {
-        -- 	pattern = "u-lang",
-        -- 	callback = function()
-        -- 		vim.lsp.buf_attach_client(0, client)
-        -- 	end,
-        -- })
       '';
   };
   home.packages = with pkgs; [

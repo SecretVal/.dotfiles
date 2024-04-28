@@ -17,15 +17,13 @@
           font-family: FontAwesome;
           font-size: 16px;
         }
+
         window#waybar {
           background-color: #${config.colorScheme.palette.base00};
-          opacity: 0.9;
         }
 
         #workspaces  {
           color: #${config.colorScheme.palette.base05};
-          padding: 0 5px;
-          min-width: 20px;
         }
          #workspaces button.active {
            color: #${config.colorScheme.palette.base0D};
@@ -59,7 +57,7 @@
          }
          #window {
            color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
+
          }
          window#waybar.empty #window{
            background: none;

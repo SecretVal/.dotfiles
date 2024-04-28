@@ -2,7 +2,6 @@
   imports = [
     nixvim.homeManagerModules.nixvim
     ./opt.nix
-    ./cmp.nix
     ./lsp.nix
     ./plugins
     ./autoCmd.nix

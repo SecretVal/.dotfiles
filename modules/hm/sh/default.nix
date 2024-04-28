@@ -4,21 +4,15 @@
     ./zoxide.nix
     ./nnn.nix
   ];
-  programs.nushell = {
+  programs.fish = {
     enable = true;
 
     shellAliases = {
       cat = "bat";
-      cd = "z";
-      ci = "zi";
     };
 
-    extraConfig = "
-      $env.config = {
-          show_banner: false,
-      }
-    ";
+    shellInit = ''
+      set fish_greeting
+    '';
   };
-  programs.carapace.enable = true;
-  programs.atuin.enable = true;
 }

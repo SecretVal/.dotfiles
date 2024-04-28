@@ -6,9 +6,10 @@
       netrw_browser_split = 0;
       netrw_banner = 0;
       netrw_winsize = 25;
+      netrw_cursor = false;
       langmap = "äöü";
     };
-    options = {
+    opts = {
       pb = 17;
 
       number = true;
@@ -37,8 +38,6 @@
       completeopt = ["menu" "menuone" "noselect"];
 
       updatetime = 50;
-
-      colorcolumn = "80";
 
       belloff = "all";
 
