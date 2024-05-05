@@ -12,5 +12,8 @@
     nim2
     gcc
     fasm
+    man
+    wget
+    file
   ];
 }

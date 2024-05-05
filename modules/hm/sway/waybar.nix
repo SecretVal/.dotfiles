@@ -16,6 +16,8 @@
         * {
           font-family: FontAwesome;
           font-size: 16px;
+          padding: 0;
+          margin: 0;
         }
 
         window#waybar {

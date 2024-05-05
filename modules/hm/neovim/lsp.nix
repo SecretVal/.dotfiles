@@ -10,19 +10,8 @@
             installRustc = false;
             installCargo = false;
           };
-          html.enable = true;
-          cssls.enable = true;
           htmx.enable = true;
-          jsonls.enable = true;
-          lua-ls = {
-            enable = true;
-            settings = {};
-          };
-          cmake.enable = true;
-          bashls.enable = true;
           gopls.enable = true;
-          tsserver.enable = true;
-          clangd.enable = true;
           zls.enable = true;
         };
         keymaps = {

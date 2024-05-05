@@ -22,7 +22,7 @@
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
   ];
-  colorScheme = nix-colors.colorSchemes.kanagawa;
+  colorScheme = nix-colors.colorSchemes.onedark;
   home.stateVersion = "23.05"; # Please read the comment before changing.
   nixpkgs.overlays = overlays;
 }

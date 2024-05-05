@@ -15,4 +15,12 @@
       set fish_greeting
     '';
   };
+  programs.eza = {
+    enable = true;
+    git = true;
+    icons = true;
+    extraOptions = [
+      "-la"
+    ];
+  };
 }

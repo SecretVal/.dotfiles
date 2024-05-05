@@ -10,7 +10,7 @@
       langmap = "äöü";
     };
     opts = {
-      pb = 17;
+      guicursor = "";
 
       number = true;
       relativenumber = true;

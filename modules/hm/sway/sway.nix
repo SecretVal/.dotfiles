@@ -26,6 +26,8 @@
       in
         lib.mkOptionDefault {
           "${modifier}+d" = "exec rofi -show drun";
+          "${modifier}+t" = ''exec grim -g "$(slurp)" ~/Bilder/$(date +'screenhost_%F-%T.png')'';
+          "${modifier}+shift+t" = "exec grim ~/Bilder/$(date +'screenhost_%F-%T.png')";
         };
       window = {
         border = 0;
@@ -38,6 +40,16 @@
       bars = [
         {
           command = "waybar";
+        }
+      ];
+      startup = [
+        {
+          command = "swww-daemon";
+          always = true;
+        }
+        {
+          command = "swaync";
+          always = true;
         }
       ];
     };

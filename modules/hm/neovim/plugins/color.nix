@@ -1,8 +1,10 @@
 {...}: {
   programs.nixvim.colorschemes = {
-    kanagawa = {
+    onedark = {
       enable = true;
-      settings.background.dark = "wave";
+      settings = {
+        style = "warmer";
+      };
     };
   };
 }

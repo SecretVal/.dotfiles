@@ -6,19 +6,17 @@
     ./harpoon.nix
     ./neorg.nix
     ./git.nix
-    ./rust.nix
     ./image.nix
     ./lint.nix
     ./format.nix
+    ./oil.nix
   ];
   programs.nixvim = {
     plugins = {
       comment.enable = true;
       todo-comments.enable = true;
-      markdown-preview.enable = true;
       undotree.enable = true;
-      rainbow-delimiters.enable = true;
-      indent-o-matic.enable = true;
+      crates-nvim.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-just
