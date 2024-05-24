@@ -8,6 +8,7 @@
     ./remaps.nix
     ./ftplugins.nix
     ./commands.nix
+    ./cmp.nix
   ];
   programs.nixvim = {
     enable = true;

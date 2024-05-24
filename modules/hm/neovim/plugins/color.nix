@@ -1,9 +1,9 @@
 {...}: {
   programs.nixvim.colorschemes = {
-    onedark = {
+    gruvbox = {
       enable = true;
       settings = {
-        style = "warmer";
+        contrast = "hard";
       };
     };
   };

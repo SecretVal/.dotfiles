@@ -18,11 +18,11 @@
     ./modules/hm/macchina
     ./modules/hm/styling/gtk.nix
     ./modules/hm/styling/qt.nix
-    ./modules/hm/multiplexers/zellij.nix
+    ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
   ];
-  colorScheme = nix-colors.colorSchemes.onedark;
+  colorScheme = nix-colors.colorSchemes.gruvbox-dark-hard;
   home.stateVersion = "23.05"; # Please read the comment before changing.
   nixpkgs.overlays = overlays;
 }

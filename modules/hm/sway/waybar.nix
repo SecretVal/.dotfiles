@@ -16,8 +16,8 @@
         * {
           font-family: FontAwesome;
           font-size: 16px;
-          padding: 0;
-          margin: 0;
+          border: none;
+          border-radius: 0;
         }
 
         window#waybar {
@@ -82,6 +82,8 @@
       '';
     settings = {
       mainBar = {
+        position = "top";
+
         modules-left = ["sway/workspaces"];
         modules-right = ["custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
         modules-center = ["sway/window"];

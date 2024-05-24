@@ -23,9 +23,8 @@
     ];
   };
   # I use nushell btw
-  environment.shells = with pkgs; [fish];
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
+  environment.shells = with pkgs; [nushell];
+  users.defaultUserShell = pkgs.nushell;
   # thunar
   programs.thunar.enable = true;
 

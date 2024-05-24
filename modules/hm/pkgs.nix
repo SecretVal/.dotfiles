@@ -15,5 +15,7 @@
     man
     wget
     file
+    zig
+    sesh
   ];
 }

@@ -1,26 +1,24 @@
 {...}: {
   imports = [
     ./starship.nix
-    ./zoxide.nix
     ./nnn.nix
   ];
-  programs.fish = {
+  programs.nushell = {
     enable = true;
 
     shellAliases = {
       cat = "bat";
+      cd = "z";
+      ci = "zi";
     };
 
-    shellInit = ''
-      set fish_greeting
-    '';
+    extraConfig = "
+      $env.config = {
+          show_banner: false,
+      }
+    ";
   };
-  programs.eza = {
-    enable = true;
-    git = true;
-    icons = true;
-    extraOptions = [
-      "-la"
-    ];
-  };
+  programs.carapace.enable = true;
+  programs.atuin.enable = true;
+  programs.zoxide.enable = true;
 }
