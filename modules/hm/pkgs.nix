@@ -6,7 +6,6 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     sl
     fzf
-    tmux-sessionizer
     toipe
     watchexec
     nim2
