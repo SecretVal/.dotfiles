@@ -4,7 +4,8 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ./modules/nixos/sway
+    ./modules/nixos/hypr
+    # ./modules/nixos/stylix
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd/keyd.nix
@@ -38,9 +39,8 @@
     jack.enable = true;
   };
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # kernelPackages
   boot.kernelPackages = pkgs.linuxPackages;
@@ -95,9 +95,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #browser
-    firefox
-
     #terminal
     foot
     neofetch
@@ -128,11 +125,6 @@
     rhythmbox
     ffmpeg
   ];
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
-  };
   virtualisation.docker.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -160,4 +152,14 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  #browser
+  programs.firefox.enable = true;
+
+  stylix.enable = true;
+  stylix.image = ./background-anime.jpg;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+
+  stylix.cursor.package = pkgs.phinger-cursors;
+  stylix.cursor.name = "phinger-cursors-dark";
+  stylix.polarity = "dark";
 }

@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-colors.url = "github:misterio77/nix-colors";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = inputs @ {
@@ -18,7 +18,7 @@
     nixpkgs,
     home-manager,
     nixvim,
-    nix-colors,
+    stylix,
     ...
   }: let
     system = "x86_64-linux";
@@ -28,8 +28,10 @@
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         modules = [
           ./configuration.nix
+          stylix.nixosModules.stylix
         ];
       };
     };
@@ -41,7 +43,6 @@
       extraSpecialArgs = {
         inherit nixvim;
         inherit inputs;
-        inherit nix-colors;
         inherit overlays;
       };
     };

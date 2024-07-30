@@ -1,13 +1,9 @@
 {pkgs, ...}: {
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+  programs.hyprland.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
   environment.systemPackages = with pkgs; [
     gtk3
   ];

@@ -6,7 +6,7 @@
         ids = ["*"];
         settings = {
           main = {
-            capslock = "ctrl";
+            capslock = "esc";
           };
         };
       };

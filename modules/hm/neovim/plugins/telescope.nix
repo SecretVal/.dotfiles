@@ -17,8 +17,7 @@
     keymaps = [
       {
         key = "<leader>gw";
-        lua = true;
-        action =
+        action.__raw =
           #lua
           ''            function()
                           require('telescope').extensions.git_worktree.git_worktrees()
@@ -26,8 +25,7 @@
       }
       {
         key = "<leader>gaw";
-        lua = true;
-        action =
+        action.__raw =
           #lua
           ''
             function()

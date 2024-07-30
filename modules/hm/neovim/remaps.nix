@@ -33,8 +33,7 @@
     }
     {
       key = "<leader>u";
-      lua = true;
-      action = "vim.cmd.UndotreeToggle";
+      action.__raw = "vim.cmd.UndotreeToggle";
     }
   ];
 }

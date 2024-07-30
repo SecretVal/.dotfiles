@@ -1,11 +1,4 @@
-{
-  config,
-  inputs,
-  ...
-}: {
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-  ];
+{config, ...}: {
   # Enable waybar
   programs.waybar = {
     enable = true;

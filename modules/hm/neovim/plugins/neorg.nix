@@ -2,7 +2,7 @@
   programs.nixvim = {
     plugins = {
       neorg = {
-        enable = true;
+        enable = false;
         modules = {
           "core.defaults".__empty = null;
           "core.concealer".__empty = null;
