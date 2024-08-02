@@ -1,8 +1,4 @@
-{
-  overlays,
-  pkgs,
-  ...
-}: {
+{overlays, ...}: {
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";
 
@@ -25,9 +21,13 @@
   nixpkgs.overlays = overlays;
   programs.firefox.enable = true;
   programs.git = {
-    enable = false;
+    enable = true;
     userEmail = "108518296+SecretVal@users.noreply.github.com";
     userName = "secretval";
+    extraConfig.credentials = {
+      "https://github.com".helper = "!/run/current-system/sw/bin/gh auth git-credential";
+      "https://gist.github.com".helper = "!/run/current-system/sw/bin/gh auth git-credential";
+    };
   };
   nixpkgs.config = {
     allowUnfree = true;
