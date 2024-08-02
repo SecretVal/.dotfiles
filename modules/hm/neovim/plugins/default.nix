@@ -10,7 +10,6 @@
     ./lint.nix
     ./format.nix
     ./oil.nix
-    ./alpha.nix
   ];
   programs.nixvim = {
     plugins = {
