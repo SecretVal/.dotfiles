@@ -16,5 +16,8 @@
     file
     zig
     sesh
+    discord-canary
+    appimage-run
+    pokeget-rs
   ];
 }

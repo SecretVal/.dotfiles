@@ -5,13 +5,14 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/nixos/hypr
-    # ./modules/nixos/stylix
+    ./modules/shared
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
-    ./modules/nixos/keyd/keyd.nix
+    ./modules/nixos/kanata
   ];
   #bluetooth
-  hardware.bluetooth.enable = true; # enables support for Bluetooth hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true; # blueman
 
   services.xserver = {
@@ -38,6 +39,7 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  services.pipewire.wireplumber.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -95,9 +97,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #terminal
-    foot
-    neofetch
     htop
     git
     gh
@@ -116,7 +115,6 @@
     bitwarden
     cava
     flameshot
-    discord-canary
     pkg-config
     openssl
     bat
@@ -139,6 +137,14 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  programs.steam.enable = true;
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    flake = /home/lukas/.dotfiles;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -152,14 +158,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  #browser
-  programs.firefox.enable = true;
-
-  stylix.enable = true;
-  stylix.image = ./background-anime.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-
-  stylix.cursor.package = pkgs.phinger-cursors;
-  stylix.cursor.name = "phinger-cursors-dark";
-  stylix.polarity = "dark";
+  nix.settings.trusted-users = ["lukas"];
+  services.hardware.openrgb.enable = true;
 }

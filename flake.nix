@@ -11,6 +11,8 @@
     };
 
     stylix.url = "github:danth/stylix";
+    walker.url = "github:abenz1267/walker";
+    polymc.url = "github:PolyMC/PolyMC";
   };
 
   outputs = inputs @ {
@@ -24,7 +26,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    overlays = [];
+    overlays = [inputs.polymc.overlay];
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
@@ -38,6 +40,7 @@
     homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
+        stylix.homeManagerModules.stylix
         ./home.nix
       ];
       extraSpecialArgs = {

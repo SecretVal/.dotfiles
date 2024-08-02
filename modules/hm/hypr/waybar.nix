@@ -5,81 +5,40 @@
     style =
       # css
       ''
-        @define-color bg #${config.colorScheme.palette.base00};
         * {
           font-family: FontAwesome;
           font-size: 16px;
           border: none;
           border-radius: 0;
         }
-
-        window#waybar {
-          background-color: #${config.colorScheme.palette.base00};
+        window#waybar.empty #window{
+          background: none;
         }
-
-        #workspaces  {
-          color: #${config.colorScheme.palette.base05};
-        }
-         #workspaces button.active {
-           color: #${config.colorScheme.palette.base0D};
-         }
-         #workspaces button.urgent {
-           color: #${config.colorScheme.palette.base08};
-         }
-         #workspaces button:hover {
-           color: #${config.colorScheme.palette.base05};
-           border: none;
-         }
-         #clock {
-           color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
-           margin: 0px 5px;
-         }
-         #pulseaudio {
-           color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
-           margin: 0px 5px;
-         }
-         #cpu {
-           color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
-           margin: 0px 5px;
-         }
-         #memory {
-           color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
-           margin: 0px 5px;
-         }
-         #window {
-           color: #${config.colorScheme.palette.base05};
-
-         }
-         window#waybar.empty #window{
-           background: none;
-         }
-         #custom-power {
-           color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
+        #custom-power {
+           padding: 0px 5px;
            margin: 0px 5px;
          }
          #custom-power:hover {
-           color: #${config.colorScheme.palette.base08};
-           padding: 0 5px;
+           padding: 0px 5px;
            margin: 0px 5px;
          }
          #custom-notification {
-           color: #${config.colorScheme.palette.base05};
-           padding: 0 5px;
+           padding: 0px 5px;
            margin: 0px 5px;
          }
+
       '';
     settings = {
       mainBar = {
         position = "top";
 
-        modules-left = ["sway/workspaces"];
+        modules-left = ["hyprland/workspaces"];
         modules-right = ["custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
         modules-center = ["sway/window"];
+        "hyprland/workspaces" = {
+          format = "{icon}";
+        };
+
         "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{volume}% {icon}  {format_source}";

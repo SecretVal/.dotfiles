@@ -17,6 +17,10 @@
       todo-comments.enable = true;
       undotree.enable = true;
       crates-nvim.enable = true;
+      startify = {
+        enable = true;
+        settings.change_to_dir = false;
+      };
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-just
