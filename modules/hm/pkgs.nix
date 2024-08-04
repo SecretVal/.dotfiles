@@ -19,5 +19,6 @@
     discord-canary
     appimage-run
     pokeget-rs
+    prismlauncher
   ];
 }
