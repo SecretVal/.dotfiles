@@ -6,7 +6,7 @@
   programs.home-manager.enable = true;
   imports = [
     ./modules/hm/fuzzel
-    ./modules/hm/term/foot.nix
+    ./modules/hm/term
     ./modules/hm/neovim
     ./modules/hm/sh
     ./modules/hm/hypr

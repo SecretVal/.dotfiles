@@ -13,11 +13,16 @@
           htmx.enable = true;
           gopls.enable = true;
           zls.enable = true;
+          kotlin-language-server.enable = true;
+          java-language-server.enable = true;
+          ccls.enable = true;
+          gleam.enable = true;
         };
         keymaps = {
           silent = true;
           diagnostic = {
             "<leader>dk" = "goto_prev";
+            "<leader>dj" = "goto_next";
             "<leader>ds" = "open_float";
           };
           lspBuf = {

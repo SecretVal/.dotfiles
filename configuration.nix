@@ -8,7 +8,7 @@
     ./modules/shared
     ./modules/nixos/sddm/sddm.nix
     ./modules/nixos/nivida/nvidia.nix
-    ./modules/nixos/kanata
+    ./modules/nixos/keyd
   ];
   #bluetooth
   hardware.bluetooth.enable = true;
@@ -69,7 +69,7 @@
     LC_MEASUREMENT = "de_DE.UTF-8";
     LC_MONETARY = "de_DE.UTF-8";
     LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
+    LC_NMERIC = "de_DE.UTF-8";
     #    LC_PAPER = "de_DE.UTF-8";
     #    LC_TELEPHONE = "de_DE.UTF-8";
     #    LC_TIME = "de_DE.UTF-8";
@@ -104,7 +104,7 @@
 
     # gui
     qpwgraph
-    pavucontrol
+    lxqt.pavucontrol-qt
     bluez
     swww
 

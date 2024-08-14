@@ -11,6 +11,7 @@
           go = ["gofumpt"];
           js = ["prettierd"];
           ts = ["prettierd"];
+          kotlin = ["ktlint"];
         };
         formatOnSave = {
           lspFallback = true;
@@ -25,5 +26,6 @@
     stylua
     jsonfmt
     prettierd
+    ktlint
   ];
 }

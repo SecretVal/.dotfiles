@@ -1,10 +1,13 @@
 {...}: {
   programs.nixvim = {
-    plugins.lazygit.enable = true;
+    plugins.neogit = {
+      enable = true;
+      settings.kind = "replace";
+    };
     keymaps = [
       {
         key = "<leader>gs";
-        action = "<cmd>LazyGit<cr>";
+        action = "<cmd>Neogit<cr>";
       }
     ];
   };

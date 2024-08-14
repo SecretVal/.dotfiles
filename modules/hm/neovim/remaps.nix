@@ -35,9 +35,5 @@
       key = "<leader>u";
       action.__raw = "vim.cmd.UndotreeToggle";
     }
-    {
-      key = "<leader>s";
-      action = "<cmd>w<cr>";
-    }
   ];
 }

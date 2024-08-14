@@ -40,7 +40,7 @@
         drop_shadow = false;
         blur = {
           enabled = true;
-          size = 2;
+          size = 6;
           passes = 3;
           xray = true;
           new_optimizations = true;
@@ -84,7 +84,7 @@
       };
 
       bind = [
-        "Super, RETURN, exec, foot"
+        "Super, RETURN, exec, wezterm"
         "Super, Q, killactive,"
         "Super, M, exit,"
         "Super, E, exec, foot -e yazi"
@@ -143,6 +143,7 @@
 
       layerrule = [
         "blur, waybar"
+        "blur, fuzzel"
       ];
     };
   };

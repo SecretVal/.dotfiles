@@ -9,6 +9,7 @@
       cat = "bat";
       cd = "z";
       ci = "zi";
+      nix-shell = "nix-shell --command nu";
     };
 
     extraConfig = "
@@ -24,5 +25,5 @@
   programs.yazi.enable = true;
   programs.cava.enable = true;
   programs.btop.enable = true;
-  programs.lazygit.enable = true;
+  programs.wezterm.enable = true;
 }

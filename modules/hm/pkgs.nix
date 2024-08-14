@@ -6,19 +6,30 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     sl
     fzf
-    toipe
+    typioca
     watchexec
-    nim2
-    gcc
-    fasm
     man
     wget
     file
-    zig
     sesh
     discord-canary
     appimage-run
     pokeget-rs
     prismlauncher
+    via
+    jetbrains.idea-community-bin
+    xonotic
+
+    gleam
+    erlang
+    rebar3
+
+    nim2
+    zig
+    jdk
+    kotlin
+    gradle
+    gcc
+    fasm
   ];
 }

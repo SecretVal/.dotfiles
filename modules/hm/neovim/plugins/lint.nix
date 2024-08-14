@@ -9,6 +9,7 @@
           markdown = ["vale"];
           go = ["golangcilint"];
           nix = ["nix"];
+          kotlin = ["ktlint"];
         };
       };
     };
@@ -17,5 +18,6 @@
     vale
     golangci-lint
     nodePackages_latest.jsonlint
+    ktlint
   ];
 }

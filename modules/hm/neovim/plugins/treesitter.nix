@@ -4,7 +4,7 @@
       treesitter = {
         enable = true;
         settings = {
-          ensureInstalled = "all";
+          ensureInstalled = ["all" pkgs.vimPlugins.nvim-treesitter-parsers.gleam];
           nixvimInjections = true;
           indent.enable = true;
         };
