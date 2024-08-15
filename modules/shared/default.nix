@@ -9,8 +9,8 @@
   stylix.cursor.size = 16;
 
   stylix.fonts.monospace = {
-    name = "JetBrainsMono Nerd Font Mono";
-    package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+    name = "Monaspace Radon";
+    package = pkgs.monaspace;
   };
 
   stylix.targets.nixvim.enable = false;
