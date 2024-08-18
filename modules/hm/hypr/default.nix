@@ -84,7 +84,7 @@
       };
 
       bind = [
-        "Super, RETURN, exec, wezterm"
+        "Super, RETURN, exec, foot"
         "Super, Q, killactive,"
         "Super, M, exit,"
         "Super, E, exec, foot -e yazi"

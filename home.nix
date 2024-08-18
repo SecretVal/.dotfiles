@@ -1,4 +1,8 @@
-{overlays, ...}: {
+{
+  pkgs,
+  overlays,
+  ...
+}: {
   home.username = "lukas";
   home.homeDirectory = "/home/lukas";
 
@@ -7,7 +11,8 @@
   imports = [
     ./modules/hm/fuzzel
     ./modules/hm/term
-    ./modules/hm/neovim
+    ./modules/hm/editors/neovim
+    ./modules/hm/editors/emacs
     ./modules/hm/sh
     ./modules/hm/hypr
     ./modules/hm/macchina

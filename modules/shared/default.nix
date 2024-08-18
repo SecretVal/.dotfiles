@@ -9,9 +9,14 @@
   stylix.cursor.size = 16;
 
   stylix.fonts.monospace = {
-    name = "Monaspace Radon";
-    package = pkgs.monaspace;
+    name = "JetBrainsMono Nerd Font Mono";
+    package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
   };
+
+  stylix.opacity.terminal = 0.8;
+  stylix.opacity.applications = 0.8;
+  stylix.opacity.desktop = 0.8;
+  stylix.opacity.popups = 0.8;
 
   stylix.targets.nixvim.enable = false;
 }

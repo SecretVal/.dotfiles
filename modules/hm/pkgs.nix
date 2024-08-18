@@ -17,7 +17,6 @@
     pokeget-rs
     prismlauncher
     via
-    jetbrains.idea-community-bin
     xonotic
 
     gleam

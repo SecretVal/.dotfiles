@@ -9,7 +9,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     stylix.url = "github:danth/stylix";
   };
 
@@ -24,7 +24,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    overlays = [];
+    overlays = [inputs.emacs-overlay.overlays.default];
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
