@@ -1,6 +1,9 @@
 {...}: {
   programs.nixvim.colorschemes.gruvbox = {
     enable = true;
-    settings.contrast = "hard";
+    settings = {
+      contrast = "dark";
+      transparent_mode = true;
+    };
   };
 }

@@ -19,16 +19,12 @@
     via
     xonotic
 
-    gleam
-    erlang
-    rebar3
-
-    nim2
     zig
     jdk
-    kotlin
-    gradle
     gcc
     fasm
+    # aseprite
+    godot_4
   ];
+  programs.qutebrowser.enable = true;
 }

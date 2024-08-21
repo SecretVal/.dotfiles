@@ -113,7 +113,6 @@
 
     #extra
     bitwarden
-    cava
     flameshot
     pkg-config
     openssl

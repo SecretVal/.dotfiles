@@ -13,10 +13,7 @@
           htmx.enable = true;
           gopls.enable = true;
           zls.enable = true;
-          kotlin-language-server.enable = true;
-          java-language-server.enable = true;
           ccls.enable = true;
-          gleam.enable = true;
         };
         keymaps = {
           silent = true;
@@ -51,6 +48,12 @@
         };
       };
       trouble.enable = true;
+      nvim-jdtls = {
+        enable = true;
+        cmd = [
+          "${pkgs.jdt-language-server}/bin/jdtls"
+        ];
+      };
     };
     extraConfigLua =
       # lua

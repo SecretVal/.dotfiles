@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # programs.nixvim = {
   #   plugins.image = {
-  #     enable = false;
+  #     enable = true;
   #     backend = "ueberzug";
   #   };
   # };

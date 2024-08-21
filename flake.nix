@@ -9,8 +9,8 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     stylix.url = "github:danth/stylix";
+    prism.url = "github:IogaMaster/prism";
   };
 
   outputs = inputs @ {
@@ -19,12 +19,13 @@
     home-manager,
     nixvim,
     stylix,
+    prism,
     ...
   }: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    overlays = [inputs.emacs-overlay.overlays.default];
+    overlays = [];
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
@@ -39,6 +40,7 @@
       inherit pkgs;
       modules = [
         stylix.homeManagerModules.stylix
+        prism.homeModules.prism
         ./home.nix
       ];
       extraSpecialArgs = {

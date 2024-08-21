@@ -1,10 +1,16 @@
 {
-  pkgs,
   overlays,
+  config,
   ...
 }: {
-  home.username = "lukas";
-  home.homeDirectory = "/home/lukas";
+  home = {
+    username = "lukas";
+    homeDirectory = "/home/lukas";
+    sessionVariables = {
+      DOOMDIR = "${config.xdg.configHome}/doom";
+      DOOMLOCALDIR = "${config.xdg.configHome}/doom-local";
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -12,7 +18,6 @@
     ./modules/hm/fuzzel
     ./modules/hm/term
     ./modules/hm/editors/neovim
-    ./modules/hm/editors/emacs
     ./modules/hm/sh
     ./modules/hm/hypr
     ./modules/hm/macchina
@@ -37,5 +42,10 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = true;
+  };
+  prism = {
+    enable = true;
+    wallpapers = ./bgs;
+    colorscheme = "gruvbox-dark";
   };
 }
