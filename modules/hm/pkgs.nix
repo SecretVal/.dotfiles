@@ -19,12 +19,11 @@
     via
     xonotic
 
-    zig
-    jdk
-    gcc
-    fasm
-    # aseprite
+    libresprite
     godot_4
+    bear
+    glfw-wayland
+    glew
   ];
-  programs.qutebrowser.enable = true;
+  programs.helix.enable = true;
 }

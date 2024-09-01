@@ -6,10 +6,6 @@
   home = {
     username = "lukas";
     homeDirectory = "/home/lukas";
-    sessionVariables = {
-      DOOMDIR = "${config.xdg.configHome}/doom";
-      DOOMLOCALDIR = "${config.xdg.configHome}/doom-local";
-    };
   };
 
   # Let Home Manager install and manage itself.

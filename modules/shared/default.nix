@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix.enable = true;
-  stylix.image = /home/lukas/.dotfiles/bgs/gruvbox/Clearday.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.image = /home/lukas/.dotfiles/bgs/foggy_valley_2.png;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest.yaml";
   stylix.polarity = "dark";
 
   stylix.cursor.package = pkgs.phinger-cursors;

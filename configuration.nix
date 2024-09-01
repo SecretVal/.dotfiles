@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
     ./modules/nixos/hypr
     ./modules/shared
-    ./modules/nixos/sddm/sddm.nix
+    ./modules/nixos/dm
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd
   ];

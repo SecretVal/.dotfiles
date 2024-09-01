@@ -1,11 +1,12 @@
-{pkgs, ...}: {
+{...}: {
   programs.nixvim = {
     plugins = {
       treesitter = {
         enable = true;
         settings = {
-          ensureInstalled = ["all" pkgs.vimPlugins.nvim-treesitter-parsers.gleam];
+          ensureInstalled = ["all"];
           nixvimInjections = true;
+          highlight.enable = true;
           indent.enable = true;
         };
       };

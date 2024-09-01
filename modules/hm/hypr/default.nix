@@ -40,7 +40,7 @@
         drop_shadow = false;
         blur = {
           enabled = true;
-          size = 6;
+          size = 2;
           passes = 3;
           xray = true;
           new_optimizations = true;

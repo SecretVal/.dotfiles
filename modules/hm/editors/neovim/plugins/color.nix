@@ -1,9 +1,6 @@
 {...}: {
-  programs.nixvim.colorschemes.gruvbox = {
+  programs.nixvim.colorschemes.everforest = {
     enable = true;
-    settings = {
-      contrast = "dark";
-      transparent_mode = true;
-    };
+    settings.transparent_background = 1;
   };
 }

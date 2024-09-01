@@ -42,10 +42,7 @@
             "<C-y>" = "cmp.mapping.confirm({ select = true })";
             "<C-Space>" = "cmp.mapping.complete()";
           };
-          experimental = {
-            native_menu = false;
-            ghost_text = true;
-          };
+          experimental.native_menu = false;
         };
       };
     };
