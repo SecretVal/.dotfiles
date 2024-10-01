@@ -13,7 +13,7 @@
           ts = ["prettierd"];
           kotlin = ["ktlint"];
         };
-        formatOnSave = {
+        settings.formatOnSave = {
           lspFallback = true;
         };
       };

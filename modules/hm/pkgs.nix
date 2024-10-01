@@ -2,6 +2,7 @@
   #fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    (pkgs.nerdfonts.override {fonts = ["Monaspace"];})
     font-awesome
 
     sl
@@ -21,9 +22,11 @@
 
     libresprite
     godot_4
-    bear
-    glfw-wayland
-    glew
+    krita
+    libsForQt5.qt5.qtwayland
+    jdk
+    jetbrains.idea-community-bin
+    glfw-wayland-minecraft
   ];
   programs.helix.enable = true;
 }

@@ -1,7 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  pkgs,
+  overlays,
+  inputs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./modules/nixos/hypr
@@ -9,11 +14,15 @@
     ./modules/nixos/dm
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd
+    inputs.aagl.nixosModules.default
   ];
+  nixpkgs.overlays = overlays;
   #bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true; # blueman
+
+  programs.anime-game-launcher.enable = true;
 
   services.xserver = {
     enable = true;
@@ -88,7 +97,7 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" ];
     packages = [];
   };
   # Allow unfree packages
@@ -114,7 +123,6 @@
     #extra
     bitwarden
     flameshot
-    pkg-config
     openssl
     bat
     nnn
@@ -130,6 +138,9 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
 
   # List services that you want to enable:
 
@@ -143,6 +154,8 @@
     clean.enable = true;
     flake = /home/lukas/.dotfiles;
   };
+
+  hardware.opentabletdriver.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -159,4 +172,8 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["lukas"];
   services.hardware.openrgb.enable = true;
+  nix.settings = {
+    substituters = ["https://ezkea.cachix.org"];
+    trusted-public-keys = ["ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="];
+  };
 }

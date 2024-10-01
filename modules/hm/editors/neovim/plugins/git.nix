@@ -1,8 +1,13 @@
 {...}: {
   programs.nixvim = {
-    plugins.neogit = {
-      enable = true;
-      settings.kind = "replace";
+    plugins = {
+      neogit = {
+        enable = true;
+        settings.kind = "replace";
+      };
+      octo = {
+        enable = true;
+      };
     };
     keymaps = [
       {
