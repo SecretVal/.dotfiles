@@ -10,7 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
-    prism.url = "github:IogaMaster/prism";
     xdg-desktop-portal-hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/xdg-desktop-portal-hyprland";
@@ -26,7 +25,6 @@
       url = "https://github.com/hyprwm/hyprwayland-scanner";
       submodules = true;
     };
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
   };
 
   outputs = inputs @ {
@@ -35,7 +33,6 @@
     home-manager,
     nixvim,
     stylix,
-    prism,
     ...
   }: let
     system = "x86_64-linux";
@@ -63,7 +60,6 @@
       inherit pkgs;
       modules = [
         stylix.homeManagerModules.stylix
-        prism.homeModules.prism
         ./home.nix
       ];
       extraSpecialArgs = {

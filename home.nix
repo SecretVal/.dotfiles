@@ -1,6 +1,5 @@
 {
   overlays,
-  config,
   ...
 }: {
   home = {
@@ -39,12 +38,6 @@
     allowUnfree = true;
     allowUnfreePredicate = true;
   };
-  prism = {
-    enable = true;
-    wallpapers = ./bgs;
-    colorscheme = "gruvbox-dark";
-  };
-
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = ["qemu:///system"];

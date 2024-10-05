@@ -36,7 +36,7 @@
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 5;
         drop_shadow = false;
         blur = {
           enabled = true;

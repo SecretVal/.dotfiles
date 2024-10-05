@@ -4,7 +4,6 @@
 {
   pkgs,
   overlays,
-  inputs,
   ...
 }: {
   imports = [
@@ -14,15 +13,12 @@
     ./modules/nixos/dm
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd
-    inputs.aagl.nixosModules.default
   ];
   nixpkgs.overlays = overlays;
   #bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true; # blueman
-
-  programs.anime-game-launcher.enable = true;
 
   services.xserver = {
     enable = true;
