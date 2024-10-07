@@ -1,4 +1,4 @@
-{nixvim, ...}: {
+{pkgs,nixvim, ...}: {
   imports = [
     nixvim.homeManagerModules.nixvim
     ./opt.nix
@@ -13,6 +13,7 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+    package = pkgs.neovim-unwrapped;
 
     viAlias = true;
     vimAlias = true;

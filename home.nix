@@ -1,7 +1,4 @@
-{
-  overlays,
-  ...
-}: {
+{overlays, ...}: {
   home = {
     username = "lukas";
     homeDirectory = "/home/lukas";
@@ -24,19 +21,14 @@
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.
   nixpkgs.overlays = overlays;
-  programs.firefox.enable = true;
   programs.git = {
     enable = true;
     userEmail = "108518296+SecretVal@users.noreply.github.com";
     userName = "secretval";
     extraConfig.credentials = {
-      "https://github.com".helper = "!/run/current-system/sw/bin/gh auth git-credential";
-      "https://gist.github.com".helper = "!/run/current-system/sw/bin/gh auth git-credential";
+      "https://github.com".helper = "!/home/lukas/.nix-profile/bin/gh auth git-credential";
+      "https://gist.github.com".helper = "!/home/lukas/.nix-profile/bin/gh auth git-credential";
     };
-  };
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = true;
   };
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {

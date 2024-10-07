@@ -17,9 +17,7 @@
       todo-comments.enable = true;
       undotree.enable = true;
       crates-nvim.enable = true;
-      yazi = {
-        enable = true;
-      };
+      web-devicons.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-just

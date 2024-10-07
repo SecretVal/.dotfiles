@@ -29,11 +29,10 @@
       }
     ];
   };
-  # I use nushell btw
-  environment.shells = with pkgs; [nushell];
-  users.defaultUserShell = pkgs.nushell;
-  # thunar
-  programs.thunar.enable = true;
+  # I use bash btw
+  environment.shells = with pkgs; [bash];
+  users.defaultUserShell = pkgs.bash;
+  environment.pathsToLink = ["/share/bash-completion"];
 
   #sound
   security.rtkit.enable = true;
@@ -51,6 +50,7 @@
 
   # kernelPackages
   boot.kernelPackages = pkgs.linuxPackages;
+  hardware.enableAllFirmware = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -93,50 +93,15 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "libvirtd"];
     packages = [];
   };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    htop
-    git
-    gh
-    killall
-
-    # gui
-    qpwgraph
-    lxqt.pavucontrol-qt
-    bluez
-    swww
-
-    #dev
-    just
-
-    #extra
-    bitwarden
-    flameshot
-    openssl
-    bat
-    nnn
-    ripgrep
-    rhythmbox
-    ffmpeg
-  ];
   virtualisation.docker.enable = true;
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-
 
   # List services that you want to enable:
 

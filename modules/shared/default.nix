@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix.enable = true;
   stylix.image = /home/lukas/.dotfiles/bgs/gruvbox/Clearday.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   stylix.polarity = "dark";
 
   stylix.cursor.package = pkgs.phinger-cursors;
@@ -9,8 +9,8 @@
   stylix.cursor.size = 16;
 
   stylix.fonts.monospace = {
-    name = "MonaspiceRn Nerd Font Mono";
-    package = pkgs.nerdfonts.override {fonts = ["Monaspace"];};
+    name = "JetBrainsMono Nerd Font Mono";
+    package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
   };
 
   stylix.opacity.terminal = 0.8;

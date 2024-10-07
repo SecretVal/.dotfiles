@@ -2,27 +2,32 @@
   imports = [
     ./starship.nix
   ];
-  programs.nushell = {
+  programs.bash = {
     enable = true;
 
     shellAliases = {
       cat = "bat";
       cd = "z";
       ci = "zi";
-      nix-shell = "nix-shell --command nu";
+      ls = "eza";
     };
 
-    extraConfig = "
-      $env.config = {
-          show_banner: false,
-      }
-      pokeget random --hide-name
-    ";
+    bashrcExtra = ''
+      pokeget --hide-name random
+    '';
   };
-  programs.carapace.enable = true;
   programs.atuin.enable = true;
   programs.zoxide.enable = true;
   programs.yazi.enable = true;
   programs.cava.enable = true;
   programs.btop.enable = true;
+  programs.eza = {
+    enable = true;
+    extraOptions = [
+      "--long"
+      "--all"
+    ];
+    icons = true;
+    git = true;
+  };
 }

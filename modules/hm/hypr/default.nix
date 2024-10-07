@@ -24,8 +24,8 @@
 
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        gaps_in = 4;
-        gaps_out = 4;
+        gaps_in = 2.5;
+        gaps_out = 5;
         border_size = 2;
 
         layout = "dwindle";
@@ -42,29 +42,28 @@
           enabled = true;
           size = 2;
           passes = 3;
-          xray = true;
           new_optimizations = true;
         };
       };
+      # Credit: https://gitlab.com/Oglo12/hyprland-rice/
       animations = {
         enabled = true;
 
-        # Define Settings For Animation Bezier Curve
         bezier = [
-          "wind, 0.05, 0.9, 0.1, 1.05"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "liner, 1, 1, 1, 1"
+          "overshot, 0.05, 0.9, 0.1, 1.05"
+          "smooth, 0.5, 0, 0.99, 0.99"
+          "snapback, 0.54, 0.42, 0.01, 1.34"
+          "curve, 0.27, 0.7, 0.03, 0.99"
         ];
         animation = [
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "border, 1, 1, liner"
-          "borderangle, 1, 30, liner, loop"
-          "fade, 1, 10, default"
-          "workspaces, 1, 5, wind"
+          "windows, 1, 5, overshot, slide"
+          "windowsOut, 1, 5, snapback, slide"
+          "windowsIn, 1, 5, snapback, slide"
+          "windowsMove, 1, 5, snapback, slide"
+          "border, 1, 5, default"
+          "fade, 1, 5, default"
+          "fadeDim, 1, 5, default"
+          "workspaces, 1, 6, curve"
         ];
       };
 
@@ -85,12 +84,12 @@
 
       bind = [
         "Super, RETURN, exec, foot"
-        "Super, Q, killactive,"
-        "Super, M, exit,"
+        "Super, Q, killactive"
+        "Super, M, exit"
         "Super, E, exec, foot -e yazi"
-        "Super, V, togglefloating,"
-        "Super, P, pseudo, # dwindle"
-        "Super shift, J, togglesplit, # dwindle"
+        "Super, F, togglefloating"
+        "Super, P, pseudo"
+        "Super shift, J, togglesplit"
 
         "Super, h, movefocus, l"
         "Super, l, movefocus, r"
@@ -108,28 +107,28 @@
         "Super, 9, workspace, 9"
         "Super, 0, workspace, 10"
 
-        "Super SHIFT, 1, movetoworkspacesilent, 1"
-        "Super SHIFT, 2, movetoworkspacesilent, 2"
-        "Super SHIFT, 3, movetoworkspacesilent, 3"
-        "Super SHIFT, 4, movetoworkspacesilent, 4"
-        "Super SHIFT, 5, movetoworkspacesilent, 5"
-        "Super SHIFT, 6, movetoworkspacesilent, 6"
-        "Super SHIFT, 7, movetoworkspacesilent, 7"
-        "Super SHIFT, 8, movetoworkspacesilent, 8"
-        "Super SHIFT, 9, movetoworkspacesilent, 9"
-        "Super SHIFT, 0, movetoworkspacesilent, 10"
+        "Super SHIFT, 1, movetoworkspace, 1"
+        "Super SHIFT, 2, movetoworkspace, 2"
+        "Super SHIFT, 3, movetoworkspace, 3"
+        "Super SHIFT, 4, movetoworkspace, 4"
+        "Super SHIFT, 5, movetoworkspace, 5"
+        "Super SHIFT, 6, movetoworkspace, 6"
+        "Super SHIFT, 7, movetoworkspace, 7"
+        "Super SHIFT, 8, movetoworkspace, 8"
+        "Super SHIFT, 9, movetoworkspace, 9"
+        "Super SHIFT, 0, movetoworkspace, 10"
 
         "Super, S, togglespecialworkspace, magic"
         "Super SHIFT, S, movetoworkspace, special:magic"
         "Super, mouse_down, workspace, e+1"
         "Super, mouse_up, workspace, e-1"
 
-        "bind = Super,F,fullscreen"
-        "bind = Super,D,exec, fuzzel -f 'DejaVu Sans'-16"
-        "bind = Super,R,exec, ~/.dotfiles/scripts/waybar.sh"
-        "bind = Super,T,exec, grim ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
-        "bind = Super Shift,T,exec, slurp | grim -g - ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
-        "bind = Super,z,exec, pypr zoom"
+        "Super Shift ,F,fullscreen"
+        "Super,D,exec, fuzzel -f 'JetBrainsMono Nerd Font Mono'-16"
+        "Super,R,exec, ~/.dotfiles/scripts/waybar.sh"
+        "Super,T,exec, grim ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "Super Shift,T,exec, slurp | grim -g - ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "Super,z,exec, pypr zoom"
       ];
 
       bindm = [
@@ -142,8 +141,9 @@
       ];
 
       layerrule = [
-        "blur, waybar"
+        # "blur, waybar"
         "blur, fuzzel"
+        "blur, foot"
       ];
     };
   };

@@ -6,22 +6,31 @@
       # css
       ''
         * {
-          font-family: FontAwesome;
-          font-size: 16px;
+          font-family: JetBrainsMono Nerd Font, monospace;
+          font-size: 15px;
+          font-weight: bold;
           border: none;
           border-radius: 0;
         }
+
+        window#waybar {
+          opacity: 0.8;
+        }
+
         window#waybar.empty #window{
           background: none;
         }
+
         #custom-power {
            padding: 0px 5px;
            margin: 0px 5px;
         }
+
          #custom-power:hover {
            padding: 0px 5px;
            margin: 0px 5px;
         }
+
          #custom-notification {
            padding: 0px 5px;
            margin: 0px 5px;

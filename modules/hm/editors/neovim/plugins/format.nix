@@ -3,18 +3,20 @@
     plugins = {
       conform-nvim = {
         enable = true;
-        formattersByFt = {
-          rust = ["rustfmt"];
-          nix = ["alejandra"];
-          lua = ["stylua"];
-          json = ["jsonfmt"];
-          go = ["gofumpt"];
-          js = ["prettierd"];
-          ts = ["prettierd"];
-          kotlin = ["ktlint"];
-        };
-        settings.formatOnSave = {
-          lspFallback = true;
+        settings = {
+          formatters_by_ft = {
+            rust = ["rustfmt"];
+            nix = ["alejandra"];
+            lua = ["stylua"];
+            json = ["jsonfmt"];
+            go = ["gofumpt"];
+            js = ["prettierd"];
+            ts = ["prettierd"];
+            kotlin = ["ktlint"];
+          };
+          default_format_opts = {
+            lsp_format = "fallback";
+          };
         };
       };
     };

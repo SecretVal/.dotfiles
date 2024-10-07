@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim = {
@@ -60,6 +61,7 @@
       inherit pkgs;
       modules = [
         stylix.homeManagerModules.stylix
+        inputs.nur.hmModules.nur
         ./home.nix
       ];
       extraSpecialArgs = {
