@@ -109,6 +109,7 @@
   services.openssh.enable = true;
 
   programs.steam.enable = true;
+  programs.obs-studio.enable = true;
 
   programs.nh = {
     enable = true;

@@ -59,6 +59,7 @@
     ripgrep
     rhythmbox
     ffmpeg
+    vlc
   ];
   programs.helix = {
     enable = true;

@@ -6,7 +6,6 @@
     ./harpoon.nix
     ./neorg.nix
     ./git.nix
-    ./image.nix
     ./lint.nix
     ./format.nix
     ./oil.nix

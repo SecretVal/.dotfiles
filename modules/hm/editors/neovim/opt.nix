@@ -50,6 +50,8 @@
       laststatus = 3;
 
       inccommand = "split";
+
+      background = "dark";
     };
     clipboard = {
       register = "unnamedplus";
