@@ -128,6 +128,7 @@
         "Super,R,exec, ~/.dotfiles/scripts/waybar.sh"
         "Super,T,exec, grim ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super Shift,T,exec, slurp | grim -g - ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "Super ALT,T,exec, grim -o $(hyprctl activeworkspace | grep 'workspace ID' | tr ' ' '\\n' | tail --lines 1 | sed 's/:$//') ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super,z,exec, pypr zoom"
       ];
 
