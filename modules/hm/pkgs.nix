@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   # nixpkgs
@@ -11,6 +12,7 @@
   # fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    util-linux
     font-awesome
 
     sl
@@ -60,6 +62,12 @@
     rhythmbox
     ffmpeg
     vlc
+
+    # my pkgs
+    inputs.kix.packages.x86_64-linux.default
+
+    swayimg
+    pixel-code
   ];
   programs.helix = {
     enable = true;
@@ -145,5 +153,9 @@
         youtube-shorts-block
       ];
     };
+  };
+  programs.thunderbird = {
+    enable = true;
+    profiles = {};
   };
 }

@@ -24,8 +24,8 @@
 
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        gaps_in = 2.5;
-        gaps_out = 5;
+        gaps_in = 2;
+        gaps_out = 4;
         border_size = 2;
 
         layout = "dwindle";
@@ -36,7 +36,7 @@
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 0;
         drop_shadow = false;
         blur = {
           enabled = true;
@@ -126,9 +126,9 @@
         "Super Shift ,F,fullscreen"
         "Super,D,exec, fuzzel -f 'JetBrainsMono Nerd Font Mono'-16"
         "Super,R,exec, ~/.dotfiles/scripts/waybar.sh"
-        "Super,T,exec, grim ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
-        "Super Shift,T,exec, slurp | grim -g - ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
-        "Super ALT,T,exec, grim -o $(hyprctl activeworkspace | grep 'workspace ID' | tr ' ' '\\n' | tail --lines 1 | sed 's/:$//') ~/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "Super,T,exec, grim ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "Super Shift,T,exec, slurp | grim -g - ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "Super ALT,T,exec, grim -o $(hyprctl activeworkspace | grep 'workspace ID' | tr ' ' '\\n' | tail --lines 1 | sed 's/:$//') ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super,z,exec, pypr zoom"
       ];
 

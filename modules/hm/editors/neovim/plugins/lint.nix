@@ -5,7 +5,7 @@
         enable = true;
         lintersByFt = {
           text = ["vale"];
-          json = ["jsonlint"];
+          # json = ["jsonlint"];
           markdown = ["vale"];
           go = ["golangcilint"];
           nix = ["nix"];
@@ -17,7 +17,8 @@
   home.packages = with pkgs; [
     vale
     golangci-lint
-    nodePackages_latest.jsonlint
+    # FIX: Is broken until https://github.com/NixOS/nixpkgs/pull/349783
+    # nodePackages_latest.jsonlint
     ktlint
   ];
 }

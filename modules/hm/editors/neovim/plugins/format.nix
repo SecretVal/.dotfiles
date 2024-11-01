@@ -14,8 +14,9 @@
             ts = ["prettierd"];
             kotlin = ["ktlint"];
           };
-          default_format_opts = {
+          format_after_save = {
             lsp_format = "fallback";
+            quiet = true;
           };
         };
       };

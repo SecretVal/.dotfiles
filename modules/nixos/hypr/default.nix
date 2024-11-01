@@ -10,5 +10,10 @@
   environment.systemPackages = with pkgs; [
     gtk3
     hyprwayland-scanner
+    hyprutils
   ];
+  environment.sessionVariables = {
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  };
 }

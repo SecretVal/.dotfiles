@@ -11,20 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
-    xdg-desktop-portal-hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/xdg-desktop-portal-hyprland";
-      submodules = true;
-    };
-    hyprpaper = {
-      type = "git";
-      url = "https://github.com/hyprwm/hyprpaper";
-      submodules = true;
-    };
-    hyprwayland-scanner = {
-      type = "git";
-      url = "https://github.com/hyprwm/hyprwayland-scanner";
-      submodules = true;
+    kix = {
+      url = "github:secretval/kix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -40,9 +29,6 @@
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
     overlays = [
-      inputs.xdg-desktop-portal-hyprland.overlays.xdg-desktop-portal-hyprland
-      inputs.hyprpaper.overlays.default
-      inputs.hyprwayland-scanner.overlays.default
     ];
   in {
     nixosConfigurations = {

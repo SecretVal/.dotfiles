@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   # Enable waybar
   programs.waybar = {
     enable = true;
@@ -11,10 +11,6 @@
           font-weight: bold;
           border: none;
           border-radius: 0;
-        }
-
-        window#waybar {
-          opacity: 0.8;
         }
 
         window#waybar.empty #window{

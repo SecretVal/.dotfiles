@@ -4,6 +4,7 @@
 {
   pkgs,
   overlays,
+  config,
   ...
 }: {
   imports = [
@@ -29,10 +30,17 @@
       }
     ];
   };
-  # I use bash btw
-  environment.shells = with pkgs; [bash];
-  users.defaultUserShell = pkgs.bash;
-  environment.pathsToLink = ["/share/bash-completion"];
+  # I use nushell btw
+  environment.shells = with pkgs; [nushell];
+  users.defaultUserShell = pkgs.nushell;
+
+  environment.systemPackages = [pkgs.man-pages pkgs.man-pages-posix];
+  documentation.dev.enable = true;
+  documentation.man = {
+    # In order to enable to mandoc man-db has to be disabled.
+    man-db.enable = false;
+    mandoc.enable = true;
+  };
 
   #sound
   security.rtkit.enable = true;
@@ -93,15 +101,32 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker"];
     packages = [];
   };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+
+    qemu = {
+      ovmf.enable = true;
+      ovmf.packages = [pkgs.OVMFFull.fd];
+      swtpm.enable = true;
+    };
+  };
   programs.virt-manager.enable = true;
+  environment.etc = {
+    "ovmf/edk2-x86_64-secure-code.fd" = {
+      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
+    };
+
+    "ovmf/edk2-i386-vars.fd" = {
+      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-i386-vars.fd";
+    };
+  };
 
   # List services that you want to enable:
 

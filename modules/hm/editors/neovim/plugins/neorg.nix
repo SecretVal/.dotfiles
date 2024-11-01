@@ -11,8 +11,6 @@
           "core.qol.toc".__empty = null;
           "core.qol.todo_items".__empty = null;
           "core.integrations.treesitter".__empty = null;
-          "core.integrations.nvim-cmp".__empty = null;
-          "core.completion".config.engine = "nvim-cmp";
         };
       };
     };

@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./color.nix
     ./treesitter.nix
     ./telescope.nix
     ./harpoon.nix
@@ -9,6 +8,11 @@
     ./lint.nix
     ./format.nix
     ./oil.nix
+    ./color.nix
+    ./zen.nix
+
+    ./cmp.nix
+    ./lsp.nix
   ];
   programs.nixvim = {
     plugins = {
