@@ -29,7 +29,7 @@
       bind -r D neww -c "#{pane_current_path}" "[[ -e TODO.md ]] && nvim TODO.md || nvim ~/.dotfiles/personal/todo.md"
 
       # forget the find window.  That is for chumps
-      bind-key -r f run-shell "tmux neww 'sesh connect $(sesh list | fzf)'"
+      bind-key -r f run-shell "tmux neww 'sesh connect (sesh list | fzf)'"
     '';
   };
 }

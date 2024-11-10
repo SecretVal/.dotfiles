@@ -8,12 +8,12 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = true;
-  };
-  # fonts
+  }; # fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     util-linux
-    font-awesome
+    font-awesome #
+    corefonts
 
     sl
     fzf
@@ -25,6 +25,7 @@
     sesh
     (vesktop.override {
       withMiddleClickScroll = true;
+      withSystemVencord = true;
     })
     appimage-run
     pokeget-rs
@@ -37,7 +38,6 @@
     krita
     libsForQt5.qt5.qtwayland
     jdk
-    jetbrains.idea-community-bin
     glfw-wayland-minecraft
 
     htop
@@ -62,12 +62,13 @@
     rhythmbox
     ffmpeg
     vlc
+    mangohud
 
     # my pkgs
     inputs.kix.packages.x86_64-linux.default
 
     swayimg
-    pixel-code
+    libreoffice
   ];
   programs.helix = {
     enable = true;
@@ -158,4 +159,5 @@
     enable = true;
     profiles = {};
   };
+  programs.zathura.enable = true;
 }

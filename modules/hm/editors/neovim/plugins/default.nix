@@ -10,6 +10,7 @@
     ./oil.nix
     ./color.nix
     ./zen.nix
+    ./alpha.nix
 
     ./cmp.nix
     ./lsp.nix

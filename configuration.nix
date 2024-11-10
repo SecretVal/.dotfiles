@@ -135,6 +135,7 @@
 
   programs.steam.enable = true;
   programs.obs-studio.enable = true;
+  programs.gamemode.enable = true;
 
   programs.nh = {
     enable = true;
