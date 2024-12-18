@@ -16,6 +16,8 @@
     corefonts
 
     sl
+    kdePackages.kclock
+    calc
     fzf
     typioca
     watchexec
@@ -25,13 +27,11 @@
     sesh
     (vesktop.override {
       withMiddleClickScroll = true;
-      withSystemVencord = true;
     })
     appimage-run
     pokeget-rs
     prismlauncher
     via
-    xonotic
 
     libresprite
     godot_4
@@ -69,6 +69,8 @@
 
     swayimg
     libreoffice
+    ferdium
+    sshfs
   ];
   programs.helix = {
     enable = true;
@@ -160,4 +162,9 @@
     profiles = {};
   };
   programs.zathura.enable = true;
+  gtk.iconTheme = {
+    package = pkgs.papirus-icon-theme;
+    name = "Papirus-Dark";
+  };
+  services.cliphist.enable = true;
 }

@@ -23,6 +23,5 @@
   programs.atuin.enable = true;
   programs.zoxide.enable = true;
   programs.yazi.enable = true;
-  programs.cava.enable = true;
   programs.btop.enable = true;
 }

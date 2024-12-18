@@ -1,11 +1,19 @@
 {pkgs, ...}: {
-  services.greetd = {
+  services.displayManager.sddm = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "lukas";
-      };
-    };
+    package = pkgs.kdePackages.sddm;
+    wayland.enable = true;
+    theme = "catppuccin-mocha";
+    extraPackages = [
+      (
+        pkgs.catppuccin-sddm.override
+        {
+          flavor = "mocha";
+          font = "JetBrainsMono Nerd Font Mono";
+          fontSize = "12";
+          loginBackground = true;
+        }
+      )
+    ];
   };
 }

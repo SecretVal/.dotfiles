@@ -137,6 +137,8 @@
   programs.obs-studio.enable = true;
   programs.gamemode.enable = true;
 
+  programs.thunar.enable = true;
+
   programs.nh = {
     enable = true;
     clean.enable = true;

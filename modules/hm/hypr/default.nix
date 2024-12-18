@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./waybar.nix
   ];
@@ -36,8 +40,8 @@
       };
 
       decoration = {
+        shadow = lib.mkForce {};
         rounding = 0;
-        drop_shadow = false;
         blur = {
           enabled = true;
           size = 2;
@@ -86,7 +90,7 @@
         "Super, RETURN, exec, foot"
         "Super, Q, killactive"
         "Super, M, exit"
-        "Super, E, exec, foot -e yazi"
+        "Super, E, exec, thunar"
         "Super, F, togglefloating"
         "Super, P, pseudo"
         "Super shift, J, togglesplit"
@@ -125,6 +129,7 @@
 
         "Super Shift ,F,fullscreen"
         "Super,D,exec, fuzzel -f 'JetBrainsMono Nerd Font Mono'-16"
+        "Super Shift,V, exec, cliphist list | fuzzel -d -f 'JetBrainsMono Nerd Font Mono'-16 | cliphist decode | wl-copy"
         "Super,R,exec, ~/.dotfiles/scripts/waybar.sh"
         "Super,T,exec, grim ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super Shift,T,exec, slurp | grim -g - ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
@@ -155,6 +160,7 @@
     swaynotificationcenter
     wlogout
     wl-clipboard
+    pyprland
   ];
   programs.hyprlock.enable = true;
 }
