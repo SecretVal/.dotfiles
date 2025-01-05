@@ -10,7 +10,6 @@
       langmap = "äöü";
     };
     opts = {
-      guicursor = "";
       wrap = false;
 
       number = true;
@@ -30,7 +29,7 @@
       splitright = true;
       splitbelow = true;
 
-      hlsearch = false;
+      hlsearch = true;
       incsearch = true;
       termguicolors = true;
       scrolloff = 15;

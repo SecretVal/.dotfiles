@@ -1,7 +1,7 @@
 {
   pkgs,
-  config,
   inputs,
+  ghostty,
   ...
 }: {
   # nixpkgs
@@ -71,6 +71,9 @@
     libreoffice
     ferdium
     sshfs
+    unetbootin
+
+    ghostty.packages.x86_64-linux.default
   ];
   programs.helix = {
     enable = true;
@@ -148,7 +151,7 @@
         };
         force = true;
       };
-      extensions = with config.nur.repos.rycee.firefox-addons; [
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
         ublock-origin
         sponsorblock

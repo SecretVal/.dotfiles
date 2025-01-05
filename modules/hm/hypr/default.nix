@@ -17,6 +17,7 @@
         "waybar"
         "swaync"
         "wl-copy"
+        "ghostty --initial-window=false"
       ];
 
       input = {
@@ -29,7 +30,7 @@
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
         gaps_in = 2;
-        gaps_out = 4;
+        gaps_out = 2;
         border_size = 2;
 
         layout = "dwindle";
@@ -41,7 +42,7 @@
 
       decoration = {
         shadow = lib.mkForce {};
-        rounding = 0;
+        rounding = 2;
         blur = {
           enabled = true;
           size = 2;
@@ -87,7 +88,7 @@
       };
 
       bind = [
-        "Super, RETURN, exec, foot"
+        "Super, RETURN, exec, ghostty"
         "Super, Q, killactive"
         "Super, M, exit"
         "Super, E, exec, thunar"
@@ -149,7 +150,7 @@
       layerrule = [
         # "blur, waybar"
         "blur, fuzzel"
-        "blur, foot"
+        "blur, ghostty"
       ];
     };
   };

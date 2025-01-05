@@ -9,8 +9,8 @@
     ./format.nix
     ./oil.nix
     ./color.nix
-    ./zen.nix
-    ./alpha.nix
+
+    ./snacks.nix
 
     ./cmp.nix
     ./lsp.nix
@@ -20,8 +20,9 @@
       comment.enable = true;
       todo-comments.enable = true;
       undotree.enable = true;
-      crates-nvim.enable = true;
+      crates.enable = true;
       web-devicons.enable = true;
+      image.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-just

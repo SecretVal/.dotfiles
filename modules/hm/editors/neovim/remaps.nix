@@ -6,6 +6,11 @@
       action = "<C-\\><C-n>";
     }
     {
+      mode = "n";
+      key = "<Esc>";
+      action = "<cmd>nohl<cr>";
+    }
+    {
       mode = "v";
       key = "K";
       action = ":m '<-2<CR>gv=gv";

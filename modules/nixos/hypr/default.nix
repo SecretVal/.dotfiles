@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  hyprland-qtutils,
+  ...
+}: {
   programs.hyprland = {
     enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
@@ -11,6 +15,7 @@
     gtk3
     hyprwayland-scanner
     hyprutils
+    hyprland-qtutils.packages."${pkgs.system}".default
   ];
   environment.sessionVariables = {
     GBM_BACKEND = "nvidia-drm";

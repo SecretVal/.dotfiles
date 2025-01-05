@@ -15,14 +15,19 @@
       url = "github:secretval/kix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
   };
 
   outputs = inputs @ {
-    self,
     nixpkgs,
     home-manager,
     nixvim,
     stylix,
+    hyprland-qtutils,
+    ghostty,
     ...
   }: let
     system = "x86_64-linux";
@@ -36,6 +41,7 @@
         specialArgs = {
           inherit inputs;
           inherit overlays;
+          inherit hyprland-qtutils;
         };
         modules = [
           ./configuration.nix
@@ -47,13 +53,14 @@
       inherit pkgs;
       modules = [
         stylix.homeManagerModules.stylix
-        inputs.nur.hmModules.nur
+        inputs.nur.modules.homeManager.default
         ./home.nix
       ];
       extraSpecialArgs = {
         inherit nixvim;
         inherit inputs;
         inherit overlays;
+        inherit ghostty;
       };
     };
   };

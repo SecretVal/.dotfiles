@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{ghostty, ...}: {
   programs.fuzzel = {
     enable = true;
-    settings.main.terminal = "${pkgs.foot}/bin/foot";
+    settings.main.terminal = "${ghostty.packages.x86_64-linux.default}/bin/ghostty";
   };
 }
