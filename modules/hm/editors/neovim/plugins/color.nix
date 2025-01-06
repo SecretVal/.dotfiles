@@ -1,3 +1,9 @@
 {...}: {
-  programs.nixvim.colorschemes.gruvbox.enable = true;
+  programs.nixvim.colorschemes.catppuccin = {
+    enable = true;
+    settings = {
+      flavour = "mocha";
+      transparent_background = true;
+    };
+  };
 }

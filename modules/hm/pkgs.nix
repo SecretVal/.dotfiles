@@ -16,6 +16,9 @@
     corefonts
 
     sl
+    cowsay
+    fortune
+    dwt1-shell-color-scripts
     kdePackages.kclock
     calc
     fzf
@@ -74,6 +77,7 @@
     unetbootin
 
     ghostty.packages.x86_64-linux.default
+    fish
   ];
   programs.helix = {
     enable = true;

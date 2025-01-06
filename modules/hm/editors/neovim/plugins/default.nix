@@ -4,13 +4,13 @@
     ./telescope.nix
     ./harpoon.nix
     ./neorg.nix
-    ./git.nix
     ./lint.nix
     ./format.nix
     ./oil.nix
     ./color.nix
 
     ./snacks.nix
+    ./mini.nix
 
     ./cmp.nix
     ./lsp.nix

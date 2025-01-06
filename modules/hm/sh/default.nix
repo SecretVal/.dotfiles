@@ -33,4 +33,5 @@
   programs.zoxide.enable = true;
   programs.yazi.enable = true;
   programs.btop.enable = true;
+  programs.lazygit.enable = true;
 }

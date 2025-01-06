@@ -16,19 +16,6 @@
             '';
         };
       }
-      {
-        event = "TermOpen";
-        pattern = "*";
-        callback = {
-          __raw =
-            # lua
-            ''
-              function()
-              vim.cmd("startinsert")
-              end
-            '';
-        };
-      }
     ];
   };
 }
