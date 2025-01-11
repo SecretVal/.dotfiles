@@ -17,6 +17,7 @@
         "waybar"
         "swaync"
         "wl-copy"
+        "ghostty --initial-window=false"
       ];
 
       input = {

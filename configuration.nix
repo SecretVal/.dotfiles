@@ -5,6 +5,7 @@
   pkgs,
   overlays,
   config,
+  flake-dir,
   ...
 }: {
   imports = [
@@ -142,7 +143,7 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    flake = /home/lukas/.dotfiles;
+    flake = flake-dir;
   };
 
   hardware.opentabletdriver.enable = true;

@@ -77,7 +77,6 @@
     unetbootin
 
     ghostty.packages.x86_64-linux.default
-    fish
   ];
   programs.helix = {
     enable = true;
