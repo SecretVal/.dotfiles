@@ -33,6 +33,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
+    flake-dir = ./.;
     overlays = [
     ];
   in {
@@ -42,6 +43,7 @@
           inherit inputs;
           inherit overlays;
           inherit hyprland-qtutils;
+          inherit flake-dir;
         };
         modules = [
           ./configuration.nix
@@ -61,6 +63,7 @@
         inherit inputs;
         inherit overlays;
         inherit ghostty;
+        inherit flake-dir;
       };
     };
   };

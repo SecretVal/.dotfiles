@@ -6,7 +6,6 @@
     installBatSyntax = true;
     clearDefaultKeybinds = true;
     settings = {
-      background-opacity = 0.8;
       cursor-opacity = 0.8;
 
       clipboard-read = "allow";
