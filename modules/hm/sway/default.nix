@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./bar.nix
+    ./kanshi.nix
   ];
   wayland.windowManager.sway = {
     enable = true;
