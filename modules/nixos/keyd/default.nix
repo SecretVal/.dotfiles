@@ -5,7 +5,7 @@
       default = {
         ids = ["*"];
         settings.main = {
-          capslock = "esc";
+          capslock = "overload(control, esc)";
         };
       };
     };

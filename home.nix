@@ -9,14 +9,14 @@
   imports = [
     ./modules/hm/fuzzel
     ./modules/hm/term
-    ./modules/hm/editors/neovim
     ./modules/hm/sh
+    ./modules/hm/neovim
     ./modules/hm/hypr
+    ./modules/hm/sway
     ./modules/hm/macchina
     ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
-    ./modules/hm/fastfetch
     ./modules/shared
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.

@@ -11,8 +11,9 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/nixos/hypr
+    ./modules/nixos/sway
+    ./modules/nixos/greetd
     ./modules/shared
-    ./modules/nixos/dm
     ./modules/nixos/nivida/nvidia.nix
     ./modules/nixos/keyd
   ];
@@ -31,11 +32,13 @@
       }
     ];
   };
-  # I use nushell btw
+
   environment.shells = with pkgs; [nushell];
   users.defaultUserShell = pkgs.nushell;
 
-  environment.systemPackages = [pkgs.man-pages pkgs.man-pages-posix];
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = [pkgs.via];
+  environment.systemPackages = [pkgs.man-pages pkgs.man-pages-posix pkgs.via];
   documentation.dev.enable = true;
   documentation.man = {
     # In order to enable to mandoc man-db has to be disabled.
@@ -167,4 +170,9 @@
     substituters = ["https://ezkea.cachix.org"];
     trusted-public-keys = ["ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="];
   };
+
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+  '';
+  security.polkit.enable = true;
 }

@@ -1,4 +1,9 @@
 {ghostty, ...}: {
+  xdg.configFile."ghostty/custom.css" = {
+    enable = true;
+    text = builtins.readFile ./custom.css;
+  };
+
   programs.ghostty = {
     enable = true;
     package = ghostty.packages.x86_64-linux.default;
@@ -16,11 +21,16 @@
 
       cursor-style = "block";
       cursor-style-blink = false;
+      shell-integration-features = "no-cursor";
 
       confirm-close-surface = false;
 
       gtk-single-instance = true;
       quit-after-last-window-closed = false;
+
+      gtk-tabs-location = "bottom";
+      gtk-wide-tabs = false;
+      gtk-custom-css = "./custom.css";
 
       keybind = [
         "ctrl+shift+;=reload_config"
@@ -29,31 +39,35 @@
         "ctrl+shift+c=copy_to_clipboard"
         "ctrl+shift+v=paste_from_clipboard"
 
-        "ctrl+a>s=new_split:down"
-        "ctrl+a>v=new_split:right"
-        "ctrl+a>h=goto_split:left"
-        "ctrl+a>j=goto_split:bottom"
-        "ctrl+a>k=goto_split:top"
-        "ctrl+a>l=goto_split:right"
+        "ctrl+shift+2=new_split:down"
+        "ctrl+shift+5=new_split:right"
 
-        "ctrl+a>z=toggle_split_zoom"
-        "ctrl+a>x=close_surface"
+        "alt+h=goto_split:left"
+        "alt+j=goto_split:bottom"
+        "alt+k=goto_split:top"
+        "alt+l=goto_split:right"
 
-        "ctrl+a>c=new_tab"
+        "ctrl+z=toggle_split_zoom"
+        "ctrl+x=close_surface"
 
-        "ctrl+a>1=goto_tab:1"
-        "ctrl+a>2=goto_tab:2"
-        "ctrl+a>3=goto_tab:3"
-        "ctrl+a>4=goto_tab:5"
-        "ctrl+a>5=goto_tab:5"
-        "ctrl+a>6=goto_tab:6"
-        "ctrl+a>7=goto_tab:7"
-        "ctrl+a>8=goto_tab:8"
-        "ctrl+a>9=goto_tab:9"
-        "ctrl+a>0=goto_tab:10"
+        "ctrl+t=new_tab"
+        "alt+n=next_tab"
+        "alt+p=previous_tab"
+        "alt+tab=toggle_tab_overview"
 
-        "ctrl+a>n=next_tab"
-        "ctrl+a>p=previous_tab"
+        "alt+1=goto_tab:1"
+        "alt+2=goto_tab:2"
+        "alt+3=goto_tab:3"
+        "alt+4=goto_tab:5"
+        "alt+5=goto_tab:5"
+        "alt+6=goto_tab:6"
+        "alt+7=goto_tab:7"
+        "alt+8=goto_tab:8"
+        "alt+9=goto_tab:9"
+        "alt+0=goto_tab:10"
+
+        "ctrl+plus=increase_font_size:2"
+        "ctrl+minus=decrease_font_size:2"
       ];
     };
   };

@@ -12,11 +12,17 @@
     xwayland = {
       enable = true;
     };
+    extraConfig = ''
+      monitor = HDMI-A-1, 1920x1080@75, 0x0, 1
+      monitor = DP-1, 1920x1080@60, 1920x0, 1
+    '';
+
     settings = {
       exec-once = [
         "waybar"
         "swaync"
         "wl-copy"
+        "pypr"
         "ghostty --initial-window=false"
       ];
 
@@ -135,7 +141,11 @@
         "Super,T,exec, grim ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super Shift,T,exec, slurp | grim -g - ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super ALT,T,exec, grim -o $(hyprctl activeworkspace | grep 'workspace ID' | tr ' ' '\\n' | tail --lines 1 | sed 's/:$//') ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+
         "Super,z,exec, pypr zoom"
+        "Super,w,exec, woomer"
+
+        "Super,x,exec, emacsclient -c -a \"emacs\""
       ];
 
       bindm = [

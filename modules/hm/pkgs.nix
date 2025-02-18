@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   ghostty,
+  system,
   ...
 }: {
   # nixpkgs
@@ -11,12 +12,25 @@
   }; # fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    # ESSENTIAL
+    woomer
+    edb
+    gdb
+    gf
+    fasm
+    gnumake
+    gcc
+    c3c
+    odin
+
     util-linux
     font-awesome #
     corefonts
 
     sl
     cowsay
+    deadbeef
+    alejandra
     fortune
     dwt1-shell-color-scripts
     kdePackages.kclock
@@ -34,11 +48,13 @@
     appimage-run
     pokeget-rs
     prismlauncher
-    via
 
     libresprite
     godot_4
     krita
+    mypaint
+    mypaint-brushes
+    mypaint-brushes1
     libsForQt5.qt5.qtwayland
     jdk
     glfw-wayland-minecraft
@@ -56,6 +72,7 @@
 
     #dev
     just
+    fasm
 
     #extra
     bitwarden
@@ -68,7 +85,7 @@
     mangohud
 
     # my pkgs
-    inputs.kix.packages.x86_64-linux.default
+    inputs.kix.packages.${system}.default
 
     swayimg
     libreoffice
@@ -76,7 +93,7 @@
     sshfs
     unetbootin
 
-    ghostty.packages.x86_64-linux.default
+    ghostty.packages.${system}.default
   ];
   programs.helix = {
     enable = true;
@@ -173,4 +190,5 @@
     name = "Papirus-Dark";
   };
   services.cliphist.enable = true;
+  programs.fastfetch.enable = true;
 }

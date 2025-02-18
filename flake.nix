@@ -6,25 +6,26 @@
     nur.url = "github:nix-community/NUR";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix.url = "github:danth/stylix";
-    kix = {
-      url = "github:secretval/kix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+
+    kix = {
+      url = "github:secretval/kix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    neovim-config = {
+      url = "/home/lukas/.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
-    nixvim,
     stylix,
     hyprland-qtutils,
     ghostty,
@@ -59,11 +60,11 @@
         ./home.nix
       ];
       extraSpecialArgs = {
-        inherit nixvim;
         inherit inputs;
         inherit overlays;
         inherit ghostty;
         inherit flake-dir;
+        inherit system;
       };
     };
   };
