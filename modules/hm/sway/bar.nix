@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -7,8 +6,8 @@
     enable = true;
     bars = {
       default = {
-        settings.overrides = config.lib.stylix.i3status-rust.bar;
         icons = "awesome6";
+        theme = "srcery";
         blocks = [
           {
             block = "disk_space";

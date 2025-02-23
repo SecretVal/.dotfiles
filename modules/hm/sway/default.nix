@@ -27,6 +27,10 @@
           always = true;
           command = "ghostty --initial-window=false";
         }
+        {
+          always = true;
+          command = "wl-copy";
+        }
       ];
       bars = [
         {
@@ -36,7 +40,6 @@
             style = "Bold";
             size = 10.0;
           };
-          colors = config.lib.stylix.sway.bar.colors;
         }
       ];
       gaps = {
@@ -61,7 +64,11 @@
           "${mod}+v" = "exec cliphist list | fuzzel -d -f 'JetBrainsMono Nerd Font Mono'-16 | cliphist decode | wl-copy";
           "${mod}+t" = "exec grim ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')";
           "${mod}+shift+t" = "exec slurp | grim -g - ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')";
+          "${mod}+shift+w" = "exec woomer";
         };
     };
   };
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
 }

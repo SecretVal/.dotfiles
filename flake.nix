@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    melange = {
+      url = "github:savq/melange-nvim";
+      flake = false;
+    };
+
     neovim-config = {
       url = "/home/lukas/.nvim";
       inputs.nixpkgs.follows = "nixpkgs";

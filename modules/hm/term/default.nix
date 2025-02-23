@@ -1,4 +1,4 @@
-{ghostty, ...}: {
+{ghostty,input, ...}: {
   xdg.configFile."ghostty/custom.css" = {
     enable = true;
     text = builtins.readFile ./custom.css;
@@ -11,6 +11,7 @@
     installBatSyntax = true;
     clearDefaultKeybinds = true;
     settings = {
+      background-opacity = 0.8;
       cursor-opacity = 0.8;
 
       clipboard-read = "allow";
@@ -48,7 +49,7 @@
         "alt+l=goto_split:right"
 
         "ctrl+z=toggle_split_zoom"
-        "ctrl+x=close_surface"
+        "ctrl+w=close_surface"
 
         "ctrl+t=new_tab"
         "alt+n=next_tab"

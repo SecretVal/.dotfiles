@@ -10,7 +10,6 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./modules/nixos/hypr
     ./modules/nixos/sway
     ./modules/nixos/greetd
     ./modules/shared
@@ -59,6 +58,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.consoleLogLevel = 0;
 
   # kernelPackages
   boot.kernelPackages = pkgs.linuxPackages;
