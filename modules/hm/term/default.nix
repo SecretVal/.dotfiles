@@ -49,9 +49,9 @@
         "alt+l=goto_split:right"
 
         "ctrl+z=toggle_split_zoom"
-        "ctrl+w=close_surface"
 
-        "ctrl+t=new_tab"
+        "alt+t=new_tab"
+        "alt+w=close_surface"
         "alt+n=next_tab"
         "alt+p=previous_tab"
         "alt+tab=toggle_tab_overview"

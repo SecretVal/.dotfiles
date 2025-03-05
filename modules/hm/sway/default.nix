@@ -31,6 +31,10 @@
           always = true;
           command = "wl-copy";
         }
+        {
+          always = true;
+          command = "kanshi";
+        }
       ];
       bars = [
         {

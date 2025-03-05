@@ -83,6 +83,7 @@
     ffmpeg
     vlc
     mangohud
+    protonmail-desktop
 
     # my pkgs
     inputs.kix.packages.${system}.default

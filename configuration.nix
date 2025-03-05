@@ -35,14 +35,11 @@
   environment.shells = with pkgs; [nushell];
   users.defaultUserShell = pkgs.nushell;
 
-  hardware.keyboard.qmk.enable = true;
-  services.udev.packages = [pkgs.via];
-  environment.systemPackages = [pkgs.man-pages pkgs.man-pages-posix pkgs.via];
+  environment.systemPackages = [pkgs.man-pages pkgs.man-pages-posix];
   documentation.dev.enable = true;
   documentation.man = {
-    # In order to enable to mandoc man-db has to be disabled.
-    man-db.enable = false;
-    mandoc.enable = true;
+    enable = true;
+    generateCaches = true;
   };
 
   #sound
