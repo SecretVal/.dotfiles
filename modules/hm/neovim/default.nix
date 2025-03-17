@@ -3,11 +3,6 @@
   system,
   ...
 }: {
-  home.shellAliases = {
-    "vim" = "nvim";
-    "vi" = "nvim";
-    "v" = "nvim";
-  };
   home.sessionVariables = {
     EDITOR = "nvim";
   };

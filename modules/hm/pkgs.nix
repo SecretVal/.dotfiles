@@ -105,7 +105,7 @@
     };
   };
 
-  programs.firefox = {
+  programs.floorp = {
     enable = true;
     profiles.default = {
       settings = {
@@ -114,7 +114,22 @@
       };
 
       search = {
+        default = "unduck";
         engines = {
+          "unduck" = {
+            urls = [
+              {
+                template = "https://unduck.link";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+          };
+
           "Nix" = {
             urls = [
               {

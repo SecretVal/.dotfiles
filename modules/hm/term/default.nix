@@ -1,4 +1,8 @@
-{ghostty,input, ...}: {
+{
+  ghostty,
+  input,
+  ...
+}: {
   xdg.configFile."ghostty/custom.css" = {
     enable = true;
     text = builtins.readFile ./custom.css;
@@ -10,9 +14,12 @@
     installVimSyntax = true;
     installBatSyntax = true;
     clearDefaultKeybinds = true;
+
     settings = {
-      background-opacity = 0.8;
+      theme = "tokyonight_night";
+
       cursor-opacity = 0.8;
+      background-opacity = 0.8;
 
       clipboard-read = "allow";
       clipboard-write = "allow";
@@ -32,6 +39,8 @@
       gtk-tabs-location = "bottom";
       gtk-wide-tabs = false;
       gtk-custom-css = "./custom.css";
+
+      quick-terminal-position = "center";
 
       keybind = [
         "ctrl+shift+;=reload_config"
@@ -69,6 +78,8 @@
 
         "ctrl+plus=increase_font_size:2"
         "ctrl+minus=decrease_font_size:2"
+
+        "super+tab=toggle_quick_terminal"
       ];
     };
   };

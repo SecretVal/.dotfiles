@@ -12,12 +12,13 @@
       nix-shell = "nix-shell --command nu";
     };
 
-    extraConfig = "
+    extraConfig = ''
       $env.config = {
           show_banner: false
       }
+      $env.editor = "nvim"
       pokeget random --hide-name
-      ";
+    '';
   };
   programs.carapace.enable = true;
   programs.atuin.enable = true;

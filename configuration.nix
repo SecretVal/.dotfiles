@@ -1,6 +1,5 @@
 # Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# your system.  Help is available in the configuration.nix(5) man page and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
   overlays,
@@ -10,7 +9,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./modules/nixos/sway
+    ./modules/nixos/hypr
     ./modules/nixos/greetd
     ./modules/shared
     ./modules/nixos/nivida/nvidia.nix

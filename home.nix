@@ -11,7 +11,7 @@
     ./modules/hm/term
     ./modules/hm/sh
     ./modules/hm/neovim
-    ./modules/hm/sway
+    ./modules/hm/hypr
     ./modules/hm/macchina
     ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/direnv/direnv.nix
