@@ -16,6 +16,7 @@
     ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
+    ./modules/hm/ollama
     ./modules/shared
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.

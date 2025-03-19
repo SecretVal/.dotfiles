@@ -1,26 +1,33 @@
 {...}: {
-  imports = [
-    ./starship.nix
-  ];
-  programs.nushell = {
+  programs.fish = {
     enable = true;
 
     shellAliases = {
+      ls = "eza";
       cat = "bat";
       cd = "z";
       ci = "zi";
-      nix-shell = "nix-shell --command nu";
+      nix-shell = "nix-shell --command fish";
     };
 
-    extraConfig = ''
-      $env.config = {
-          show_banner: false
-      }
-      $env.editor = "nvim"
+    
+    shellInit = ''
+      set fish_greeting
+    '';
+    shellInitLast = ''
       pokeget random --hide-name
     '';
   };
-  programs.carapace.enable = true;
+  programs.eza = {
+    enable = true;
+    colors = "always";
+    icons = "always";
+    git = true;
+    extraOptions = [
+      "--all"
+      "--long"
+    ];
+  };
   programs.atuin.enable = true;
   programs.zoxide.enable = true;
   programs.yazi.enable = true;

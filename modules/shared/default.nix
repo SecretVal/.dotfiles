@@ -1,7 +1,6 @@
 {
   pkgs,
   flake-dir,
-  inputs,
   ...
 }: {
   stylix.enable = true;
@@ -18,11 +17,6 @@
     name = "Departure Mono Nerd Font";
     package = pkgs.nerd-fonts.departure-mono;
   };
-
-  stylix.opacity.terminal = 0.8;
-  stylix.opacity.applications = 0.8;
-  stylix.opacity.desktop = 0.8;
-  stylix.opacity.popups = 0.8;
 
   qt.enable = true;
 }

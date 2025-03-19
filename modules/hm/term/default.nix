@@ -1,6 +1,5 @@
 {
   ghostty,
-  input,
   ...
 }: {
   xdg.configFile."ghostty/custom.css" = {
@@ -19,7 +18,6 @@
       theme = "tokyonight_night";
 
       cursor-opacity = 0.8;
-      background-opacity = 0.8;
 
       clipboard-read = "allow";
       clipboard-write = "allow";

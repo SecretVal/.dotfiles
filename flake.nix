@@ -18,7 +18,7 @@
     };
 
     neovim-config = {
-      url = "/home/lukas/.nvim";
+      url = "github:secretval/.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

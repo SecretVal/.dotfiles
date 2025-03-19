@@ -13,11 +13,6 @@
           border-radius: 0;
         }
 
-        window#waybar {
-          background: transparent;
-          opacity: 0.8;
-        }
-
         window#waybar.empty #window{
           background: none;
         }
