@@ -22,6 +22,9 @@
     gcc
     c3c
     odin
+    nodePackages.nodejs
+    nodePackages.pnpm
+    jetbrains.idea-community-bin
 
     util-linux
     font-awesome #
@@ -50,17 +53,15 @@
     prismlauncher
 
     libresprite
-    godot_4
     krita
     mypaint
     mypaint-brushes
     mypaint-brushes1
     libsForQt5.qt5.qtwayland
-    jdk
     glfw-wayland-minecraft
 
     htop
-    git
+    git-extras
     gh
     killall
 
@@ -95,6 +96,10 @@
     unetbootin
 
     ghostty.packages.${system}.default
+
+    # games
+    lutris
+    # flightgear
   ];
   programs.helix = {
     enable = true;

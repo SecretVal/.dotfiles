@@ -1,4 +1,4 @@
-{overlays, ...}: {
+{pkgs, overlays, ...}: {
   home = {
     username = "lukas";
     homeDirectory = "/home/lukas";
@@ -16,13 +16,13 @@
     ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
-    ./modules/hm/ollama
     ./modules/shared
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.
   nixpkgs.overlays = overlays;
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     userEmail = "108518296+SecretVal@users.noreply.github.com";
     userName = "secretval";
     extraConfig.credentials = {

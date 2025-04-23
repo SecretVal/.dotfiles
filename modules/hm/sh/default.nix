@@ -1,5 +1,5 @@
 {...}: {
-  programs.fish = {
+  programs.bash = {
     enable = true;
 
     shellAliases = {
@@ -7,27 +7,23 @@
       cat = "bat";
       cd = "z";
       ci = "zi";
-      nix-shell = "nix-shell --command fish";
     };
 
-    
-    shellInit = ''
-      set fish_greeting
-    '';
-    shellInitLast = ''
+    bashrcExtra = ''
       pokeget random --hide-name
     '';
   };
+
   programs.eza = {
     enable = true;
     colors = "always";
     icons = "always";
     git = true;
     extraOptions = [
-      "--all"
-      "--long"
+      "-lah"
     ];
   };
+
   programs.atuin.enable = true;
   programs.zoxide.enable = true;
   programs.yazi.enable = true;

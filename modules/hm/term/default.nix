@@ -1,7 +1,4 @@
-{
-  ghostty,
-  ...
-}: {
+{ghostty, ...}: {
   xdg.configFile."ghostty/custom.css" = {
     enable = true;
     text = builtins.readFile ./custom.css;
@@ -12,11 +9,8 @@
     package = ghostty.packages.x86_64-linux.default;
     installVimSyntax = true;
     installBatSyntax = true;
-    clearDefaultKeybinds = true;
 
     settings = {
-      theme = "tokyonight_night";
-
       cursor-opacity = 0.8;
 
       clipboard-read = "allow";
