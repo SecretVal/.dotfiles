@@ -21,11 +21,6 @@
       url = "github:secretval/.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nightfox = {
-      url = "github:EdenEast/nightfox.nvim";
-      flake = false;
-    };
   };
 
   outputs = inputs @ {

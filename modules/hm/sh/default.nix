@@ -1,5 +1,5 @@
 {...}: {
-  programs.bash = {
+  programs.fish = {
     enable = true;
 
     shellAliases = {
@@ -9,7 +9,9 @@
       ci = "zi";
     };
 
-    bashrcExtra = ''
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      fish_config theme choose "Base16 Default Dark" # set theme
       pokeget random --hide-name
     '';
   };
@@ -22,6 +24,15 @@
     extraOptions = [
       "-lah"
     ];
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      format = "$jobs$directory$character";
+      right_format = "$all";
+    };
   };
 
   programs.atuin.enable = true;

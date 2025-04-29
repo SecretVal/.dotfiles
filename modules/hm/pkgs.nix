@@ -12,6 +12,9 @@
   }; # fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    # TODO: REMOVE
+    # ags
+
     # ESSENTIAL
     woomer
     edb

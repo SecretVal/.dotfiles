@@ -31,8 +31,9 @@
     ];
   };
 
-  environment.shells = with pkgs; [bash];
-  users.defaultUserShell = pkgs.bash;
+  environment.shells = with pkgs; [fish];
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
 
   environment.systemPackages = [pkgs.man-pages pkgs.man-pages-posix];
   documentation.dev.enable = true;

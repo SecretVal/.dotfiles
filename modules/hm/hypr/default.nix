@@ -19,11 +19,9 @@
 
     settings = {
       exec-once = [
-        "waybar"
         "swaync"
         "wl-copy"
         "pypr"
-        "[workspace special:hauntedhouse silent] ghostty"
       ];
 
       exec = [
@@ -52,7 +50,7 @@
 
       decoration = {
         shadow = lib.mkForce {};
-        rounding = 2;
+        rounding = 0;
         blur = {
           enabled = true;
           size = 2;
@@ -60,25 +58,35 @@
           new_optimizations = true;
         };
       };
-      # Credit: https://gitlab.com/Oglo12/hyprland-rice/
       animations = {
         enabled = true;
 
-        bezier = [
-          "overshot, 0.05, 0.9, 0.1, 1.05"
-          "smooth, 0.5, 0, 0.99, 0.99"
-          "snapback, 0.54, 0.42, 0.01, 1.34"
-          "curve, 0.27, 0.7, 0.03, 0.99"
-        ];
+        # DEPRECATED: Credit: https://gitlab.com/Oglo12/hyprland-rice/
+        # bezier = [
+        #   "overshot, 0.05, 0.9, 0.1, 1.05"
+        #   "smooth, 0.5, 0, 0.99, 0.99"
+        #   "snapback, 0.54, 0.42, 0.01, 1.34"
+        #   "curve, 0.27, 0.7, 0.03, 0.99"
+        # ];
+        # animation = [
+        #   "windows, 1, 5, overshot, slide"
+        #   "windowsOut, 1, 5, snapback, slide"
+        #   "windowsIn, 1, 5, snapback, slide"
+        #   "windowsMove, 1, 5, snapback, slide"
+        #   "border, 1, 5, default"
+        #   "fade, 1, 5, default"
+        #   "fadeDim, 1, 5, default"
+        #   "workspaces, 1, 6, curve"
+        # ];
+        # DEPRECATED END
+
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
-          "windows, 1, 5, overshot, slide"
-          "windowsOut, 1, 5, snapback, slide"
-          "windowsIn, 1, 5, snapback, slide"
-          "windowsMove, 1, 5, snapback, slide"
-          "border, 1, 5, default"
-          "fade, 1, 5, default"
-          "fadeDim, 1, 5, default"
-          "workspaces, 1, 6, curve"
+          "windows, 1, 5, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
         ];
       };
 
@@ -164,7 +172,6 @@
       layerrule = [
         "blur, waybar"
         "blur, fuzzel"
-        "blur, ghostty"
       ];
     };
   };

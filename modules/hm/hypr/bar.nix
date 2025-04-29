@@ -1,4 +1,20 @@
-{...}: {
+{pkgs,config, ...}: 
+let 
+  hide-waybar = pkgs.writeShellApplication {
+    name = "hide-waybar";
+    runtimeInputs = with pkgs; [jq];
+    text = builtins.readFile ./waybar.sh;
+  };
+in{
+  systemd.user.services.hide-waybar = {
+    Service = {
+      ExecStart = "${hide-waybar}/bin/${hide-waybar.name}";
+    };
+
+    Install.WantedBy = [
+      config.programs.waybar.systemd.target
+    ];
+  };
   # Enable waybar
   programs.waybar = {
     enable = true;
@@ -11,6 +27,10 @@
           font-weight: bold;
           border: none;
           border-radius: 0;
+        }
+
+        window#waybar {
+          background-color: rgba(0,0,0,0.75);
         }
 
         window#waybar.empty #window{

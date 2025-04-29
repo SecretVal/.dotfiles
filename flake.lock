@@ -513,32 +513,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1745418652,
-        "narHash": "sha256-BPs/vaFJGe5PhyO4ueHnQSk0l6zcGbOkgC1lQcCDSNk=",
+        "lastModified": 1745914404,
+        "narHash": "sha256-xEQcMgnO2J3x7VK3SSv2zYWuD0ndrmkppoo3FhpGEkk=",
         "owner": "secretval",
         "repo": ".nvim",
-        "rev": "31d3a36a9b87f137191da2adcdcd6acfc1019b59",
+        "rev": "fbc136e533d727545c17762fe483ec8623826285",
         "type": "github"
       },
       "original": {
         "owner": "secretval",
         "repo": ".nvim",
-        "type": "github"
-      }
-    },
-    "nightfox": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1739121671,
-        "narHash": "sha256-HoZEwncrUnypWxyB+XR0UQDv+tNu1/NbvimxYGb7qu8=",
-        "owner": "EdenEast",
-        "repo": "nightfox.nvim",
-        "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "EdenEast",
-        "repo": "nightfox.nvim",
         "type": "github"
       }
     },
@@ -717,7 +701,6 @@
         "hyprland-qtutils": "hyprland-qtutils",
         "kix": "kix",
         "neovim-config": "neovim-config",
-        "nightfox": "nightfox",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
         "stylix": "stylix"
