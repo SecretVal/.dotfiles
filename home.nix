@@ -12,13 +12,14 @@
     ./modules/hm/sh
     ./modules/hm/neovim
     ./modules/hm/hypr
-    ./modules/hm/macchina
-    ./modules/hm/multiplexers/tmux.nix
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
     ./modules/shared
   ];
   home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.sessionVariables = {
+    MANPAGER = "nvim +Man!";
+  };
   nixpkgs.overlays = overlays;
   programs.git = {
     enable = true;

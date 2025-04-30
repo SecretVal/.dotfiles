@@ -110,6 +110,7 @@
         "Super, Q, killactive"
         "Super, M, exit"
         "Super, E, exec, thunar"
+        "Super Shift, E, exec, floorp"
         "Super, F, togglefloating"
         "Super, P, pseudo"
         "Super shift, J, togglesplit"
@@ -166,7 +167,8 @@
       ];
 
       windowrulev2 = [
-        "suppressevent maximize, class:.*"
+        "opacity 0.8 0.8, class:^(vesktop|floorp|thunar)$"
+        "suppressevent maximize, class:^(.*)$"
       ];
 
       layerrule = [

@@ -4,7 +4,7 @@
   pkgs,
   overlays,
   config,
-  flake-dir,
+  flake-dir, lib,
   ...
 }: {
   imports = [
@@ -70,6 +70,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.wantedBy = lib.mkForce [];
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";

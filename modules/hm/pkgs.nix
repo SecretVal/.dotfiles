@@ -12,9 +12,6 @@
   }; # fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
-    # TODO: REMOVE
-    # ags
-
     # ESSENTIAL
     woomer
     edb
@@ -35,6 +32,7 @@
 
     sl
     cowsay
+    nitch
     deadbeef
     alejandra
     fortune
@@ -57,6 +55,7 @@
 
     libresprite
     krita
+    inkscape
     mypaint
     mypaint-brushes
     mypaint-brushes1

@@ -27,10 +27,11 @@ in{
           font-weight: bold;
           border: none;
           border-radius: 0;
+          min-height: 0;
         }
 
         window#waybar {
-          background-color: rgba(0,0,0,0.75);
+          background: transparent;
         }
 
         window#waybar.empty #window{
@@ -59,9 +60,6 @@ in{
         modules-left = ["hyprland/workspaces"];
         modules-right = ["custom/notification" "tray" "cpu" "memory" "pulseaudio" "clock" "custom/power"];
         modules-center = ["hyprland/window"];
-        "hyprland/workspaces" = {
-          format = "{icon}";
-        };
 
         "pulseaudio" = {
           "scroll-step" = 1;

@@ -11,8 +11,8 @@
     installBatSyntax = true;
 
     settings = {
-      background-opacity = 0.75;
-      cursor-opacity = 0.75;
+      background-opacity = 0.8;
+      cursor-opacity = 0.8;
 
       clipboard-read = "allow";
       clipboard-write = "allow";
