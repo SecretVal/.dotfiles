@@ -67,9 +67,8 @@
     gh
     killall
 
-    # gui
     qpwgraph
-    lxqt.pavucontrol-qt
+    pulsemixer
     bluez
     swww
 

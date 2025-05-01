@@ -114,6 +114,7 @@
         "Super, F, togglefloating"
         "Super, P, pseudo"
         "Super shift, J, togglesplit"
+        "Super, A, exec, foot -e pulsemixer"
 
         "Super, h, movefocus, l"
         "Super, l, movefocus, r"

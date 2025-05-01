@@ -55,6 +55,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 0;
   boot.consoleLogLevel = 0;
 
   # kernelPackages
@@ -110,6 +111,10 @@
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
+  systemd.services.docker = {
+    wantedBy = lib.mkForce ["graphical.target"];
+    after = lib.mkForce ["graphical.target"];
+  };
   virtualisation.libvirtd = {
     enable = true;
 
