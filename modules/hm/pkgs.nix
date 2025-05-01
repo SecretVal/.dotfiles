@@ -95,6 +95,7 @@
     ferdium
     sshfs
     unetbootin
+    qmk
 
     ghostty.packages.${system}.default
 

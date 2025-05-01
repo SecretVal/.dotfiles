@@ -30,7 +30,6 @@
       }
     ];
   };
-
   environment.shells = with pkgs; [fish];
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
@@ -153,7 +152,9 @@
   };
 
   hardware.opentabletdriver.enable = true;
-
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = with pkgs; [qmk-udev-rules];
+  
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
