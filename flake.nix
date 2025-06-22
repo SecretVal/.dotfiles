@@ -21,6 +21,8 @@
       url = "github:secretval/.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    musnix = {url = "github:musnix/musnix";};
   };
 
   outputs = inputs @ {
@@ -49,6 +51,7 @@
         modules = [
           ./configuration.nix
           stylix.nixosModules.stylix
+          inputs.musnix.nixosModules.musnix
         ];
       };
     };

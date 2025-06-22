@@ -14,8 +14,8 @@
   stylix.cursor.size = 16;
 
   stylix.fonts.monospace = {
-    name = "JetBrains Mono";
-    package = pkgs.jetbrains-mono;
+    name = "Maple Mono NF";
+    package = pkgs.maple-mono.NF;
   };
 
   stylix.opacity.terminal = 0.8;

@@ -168,7 +168,7 @@
       ];
 
       windowrulev2 = [
-        "opacity 0.8 0.8, class:^(vesktop|floorp|thunar)$"
+        "opacity 0.8 0.8, class:^(vesktop|floorp|thunar|Ardour)$"
         "suppressevent maximize, class:^(.*)$"
       ];
 

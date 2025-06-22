@@ -1,6 +1,4 @@
-{...}: 
-{
-  # Enable waybar
+{...}: {
   programs.waybar = {
     enable = true;
     style =

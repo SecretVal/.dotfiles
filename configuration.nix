@@ -4,7 +4,7 @@
   pkgs,
   overlays,
   config,
-  flake-dir, lib,
+  lib,
   ...
 }: {
   imports = [
@@ -44,7 +44,7 @@
   #sound
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = lib.mkForce true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -56,6 +56,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
   boot.consoleLogLevel = 0;
+  hardware.alsa.enable = true;
 
   # kernelPackages
   boot.kernelPackages = pkgs.linuxPackages;
@@ -103,7 +104,7 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" "audio"];
     packages = [];
   };
   # Allow unfree packages
@@ -148,13 +149,14 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    flake = flake-dir;
   };
 
   hardware.opentabletdriver.enable = true;
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = with pkgs; [qmk-udev-rules];
-  
+
+  musnix.enable = true; # music
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

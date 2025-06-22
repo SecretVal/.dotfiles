@@ -4,7 +4,8 @@
   ghostty,
   system,
   ...
-}: {
+}: 
+{
   # nixpkgs
   nixpkgs.config = {
     allowUnfree = true;
@@ -101,7 +102,57 @@
 
     # games
     lutris
-    # flightgear
+    # music
+    ardour
+    bespokesynth
+    audacious
+    audacious-plugins
+
+    distrho-ports
+    carla
+    helm
+    odin2
+    tunefish
+    redux
+    surge
+    surge-XT
+    lsp-plugins
+    dexed
+    drumkv1
+    samplv1
+    synthv1
+    drumgizmo
+    x42-plugins
+    x42-avldrums
+    x42-gmsynth
+    geonkick
+    calf
+    fluidsynth
+    zynaddsubfx
+    cardinal
+    artyFX
+    bchoppr
+    dragonfly-reverb
+    eq10q
+    infamousPlugins
+    oxefmsynth
+    sfizz 
+    ChowKick
+    ChowPhaser
+    ChowCentaur
+    CHOWTapeModel
+    swh_lv2
+    airwindows
+    wolf-shaper
+    tap-plugins
+    aether-lv2
+    ninjas2
+    stochas
+    fire
+    bslizr
+
+    linuxsampler
+    qsampler
   ];
   programs.helix = {
     enable = true;

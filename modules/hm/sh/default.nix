@@ -7,24 +7,23 @@
       cat = "bat";
       cd = "z";
       ci = "zi";
-
     };
 
     shellAbbrs = {
       # git
-      ga="git add";
-      gs="git status --short";
-      gl="git log";
-      gcl="git clone";
-      ghc={
+      ga = "git add";
+      gs = "git status --short";
+      gl = "git log";
+      gcl = "git clone";
+      ghc = {
         setCursor = "$";
         expansion = "git clone https://github.com/$";
       };
-      gc= {
+      gc = {
         setCursor = "$";
         expansion = "git commit -m '$'";
       };
-      gca= {
+      gca = {
         setCursor = "$";
         expansion = "git commit -am '$'";
       };

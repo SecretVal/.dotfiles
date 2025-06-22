@@ -14,6 +14,8 @@
       background-opacity = 0.8;
       cursor-opacity = 0.8;
 
+      font-feature = "cv03,cv05,cv06,cv08,cv61,ss03";
+
       clipboard-read = "allow";
       clipboard-write = "allow";
 

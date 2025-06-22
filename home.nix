@@ -13,6 +13,7 @@
     ./modules/hm/git
     ./modules/hm/neovim
     ./modules/hm/hypr
+    ./modules/hm/multiplexer
     ./modules/hm/direnv/direnv.nix
     ./modules/hm/pkgs.nix
     ./modules/shared
