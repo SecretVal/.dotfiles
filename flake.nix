@@ -6,7 +6,7 @@
     nur.url = "github:nix-community/NUR";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
@@ -23,6 +23,11 @@
     };
 
     musnix = {url = "github:musnix/musnix";};
+
+    minimal-tmux = {
+      url = "github:niksingh710/minimal-tmux-status";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -58,8 +63,9 @@
     homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        stylix.homeManagerModules.stylix
+        stylix.homeModules.stylix
         inputs.nur.modules.homeManager.default
+
         ./home.nix
       ];
       extraSpecialArgs = {

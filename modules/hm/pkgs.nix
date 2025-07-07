@@ -4,8 +4,7 @@
   ghostty,
   system,
   ...
-}: 
-{
+}: {
   # nixpkgs
   nixpkgs.config = {
     allowUnfree = true;
@@ -109,7 +108,7 @@
     audacious-plugins
 
     distrho-ports
-    carla
+    # carla
     helm
     odin2
     tunefish
@@ -136,7 +135,7 @@
     eq10q
     infamousPlugins
     oxefmsynth
-    sfizz 
+    sfizz
     ChowKick
     ChowPhaser
     ChowCentaur
@@ -163,12 +162,36 @@
     };
   };
 
-  programs.floorp = {
+  programs.firefox = {
     enable = true;
     profiles.default = {
       settings = {
+        "sidebar.verticalTabs" = true;
+        "sidebar.expandOnHover" = true;
+        "general.autoScroll" = true;
         "browser.download.alwaysOpenPanel" = true;
         "browser.download.panel.shown" = true;
+        "browser.toolbars.bookmarks.visibility" = "newtab";
+        "browser.compactmode.show" = true;
+        "widget.non-native-theme.scrollbar.style" = 3;
+        "browser.tabs.closeWindowWithLastTab" = false;
+        "browser.tabs.tabmanager.enabled" = true;
+        "mousewheel.default.delta_multiplier_y" = 300;
+
+        "browser.vpn_promo.enabled" = false;
+        "extensions.pocket.enabled" = false;
+
+        "toolkit.telemetry.*" = false;
+        "datareporting.usage.uploadEnabled" = false;
+        "browser.dataFeatureRecommendations.enabled" = false;
+        "browser.newtabpage.activity-stream.feeds.recommendationprovider" = false;
+        "browser.newtabpage.activity-stream.feeds.recommendationproviderswitcher" = false;
+        "extensions.htmlaboutaddons.recommendations.enabled" = false;
+
+        "network.http.rcwn.enabled" = false;
+        "general.smoothScroll.msdPhysics.enabled" = true;
+
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
       };
 
       search = {
@@ -251,6 +274,7 @@
         sponsorblock
         darkreader
         youtube-shorts-block
+        vimium
       ];
     };
   };

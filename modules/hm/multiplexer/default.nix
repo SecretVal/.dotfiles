@@ -1,20 +1,29 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.tmux = {
     enable = true;
-    shortcut = "a";
     keyMode = "vi";
     clock24 = true;
     terminal = "screen-256color";
     escapeTime = 0;
     baseIndex = 1;
-    plugins = with pkgs; [
+    plugins = with pkgs.tmuxPlugins; [
+      {plugin = inputs.minimal-tmux.packages.${pkgs.system}.default;}
       {
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = "set -g @catppuccin_flavor 'mocha'";
+        plugin = tmux-sessionx;
+        extraConfig = "set -g @sessionx-bind 'f'";
       }
     ];
-    extraConfig = ''
-      bind-key C-a send-prefix
+    extraConfig = let
+      prefix = "ö";
+    in ''
+      unbind C-b
+      set-option -g prefix ${prefix}
+      bind-key ${prefix} send-prefix
+
       set-option -g renumber-windows on
       set-option -g status-position top
 
@@ -27,14 +36,6 @@
       bind -r j select-pane -D
       bind -r h select-pane -L
       bind -r l select-pane -R
-
-      bind -r D neww -c "#{pane_current_path}" "[[ -e TODO.md ]] && nvim TODO.md || nvim ~/.dotfiles/personal/todo.md"
-
-      # forget the find window.  That is for chumps
-      bind-key -r f run-shell "tmux neww 'sesh connect (sesh list | fzf)'"
     '';
   };
-  home.packages = with pkgs; [
-    sesh
-  ];
 }

@@ -26,6 +26,7 @@
 
       exec = [
         "[workspace special:hauntedhouse silent] ghostty"
+        "killall .waybar-wrapped; waybar"
       ];
 
       input = {
@@ -49,36 +50,18 @@
       };
 
       decoration = {
-        shadow = lib.mkForce {};
-        rounding = 0;
+        # shadow = lib.mkForce {};
+        rounding = 6;
         blur = {
           enabled = true;
-          size = 2;
-          passes = 3;
+          size = 6;
+          passes = 2;
+          vibrancy = 0.15;
           new_optimizations = true;
         };
       };
       animations = {
         enabled = true;
-
-        # DEPRECATED: Credit: https://gitlab.com/Oglo12/hyprland-rice/
-        # bezier = [
-        #   "overshot, 0.05, 0.9, 0.1, 1.05"
-        #   "smooth, 0.5, 0, 0.99, 0.99"
-        #   "snapback, 0.54, 0.42, 0.01, 1.34"
-        #   "curve, 0.27, 0.7, 0.03, 0.99"
-        # ];
-        # animation = [
-        #   "windows, 1, 5, overshot, slide"
-        #   "windowsOut, 1, 5, snapback, slide"
-        #   "windowsIn, 1, 5, snapback, slide"
-        #   "windowsMove, 1, 5, snapback, slide"
-        #   "border, 1, 5, default"
-        #   "fade, 1, 5, default"
-        #   "fadeDim, 1, 5, default"
-        #   "workspaces, 1, 6, curve"
-        # ];
-        # DEPRECATED END
 
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
@@ -110,11 +93,13 @@
         "Super, Q, killactive"
         "Super, M, exit"
         "Super, E, exec, thunar"
-        "Super Shift, E, exec, floorp"
+        "Super Shift, E, exec, firefox"
         "Super, F, togglefloating"
         "Super, P, pseudo"
         "Super shift, J, togglesplit"
         "Super, A, exec, foot -e pulsemixer"
+
+        "Super Shift, W, exec, killall .waybar-wrapped && waybar"
 
         "Super, h, movefocus, l"
         "Super, l, movefocus, r"
@@ -168,21 +153,8 @@
       ];
 
       windowrulev2 = [
-        "opacity 0.8 0.8, class:^(vesktop|floorp|thunar|Ardour)$"
-        "suppressevent maximize, class:^(.*)$"
+        "opacity 0.8 0.8, class:^(vesktop|firefox|thunar|Ardour)$"
       ];
-
-      # Smart gaps (start)
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
-
-      windowrule = [
-        "bordersize 0, floating:0, onworkspace:w[tv1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-      ];
-      # Smart gaps (end)
 
       layerrule = [
         "blur, waybar"
@@ -199,5 +171,14 @@
     wl-clipboard
     pyprland
   ];
-  programs.hyprlock.enable = true;
+  programs.hyprlock = {
+    enable = true;
+    settings.background = lib.mkForce [
+      {
+        path = "screenshot";
+        blur_passes = 3;
+        blur_size = 8;
+      }
+    ];
+  };
 }

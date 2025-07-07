@@ -156,6 +156,7 @@
   services.udev.packages = with pkgs; [qmk-udev-rules];
 
   musnix.enable = true; # music
+  programs.wireshark.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
