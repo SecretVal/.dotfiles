@@ -9,7 +9,8 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = true;
-  }; # fonts
+  };
+  # fonts
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     # ESSENTIAL

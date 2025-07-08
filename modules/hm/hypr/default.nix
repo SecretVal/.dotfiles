@@ -141,8 +141,9 @@
         "Super Shift,T,exec, slurp | grim -g - ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
         "Super ALT,T,exec, grim -o $(hyprctl activeworkspace | grep 'workspace ID' | tr ' ' '\\n' | tail --lines 1 | sed 's/:$//') ~/HDD/Pictures/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
 
-        "Super,z,exec, pypr zoom"
-        "Super,w,exec, woomer"
+        "Super,Z,exec, pypr zoom"
+        "Super,W,exec, woomer"
+        "Super Shift, L,exec, hyprlock"
 
         "Super, Tab, pass, class:^(com\.mitchellh\.ghostty)$"
       ];
@@ -167,7 +168,6 @@
     grim
     slurp
     swaynotificationcenter
-    wlogout
     wl-clipboard
     pyprland
   ];
@@ -178,6 +178,47 @@
         path = "screenshot";
         blur_passes = 3;
         blur_size = 8;
+      }
+    ];
+  };
+  programs.wlogout = {
+    enable = true;
+    layout = [
+      {
+        "label" = "lock";
+        "action" = "hyprlock";
+        "text" = "Lock";
+        "keybind" = "l";
+      }
+      {
+        "label" = "hibernate";
+        "action" = "systemctl hibernate";
+        "text" = "Hibernate";
+        "keybind" = "h";
+      }
+      {
+        "label" = "logout";
+        "action" = "loginctl terminate-user $USER";
+        "text" = "Logout";
+        "keybind" = "e";
+      }
+      {
+        "label" = "shutdown";
+        "action" = "systemctl poweroff";
+        "text" = "Shutdown";
+        "keybind" = "s";
+      }
+      {
+        "label" = "suspend";
+        "action" = "systemctl suspend";
+        "text" = "Suspend";
+        "keybind" = "u";
+      }
+      {
+        "label" = "reboot";
+        "action" = "systemctl reboot";
+        "text" = "Reboot";
+        "keybind" = "r";
       }
     ];
   };
