@@ -19,7 +19,6 @@
 
     settings = {
       exec-once = [
-        "swaync"
         "wl-copy"
         "pypr"
       ];
@@ -93,7 +92,7 @@
         "Super, Q, killactive"
         "Super, M, exit"
         "Super, E, exec, thunar"
-        "Super Shift, E, exec, firefox"
+        "Super Shift, E, exec, librewolf"
         "Super, F, togglefloating"
         "Super, P, pseudo"
         "Super shift, J, togglesplit"
@@ -167,9 +166,9 @@
   home.packages = with pkgs; [
     grim
     slurp
-    swaynotificationcenter
     wl-clipboard
     pyprland
+    hyprpicker
   ];
   programs.hyprlock = {
     enable = true;
@@ -180,6 +179,12 @@
         blur_size = 8;
       }
     ];
+  };
+  services.fnott = {
+    enable = true;
+    settings = {
+      main.border-radius = 6;
+    };
   };
   programs.wlogout = {
     enable = true;

@@ -104,7 +104,7 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" "audio"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" "audio" "wireshark"];
     packages = [];
   };
   # Allow unfree packages
@@ -156,7 +156,12 @@
   services.udev.packages = with pkgs; [qmk-udev-rules];
 
   musnix.enable = true; # music
-  programs.wireshark.enable = true;
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+    dumpcap.enable = true;
+    usbmon.enable = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

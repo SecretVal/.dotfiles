@@ -28,8 +28,9 @@
     jetbrains.idea-community-bin
 
     util-linux
-    font-awesome #
+    font-awesome
     corefonts
+    fyi
 
     sl
     cowsay
@@ -163,7 +164,8 @@
     };
   };
 
-  programs.firefox = {
+  stylix.targets.librewolf.profileNames = ["default"];
+  programs.librewolf = {
     enable = true;
     profiles.default = {
       settings = {
@@ -269,12 +271,10 @@
         };
         force = true;
       };
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
-        ublock-origin
         sponsorblock
         darkreader
-        youtube-shorts-block
         vimium
       ];
     };

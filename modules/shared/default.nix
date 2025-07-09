@@ -15,7 +15,7 @@
 
   stylix.fonts.monospace = {
     name = "Maple Mono NF";
-    package = pkgs.maple-mono.variable;
+    package = pkgs.maple-mono.NF;
   };
 
   stylix.opacity.terminal = 0.8;
